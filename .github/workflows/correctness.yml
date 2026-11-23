@@ -74,3 +74,4 @@ jobs:
             build/ucie-validation/
             build/ucie-mutations/
             build/ucie-sanitized/
+            build/external-alignment/

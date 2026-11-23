@@ -1,0 +1,116 @@
+{
+  "performance_ready": false,
+  "hardware_calibrated": false,
+  "paper_curve_reproduced": false,
+  "bandwidth_comparison": [
+    {
+      "grade": 1,
+      "engine_GBps": 384,
+      "ocp_table4_GBps": 384,
+      "relative_difference_pct": 0.0,
+      "classification": "PARAMETER_MATCH"
+    },
+    {
+      "grade": 2,
+      "engine_GBps": 1504,
+      "ocp_table4_GBps": 1536,
+      "relative_difference_pct": -2.083333333333337,
+      "classification": "SOURCE_CONFLICT"
+    },
+    {
+      "grade": 3,
+      "engine_GBps": 3008,
+      "ocp_table4_GBps": 3072,
+      "relative_difference_pct": -2.083333333333337,
+      "classification": "SOURCE_CONFLICT"
+    }
+  ],
+  "microtraces": [
+    {
+      "profile": 0,
+      "mode": 0,
+      "observed_sense_ns": 100.0,
+      "page_efficiency": 0.0625,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 0,
+      "mode": 1,
+      "observed_sense_ns": 100.0,
+      "page_efficiency": 0.125,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 0,
+      "mode": 2,
+      "observed_sense_ns": 100.0,
+      "page_efficiency": 0.0625,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 0,
+      "mode": 3,
+      "observed_sense_ns": 100.0,
+      "page_efficiency": 0.0625,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 1,
+      "mode": 0,
+      "observed_sense_ns": 2720.0,
+      "page_efficiency": 0.0625,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 1,
+      "mode": 1,
+      "observed_sense_ns": 2720.0,
+      "page_efficiency": 0.125,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 1,
+      "mode": 2,
+      "observed_sense_ns": 2720.0,
+      "page_efficiency": 0.0625,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 1,
+      "mode": 3,
+      "observed_sense_ns": 2720.0,
+      "page_efficiency": 0.0625,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 2,
+      "mode": 0,
+      "observed_sense_ns": 4000.0,
+      "page_efficiency": 0.0625,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 2,
+      "mode": 1,
+      "observed_sense_ns": 4000.0,
+      "page_efficiency": 0.125,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 2,
+      "mode": 2,
+      "observed_sense_ns": 4000.0,
+      "page_efficiency": 0.0625,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    },
+    {
+      "profile": 2,
+      "mode": 3,
+      "observed_sense_ns": 4000.0,
+      "page_efficiency": 0.0625,
+      "classification": "PARAMETER_PROPAGATION_AND_ARCHITECTURAL_CHECK_ONLY"
+    }
+  ],
+  "default_to_retrieval_paper_sense_ratio": 27.2,
+  "paper_nominal_media_ceiling_GBps": 1542.0235294117647
+}

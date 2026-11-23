@@ -1,0 +1,15 @@
+{"kind":"profile","grade":1,"GBps_per_module":48,"max_modules":8,"cube_GBps":384}
+{"kind":"profile","grade":2,"GBps_per_module":94,"max_modules":16,"cube_GBps":1504}
+{"kind":"profile","grade":3,"GBps_per_module":188,"max_modules":16,"cube_GBps":3008}
+{"kind":"microtrace","profile":0,"mode":0,"sense_parameter_ps":100000,"useful_bytes":256,"senses":1,"elapsed_ps":103779,"drained":true,"starts_ps":[271],"finishes_ps":[100271]}
+{"kind":"microtrace","profile":0,"mode":1,"sense_parameter_ps":100000,"useful_bytes":512,"senses":1,"elapsed_ps":107187,"drained":true,"starts_ps":[271],"finishes_ps":[100271]}
+{"kind":"microtrace","profile":0,"mode":2,"sense_parameter_ps":100000,"useful_bytes":512,"senses":2,"elapsed_ps":107187,"drained":true,"starts_ps":[271,784],"finishes_ps":[100271,100784]}
+{"kind":"microtrace","profile":0,"mode":3,"sense_parameter_ps":100000,"useful_bytes":512,"senses":2,"elapsed_ps":203779,"drained":true,"starts_ps":[271,100271],"finishes_ps":[100271,200271]}
+{"kind":"microtrace","profile":1,"mode":0,"sense_parameter_ps":2720000,"useful_bytes":256,"senses":1,"elapsed_ps":2723779,"drained":true,"starts_ps":[271],"finishes_ps":[2720271]}
+{"kind":"microtrace","profile":1,"mode":1,"sense_parameter_ps":2720000,"useful_bytes":512,"senses":1,"elapsed_ps":2727187,"drained":true,"starts_ps":[271],"finishes_ps":[2720271]}
+{"kind":"microtrace","profile":1,"mode":2,"sense_parameter_ps":2720000,"useful_bytes":512,"senses":2,"elapsed_ps":2727187,"drained":true,"starts_ps":[271,784],"finishes_ps":[2720271,2720784]}
+{"kind":"microtrace","profile":1,"mode":3,"sense_parameter_ps":2720000,"useful_bytes":512,"senses":2,"elapsed_ps":5443779,"drained":true,"starts_ps":[271,2720271],"finishes_ps":[2720271,5440271]}
+{"kind":"microtrace","profile":2,"mode":0,"sense_parameter_ps":4000000,"useful_bytes":256,"senses":1,"elapsed_ps":4003779,"drained":true,"starts_ps":[271],"finishes_ps":[4000271]}
+{"kind":"microtrace","profile":2,"mode":1,"sense_parameter_ps":4000000,"useful_bytes":512,"senses":1,"elapsed_ps":4007187,"drained":true,"starts_ps":[271],"finishes_ps":[4000271]}
+{"kind":"microtrace","profile":2,"mode":2,"sense_parameter_ps":4000000,"useful_bytes":512,"senses":2,"elapsed_ps":4007187,"drained":true,"starts_ps":[271,784],"finishes_ps":[4000271,4000784]}
+{"kind":"microtrace","profile":2,"mode":3,"sense_parameter_ps":4000000,"useful_bytes":512,"senses":2,"elapsed_ps":8003779,"drained":true,"starts_ps":[271,4000271],"finishes_ps":[4000271,8000271]}
