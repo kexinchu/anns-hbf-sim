@@ -1,0 +1,12 @@
+{"event":"read_issue","page":0,"value":1}
+{"event":"response","page":0,"value":0}
+{"event":"publish","page":0,"value":0}
+{"event":"read_issue","page":1,"value":2}
+{"event":"response","page":1,"value":0}
+{"event":"publish","page":1,"value":0}
+{"event":"read_issue","page":2,"value":3}
+{"event":"response","page":2,"value":0}
+{"event":"publish","page":2,"value":0}
+{"event":"read_issue","page":3,"value":4}
+{"event":"response","page":3,"value":0}
+{"event":"publish","page":3,"value":0}

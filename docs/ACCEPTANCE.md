@@ -9,9 +9,9 @@ Passing software tests does not change this flag automatically.
 | Timeout | Explicit deadline drain and retry generations | Selected same-tick policy now tested; broader interleavings and autonomous host recovery remain |
 | Cache | Two retained pages and same-bank issue order | Conflict/replacement/fault differential reference |
 | Core Channel | Finite shared serialization, independent channels | Die ports, packet overhead, parameter provenance |
-| HBM | Bounded per-PC concurrent bursts | Isolated bank candidate tested; integration, refresh stress and hardware timing still pending |
-| ANNS | CPU toy IVF/rerank exact output equivalence | Real GPU transfers, production ANN implementation, scale |
-| Calibration | None | Hardware or bounded physical evidence, held-out error tests |
+| HBM | Bounded per-PC bursts; synthetic bank backend integrated into CPU ANNS fixture | Refresh/bank-group fidelity, actual GPU integration and hardware timing still pending |
+| ANNS | CPU toy IVF and real A6000 CUDA candidate-distance/top-k equivalence, with scripted recovery | EventLab wire recovery, asynchronous faults, production ANN implementation, scale |
+| Calibration | A6000 GDDR6 dependent-load observations only; no fitted model | HBM evidence, parameter fit and held-out error tests |
 | Performance | CLOSED | Arrival protocol, recall/resource budget, P99 and cache state frozen |
 
 Protocol assertions refer to OCP v0.7 §5.3.1, §5.4.1(6), §5.4.3,
@@ -27,3 +27,5 @@ from evaluation. Similar predictions from related simulators are not independent
 hardware validation. No blanket conservative-bound claim is supported.
 
 See [new recovery/deadline/bank evidence](RECOVERY_BANK_REVIEW.md). New candidate tests do not change the performance gate.
+
+See [A6000 functional recovery evidence](../gpu/README.md). CUDA execution does not change the calibration or performance gate.

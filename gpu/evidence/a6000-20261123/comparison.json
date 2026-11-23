@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "cases": [
+    "clean",
+    "retry",
+    "cecc",
+    "uecc",
+    "die"
+  ],
+  "oracle": "independent Python candidates/distances/topk plus bank simulator topk",
+  "performance_ready": false
+}
