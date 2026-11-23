@@ -1,0 +1,11 @@
+{"event":"at_reset","resources":[1,1,1,0,0,0,0,0,0,0,0,0,0,0,2,0],"handed":0,"accepted":0,"responses":0,"errors":0}
+{"completion":101,"success":false}
+{"completion":100,"success":false}
+{"event":"drained","resources":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"handed":65,"accepted":65,"responses":65,"errors":1}
+{"unknown":true,"ready":1}
+{"completion":200,"success":false}
+{"completion":300,"success":true}
+{"completion":301,"success":true}
+{"completion":400,"success":true}
+{"scores":[99375,99875,100359,100827,101279,101715,102135,102539,101040,99627,100119,100595,101055,101499,101927,102339,102735,99375,99875,100359,100827,101279,101715,102135,102539,101040,99627,100119,100595,101055,101499,101927],"physical":[0,0,0,0,0]}
+{"event":"final","resources":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"handed":195,"accepted":195,"responses":195,"errors":2}

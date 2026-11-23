@@ -1,0 +1,7 @@
+Test project /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/build
+    Start 22: driver_reset_diff
+1/1 Test #22: driver_reset_diff ................   Passed    6.12 sec
+
+100% tests passed out of 1
+
+Total Test time (real) =   6.13 sec
