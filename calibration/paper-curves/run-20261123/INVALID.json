@@ -1,0 +1,4 @@
+{
+  "valid": false,
+  "reason": "Debug initialization exceeded 180s wall timeout; no model result."
+}

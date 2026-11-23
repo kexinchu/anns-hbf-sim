@@ -1,0 +1,4 @@
+{
+  "valid": false,
+  "reason": "INVALID: replaced executable path while bulk warmup was in flight. Stopped explicitly. Use final run only."
+}

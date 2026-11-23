@@ -1,0 +1,52 @@
+256-cold-sequential-independent-q1 0.094 GB/s model
+256-cold-sequential-independent-q16 1.5038 GB/s model
+256-cold-sequential-independent-q256 23.9465 GB/s model
+256-cold-sequential-independent-q1024 89.2107 GB/s model
+256-cold-sequential-chain-q1 0.094 GB/s model
+256-cold-sequential-chain-q16 0.094 GB/s model
+256-cold-sequential-chain-q256 0.094 GB/s model
+256-cold-sequential-chain-q1024 0.094 GB/s model
+256-cold-permutation-independent-q1 0.094 GB/s model
+256-cold-permutation-independent-q16 1.5035 GB/s model
+256-cold-permutation-independent-q256 23.8721 GB/s model
+256-cold-permutation-independent-q1024 89.2107 GB/s model
+256-cold-permutation-chain-q1 0.094 GB/s model
+256-cold-permutation-chain-q16 0.094 GB/s model
+256-cold-permutation-chain-q256 0.094 GB/s model
+256-cold-permutation-chain-q1024 0.094 GB/s model
+256-hot-sequential-independent-q1 65.9964 GB/s model
+256-hot-sequential-independent-q16 1055.9423 GB/s model
+256-hot-sequential-independent-q256 1199.2881 GB/s model
+256-hot-sequential-independent-q1024 1199.2881 GB/s model
+256-hot-sequential-chain-q1 65.9964 GB/s model
+256-hot-sequential-chain-q16 65.9964 GB/s model
+256-hot-sequential-chain-q256 65.9964 GB/s model
+256-hot-sequential-chain-q1024 65.9964 GB/s model
+256-hot-permutation-independent-q1 65.9964 GB/s model
+256-hot-permutation-independent-q16 686.7388 GB/s model
+256-hot-permutation-independent-q256 1199.2881 GB/s model
+256-hot-permutation-independent-q1024 1199.2881 GB/s model
+256-hot-permutation-chain-q1 65.9964 GB/s model
+256-hot-permutation-chain-q16 65.9964 GB/s model
+256-hot-permutation-chain-q256 65.9964 GB/s model
+256-hot-permutation-chain-q1024 65.9964 GB/s model
+4096-cold-sequential-independent-q1 1.4761 GB/s model
+4096-cold-sequential-independent-q16 23.6174 GB/s model
+Traceback (most recent call last):
+  File "/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/tests/paper_curves.py", line 17, in <module>
+    key=f'{name}-q{qd}'
+      ^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 556, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1220, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 2153, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1267, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['/private/tmp/anns-paper-release/paper_curve_probe', '4096', '256', '0', '0']' timed out after 180 seconds

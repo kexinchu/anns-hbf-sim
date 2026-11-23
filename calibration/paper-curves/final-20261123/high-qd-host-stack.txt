@@ -1,0 +1,154 @@
+Analysis of sampling probe.bin (pid 20441) every 1 millisecond
+Process:         probe.bin [20441]
+Path:            /Users/USER/*/probe.bin
+Load Address:    0x1042e8000
+Identifier:      probe.bin
+Version:         0
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  Python [20430]
+Target Type:     live task
+
+Date/Time:       2026-11-23 16:38:39.485 -0500
+Launch Time:     2026-11-23 16:37:54.274 -0500
+OS Version:      macOS 26.4 (25E246)
+Report Version:  7
+Analysis Tool:   /usr/bin/sample
+
+Physical footprint:         28.0M
+Physical footprint (peak):  45.3M
+Idle exit:                  untracked
+----
+
+Call graph:
+    757 Thread_17906242   DispatchQueue_1: com.apple.main-thread  (serial)
+      757 start  (in dyld) + 6992  [0x1808bbda4]
+        757 main  (in probe.bin) + 3320  [0x1042eb9e0]
+          757 hbf_eventlab::EventQueue::run()  (in probe.bin) + 24  [0x10433a574]
+            757 hbf_eventlab::EventQueue::run_next()  (in probe.bin) + 1692  [0x10433a368]
+              757 hbf_eventlab::EventQueue::invoke(hbf_eventlab::EventQueue::Event)  (in probe.bin) + 264  [0x104339c8c]
+                733 std::__function::__func<hbf_eventlab::HostDriver::schedule(hbf_eventlab::Quantity<hbf_eventlab::TickTag>, std::function<void ()>)::$_4, void ()>::operator()()  (in probe.bin) + 212  [0x1042fc1a8]
+                + 592 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 488,508,...  [0x1042f55c4,0x1042f55d8,...]
+                + 97 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 548  [0x1042f5600]
+                + ! 91 hbf_eventlab::HostDriver::eligible(hbf_eventlab::HostDriver::Unit const&) const  (in probe.bin) + 228,220,...  [0x1042f4f2c,0x1042f4f24,...]
+                + ! 6 hbf_eventlab::HostDriver::eligible(hbf_eventlab::HostDriver::Unit const&) const  (in probe.bin) + 560  [0x1042f5078]
+                + !   6 hbf_eventlab::HostDriver::read_predecessor_pending(hbf_eventlab::HostDriver::Unit const&) const  (in probe.bin) + 224,276,...  [0x104306940,0x104306974,...]
+                + 8 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 144  [0x1042f546c]
+                + ! 8 hbf_eventlab::HostDriver::advance()  (in probe.bin) + 956,964,...  [0x1042f6fd0,0x1042f6fd8,...]
+                + 7 hbf_eventlab::HostDriver::eligible(hbf_eventlab::HostDriver::Unit const&) const  (in probe.bin) + 156,148,...  [0x1042f4ee4,0x1042f4edc,...]
+                + 5 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 1440  [0x1042f597c]
+                + ! 5 hbf_eventlab::FcfsHostSendPolicy::select(std::vector<hbf_eventlab::HostSendCandidate> const&) const  (in probe.bin) + 76,40  [0x1042fae54,0x1042fae30]
+                + 5 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2928  [0x1042f5f4c]
+                + ! 5 hbf_eventlab::AdmissionWaitRegistry::observe(hbf_eventlab::WaitKey) const  (in probe.bin) + 36  [0x104335134]
+                + !   5 std::__tree<std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, std::__map_value_compare<hbf_eventlab::WaitKey, std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, true>>::find<hbf_eventlab::WaitKey>(hbf_eventlab::WaitKey const&) const  (in probe.bin) + 76,36,...  [0x104335f08,0x104335ee0,...]
+                + 4 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 1284  [0x1042f58e0]
+                + ! 2 _xzm_free  (in libsystem_malloc.dylib) + 260,684  [0x180a95170,0x180a95318]
+                + ! 1 _xzm_free  (in libsystem_malloc.dylib) + 1048  [0x180a95484]
+                + ! : 1 mach_absolute_time  (in libsystem_kernel.dylib) + 108  [0x180c3410c]
+                + ! 1 _xzm_xzone_free_freelist  (in libsystem_malloc.dylib) + 760  [0x180a9ddd0]
+                + !   1 mach_absolute_time  (in libsystem_kernel.dylib) + 108  [0x180c3410c]
+                + 4 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2400  [0x1042f5d3c]
+                + ! 4 hbf_eventlab::DeviceDriver::try_submit(hbf_eventlab::LocalTransaction const&, std::function<void (hbf_eventlab::DeliveredResponse const&)>, std::function<void (hbf_eventlab::AcceptedNotice const&)>)  (in probe.bin) + 328,264,...  [0x10430e838,0x10430e7f8,...]
+                + 2 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 1164  [0x1042f5868]
+                + ! 2 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+                + !   1 _xzm_xzone_malloc  (in libsystem_malloc.dylib) + 336  [0x180a94a10]
+                + !   1 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 284  [0x180a99ff0]
+                + 2 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2232  [0x1042f5c94]
+                + ! 2 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+                + !   1 _xzm_xzone_malloc  (in libsystem_malloc.dylib) + 8  [0x180a948c8]
+                + !   1 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 488  [0x180a9a0bc]
+                + 2 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2812  [0x1042f5ed8]
+                + ! 2 std::__tree_balance_after_insert[abi:ne180100]<std::__tree_node_base<void*>*>(std::__tree_node_base<void*>*, std::__tree_node_base<void*>*)  (in probe.bin) + 56,84  [0x1042ed06c,0x1042ed088]
+                + 2 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 4804  [0x1042f66a0]
+                + ! 2 _xzm_free  (in libsystem_malloc.dylib) + 1048  [0x180a95484]
+                + !   2 mach_absolute_time  (in libsystem_kernel.dylib) + 28,108  [0x180c340bc,0x180c3410c]
+                + 1 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 124  [0x1042f5458]
+                + ! 1 hbf_eventlab::AdmissionWaitRegistry::cancel(hbf_eventlab::Quantity<hbf_eventlab::WaitTag>)  (in probe.bin) + 324  [0x104335b40]
+                + !   1 std::__function::__func<hbf_eventlab::HostDriver::pump(unsigned int)::$_6, void ()>::destroy()  (in probe.bin) + 0  [0x1042fcd14]
+                + 1 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2324  [0x1042f5cf0]
+                + ! 1 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+                + !   1 _xzm_xzone_malloc  (in libsystem_malloc.dylib) + 8  [0x180a948c8]
+                + 1 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2448  [0x1042f5d6c]
+                +   1 _xzm_free  (in libsystem_malloc.dylib) + 1332  [0x180a955a0]
+                12 hbf_eventlab::HostDriver::reclaim()  (in probe.bin) + 432,412,...  [0x104307880,0x10430786c,...]
+                5 std::__function::__func<hbf_eventlab::DeviceDriver::deliver(unsigned long long)::$_19, void ()>::operator()()  (in probe.bin) + 936  [0x10431cb68]
+                + 5 hbf_eventlab::DeviceDriver::detach_external(hbf_eventlab::DeliveredResponse, std::function<void (hbf_eventlab::DeliveredResponse const&)>, hbf_eventlab::ChannelAddress, unsigned long long)  (in probe.bin) + 420  [0x104317420]
+                +   5 hbf_eventlab::DeviceDriver::receive_external(hbf_eventlab::DeviceDriver::ExternalPacket const&)  (in probe.bin) + 1036  [0x104317a84]
+                +     5 std::__function::__func<hbf_eventlab::HostDriver::pump(unsigned int)::$_1, void (hbf_eventlab::DeliveredResponse const&)>::operator()(hbf_eventlab::DeliveredResponse const&)  (in probe.bin) + 80  [0x1042fc6d0]
+                +       4 hbf_eventlab::HostDriver::receive(hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>, hbf_eventlab::DeliveredResponse const&)  (in probe.bin) + 2264  [0x1042f8f20]
+                +       ! 4 hbf_eventlab::HostDriver::advance()  (in probe.bin) + 944,956,...  [0x1042f6fc4,0x1042f6fd0,...]
+                +       1 hbf_eventlab::HostDriver::receive(hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>, hbf_eventlab::DeliveredResponse const&)  (in probe.bin) + 2488  [0x1042f9000]
+                +         1 hbf_eventlab::HostDriver::reclaim()  (in probe.bin) + 188  [0x10430778c]
+                2 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 576  [0x1043115c0]
+                + 2 hbf_eventlab::DeviceDriver::execute_media(unsigned int)  (in probe.bin) + 2396,2428  [0x104311fa0,0x104311fc0]
+                2 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 588  [0x1043115cc]
+                + 1 hbf_eventlab::DeviceDriver::queue_responses(unsigned int)  (in probe.bin) + 276  [0x104313538]
+                + ! 1 hbf_eventlab::ReadPath::response(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>) const  (in probe.bin) + 196  [0x104331fb8]
+                + !   1 hbf_eventlab::BankCache::load(hbf_eventlab::Quantity<hbf_eventlab::ReadResultTag>) const  (in probe.bin) + 48  [0x10430bde4]
+                + 1 hbf_eventlab::DeviceDriver::queue_responses(unsigned int)  (in probe.bin) + 116  [0x104313498]
+                2 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 156,324  [0x10431141c,0x1043114c4]
+                1 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 188  [0x10431143c]
+                  1 hbf_eventlab::DeviceDriver::admit(hbf_eventlab::DeviceDriver::Transaction&)  (in probe.bin) + 1164  [0x104310148]
+                    1 hbf_eventlab::ReadPath::submit(hbf_eventlab::HostCommand const&)  (in probe.bin) + 284  [0x10432fce0]
+                      1 hbf_eventlab::ReadPath::observe(hbf_eventlab::HostCommand const&) const  (in probe.bin) + 424  [0x10432f8f4]
+                        1 hbf_eventlab::NandMediaState::unusable(hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>) const  (in probe.bin) + 60  [0x1043296b0]
+                          1 std::__tree<std::__value_type<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, hbf_eventlab::NandMediaState::Block>, std::__map_value_compare<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, std::__value_type<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, hbf_eventlab::NandMediaState::Block>, true>>::find<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>>(hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag> const&) const  (in probe.bin) + 104  [0x10432994c]
+
+Total number in stack (recursive counted multiple, when >=5):
+
+Sort by top of stack, same collapsed (when >= 5):
+        hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin)        592
+        hbf_eventlab::HostDriver::eligible(hbf_eventlab::HostDriver::Unit const&) const  (in probe.bin)        98
+        hbf_eventlab::HostDriver::reclaim()  (in probe.bin)        13
+        hbf_eventlab::HostDriver::advance()  (in probe.bin)        12
+        hbf_eventlab::HostDriver::read_predecessor_pending(hbf_eventlab::HostDriver::Unit const&) const  (in probe.bin)        6
+        hbf_eventlab::FcfsHostSendPolicy::select(std::vector<hbf_eventlab::HostSendCandidate> const&) const  (in probe.bin)        5
+        std::__tree<std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, std::__map_value_compare<hbf_eventlab::WaitKey, std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, true>>::find<hbf_eventlab::WaitKey>(hbf_eventlab::WaitKey const&) const  (in probe.bin)        5
+
+Binary Images:
+       0x1042e8000 -        0x104347ff7 +probe.bin (0) <2445A066-48A1-361F-9910-BF9403E0E64F> /Users/*/probe.bin
+       0x180814000 -        0x180866b4b  libobjc.A.dylib (951.7) <2E858E25-1FF6-3DA6-84F6-911630620512> /usr/lib/libobjc.A.dylib
+       0x180867000 -        0x18089bb34  libdyld.dylib (1376.6) <2C3C5F75-3686-39A1-9202-BD4D2133379D> /usr/lib/system/libdyld.dylib
+       0x18089c000 -        0x180941ec7  dyld (1.0.0 - 1376.6) <9F682DCF-340C-3BFA-BCDD-DD702F30313E> /usr/lib/dyld
+       0x180942000 -        0x180945228  libsystem_blocks.dylib (96) <2EA73169-CF76-3DD1-9869-F23C8B338022> /usr/lib/system/libsystem_blocks.dylib
+       0x180946000 -        0x18099a51f  libxpc.dylib (3102.100.102) <618039C8-9965-3782-A7D2-90FD4C3DD66F> /usr/lib/system/libxpc.dylib
+       0x18099b000 -        0x1809bb9bf  libsystem_trace.dylib (1861.100.19) <08629650-54FC-3AA6-910E-EACA563804D0> /usr/lib/system/libsystem_trace.dylib
+       0x1809bc000 -        0x180a69daf  libcorecrypto.dylib (1922.101.2) <D1EC203E-9B2E-391B-8DE3-7C58F0589437> /usr/lib/system/libcorecrypto.dylib
+       0x180a6a000 -        0x180aba1d7  libsystem_malloc.dylib (812.100.31) <2AD21BE3-FFDB-31D5-A3D7-2F7F672D6E92> /usr/lib/system/libsystem_malloc.dylib
+       0x180abb000 -        0x180b0223f  libdispatch.dylib (1542.100.32) <E17AA23F-DB2A-3302-B14C-F6B08C540FCF> /usr/lib/system/libdispatch.dylib
+       0x180b03000 -        0x180b05ffb  libsystem_featureflags.dylib (103) <0DE01F76-4B36-35A2-98F9-43DD147EDD95> /usr/lib/system/libsystem_featureflags.dylib
+       0x180b06000 -        0x180b86ef7  libsystem_c.dylib (1752.100.10) <66EBD321-6899-3863-BA24-5CFC3076A0CB> /usr/lib/system/libsystem_c.dylib
+       0x180b87000 -        0x180c17ae7  libc++.1.dylib (2100.43) <1E9541EC-C564-38CB-BED6-46F708E8D863> /usr/lib/libc++.1.dylib
+       0x180c18000 -        0x180c3275f  libc++abi.dylib (2100.43) <E8D325ED-3B97-325E-B494-B1B0FF93D133> /usr/lib/libc++abi.dylib
+       0x180c33000 -        0x180c7028f  libsystem_kernel.dylib (12377.101.15) <51565B39-F595-3E96-A217-FEF29815057A> /usr/lib/system/libsystem_kernel.dylib
+       0x180c71000 -        0x180c7db3b  libsystem_pthread.dylib (539.100.4) <E7A73008-0C09-31E3-9DD9-0C61652F0E85> /usr/lib/system/libsystem_pthread.dylib
+       0x180c7e000 -        0x180c868f3  libsystem_platform.dylib (375.100.10) <D93EC420-F465-3A3A-916D-A04AF9B023EB> /usr/lib/system/libsystem_platform.dylib
+       0x180c87000 -        0x180cb66eb  libsystem_info.dylib (600) <201FD67C-3DF6-3788-B132-A69CAA2AA3D7> /usr/lib/system/libsystem_info.dylib
+       0x184c4c000 -        0x184c55e5f  libsystem_darwin.dylib (1752.100.10) <D5BA0CAB-F283-3620-AAA9-1EEB718E1BA8> /usr/lib/system/libsystem_darwin.dylib
+       0x1850b7000 -        0x1850c8f5b  libsystem_notify.dylib (348.100.7) <9F46F30B-B7C0-3DD7-AC38-57B78C7971FF> /usr/lib/system/libsystem_notify.dylib
+       0x187381000 -        0x18739bf5b  libsystem_networkextension.dylib (2226.101.1) <85169C7B-48DD-3542-AD38-F1B88EA2A95A> /usr/lib/system/libsystem_networkextension.dylib
+       0x18741e000 -        0x187435fdf  libsystem_asl.dylib (406) <6427D987-7938-3278-8C14-10FB9C06BBD5> /usr/lib/system/libsystem_asl.dylib
+       0x188fd9000 -        0x188fe1387  libsystem_symptoms.dylib (2169.100.30) <28B6E34E-9C7D-3437-A3F1-A3C979DE579A> /usr/lib/system/libsystem_symptoms.dylib
+       0x18d274000 -        0x18d2ac25f  libsystem_containermanager.dylib (725.100.37) <14750F95-BB3A-3654-8610-A05A454643A8> /usr/lib/system/libsystem_containermanager.dylib
+       0x18e684000 -        0x18e6885d7  libsystem_configuration.dylib (1405.100.8) <634F597D-F8BD-3C00-B967-86047FC15D14> /usr/lib/system/libsystem_configuration.dylib
+       0x18e689000 -        0x18e68f8cf  libsystem_sandbox.dylib (2680.100.174) <AF76231D-EADC-3399-9414-6AD90FB4EA89> /usr/lib/system/libsystem_sandbox.dylib
+       0x18fccf000 -        0x18fcd21fb  libquarantine.dylib (196.100.8) <268FEB6E-A237-3050-BFFF-AE3A66B7EAD4> /usr/lib/system/libquarantine.dylib
+       0x19046e000 -        0x190474d03  libsystem_coreservices.dylib (191.4.5) <7129349D-04F9-3C3C-BF37-3082C1468654> /usr/lib/system/libsystem_coreservices.dylib
+       0x1909f3000 -        0x190a30a77  libsystem_m.dylib (3312.100.1) <83B173CD-7F32-3901-8E67-C0B2676BE015> /usr/lib/system/libsystem_m.dylib
+       0x190a32000 -        0x190a35527  libmacho.dylib (1376.6) <9729ECEA-0A08-32E3-8BDB-B42FC15FF258> /usr/lib/system/libmacho.dylib
+       0x190a4f000 -        0x190a5c3a7  libcommonCrypto.dylib (600035) <710EC5FA-F77C-3646-A9E3-C037C42E1539> /usr/lib/system/libcommonCrypto.dylib
+       0x190a5d000 -        0x190a66ca3  libunwind.dylib (2100.2) <FB0518B9-DF0F-3A03-A74B-AF1B21C26F8B> /usr/lib/system/libunwind.dylib
+       0x190a6f000 -        0x190a797ff  libcopyfile.dylib (240) <0B7FF027-5579-3CBF-A12B-68A4FD36641C> /usr/lib/system/libcopyfile.dylib
+       0x190a7a000 -        0x190a7d987  libcompiler_rt.dylib (103.3) <65E29E6E-7042-3F73-A1D2-F2C4EBCD7524> /usr/lib/system/libcompiler_rt.dylib
+       0x190a7e000 -        0x190a8278b  libsystem_collections.dylib (1752.100.10) <B81193DE-3BEC-3340-86D0-DB7F3683D135> /usr/lib/system/libsystem_collections.dylib
+       0x190a83000 -        0x190a864cf  libsystem_secinit.dylib (168.100.7) <A6B77B36-195D-33F8-8058-FE0B5BFA9D37> /usr/lib/system/libsystem_secinit.dylib
+       0x190a87000 -        0x190a89bf7  libremovefile.dylib (85.100.6) <BD89B1A3-0D06-3881-B5E1-EFC6CFBDFCC1> /usr/lib/system/libremovefile.dylib
+       0x190a8a000 -        0x190a8af27  libkeymgr.dylib (31) <DE8F8219-0072-35C2-8932-C065491ED15D> /usr/lib/system/libkeymgr.dylib
+       0x190a8b000 -        0x190a93e3f  libsystem_dnssd.dylib (2881.100.56.0.1) <DEC8BDD2-366C-3BF9-A123-35744DB06354> /usr/lib/system/libsystem_dnssd.dylib
+       0x190a94000 -        0x190a9909b  libcache.dylib (95) <4D6833A3-C910-3A76-AA8A-303F698B36BF> /usr/lib/system/libcache.dylib
+       0x190a9a000 -        0x190a9bce3  libSystem.B.dylib (1356) <E05F5341-06B7-365E-8014-E9CD64C352FE> /usr/lib/libSystem.B.dylib
+       0x28337d000 -        0x283384349  libRosetta.dylib (367.5) <2FC1EF06-04C4-35FC-8DC3-BEA1E9FBD63F> /usr/lib/libRosetta.dylib
+       0x28505a000 -        0x28505da4b  libsystem_darwindirectory.dylib (122) <CCAA2170-32DD-34BD-A927-32DF30893969> /usr/lib/system/libsystem_darwindirectory.dylib
+       0x28505e000 -        0x2850675a7  libsystem_eligibility.dylib (319.101.1) <2D19994A-87BB-34B8-A343-CB8DD47FF110> /usr/lib/system/libsystem_eligibility.dylib
+       0x285068000 -        0x28506f8db  libsystem_sanitizers.dylib (26) <FCB93D2F-4437-3089-A43F-A19BC23DD65B> /usr/lib/system/libsystem_sanitizers.dylib
+       0x285070000 -        0x285070bb7  libsystem_trial.dylib (474.2.18) <5BB81430-4E33-3160-94D2-1FFB2B614DB2> /usr/lib/system/libsystem_trial.dylib

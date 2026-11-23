@@ -96,3 +96,5 @@ The [AoU wire audit](docs/AOU_WIRE_REVIEW.md) adds a metadata-free HBF message p
 UCIe lower-transport work: [retry ownership and FDI/reset audit](docs/UCIE_LIFETIME_REVIEW.md). This is a bounded decoded-event model; full wire/PHY conformance and performance remain gated.
 
 External numeric audit: [OCP and paper alignment](calibration/external-alignment/README.md), including exposed source conflicts and uncalibrated timing differences.
+
+Frozen paper-aligned topology, closed-loop QD/dependency sweeps, and calibration/validation boundaries: [component curves](calibration/paper-curves/README.md). Missing external curve data and invalid execution points remain explicit; performance stays gated.

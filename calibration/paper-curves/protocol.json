@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "status": "frozen-before-observation",
+  "paper": "https://research.ece.cornell.edu/retrieve/camera-ready/retrieve26-final50.pdf",
+  "paper_sha256": "9daf8a1e790a44ee2babaa3fd4853ee65c990e275b01338159aca7b5c5d6b4a9",
+  "topology": {"capacity_GiB":512,"channels":16,"dies_per_channel":4,"banks_per_die":16,"page_bytes":4096,"buffers_per_bank":2},
+  "mapping": "global page p: channel=p%16, bank=(p//16)%16, die=(p//256)%4, page_in_bank=p//1024; channel-first verified, bank-before-die reference interpretation",
+  "assumed_block_decomposition": {"pages_per_block":256,"blocks_per_bank":512},
+  "sense_ps":2720000,
+  "bandwidth_profile": "OCP section SG2: 94 GB/s/channel, 1504 GB/s total; paper Table 4:1536 GB/s remains separate, not silently substituted",
+  "fixed_uncalibrated_parameters": {"core_bytes_per_ns":0,"cache_access_ps":100,"request_control_bytes":16,"response_control_bytes":16,"request_fixed_latency_ps":100,"response_fixed_latency_ps":100,"ingress_entries":16,"ingress_bytes":16384,"egress_entries":8,"egress_bytes":512,"read_dispatch_wait_ps":0},
+  "fit": {"method":"none in this experiment","paper_nominal_is_preexisting_fitted_input":true,"reserved_condition":"steady sequential 4KiB fully utilized banks (not an independent validation anchor)"},
+  "validation": {"seeds":[1729],"request_count":1024,"footprint_pages":1024,"sizes":[256,4096],"qd":[1,16,256,1024],"cache":["cold","hot"],"access":["sequential","permutation"],"dependency":["independent","chain"]},
+  "arrival": "closed-loop sliding window; replenish on parent completion; chain always one outstanding regardless of nominal QD",
+  "timing": "first measurement submit to final parent logical completion; initialization and hot warmup excluded; queueing, host splitting, link and assembly included; finite batch, not steady state",
+  "cold": "fresh device per point, write initialized footprint without reading",
+  "hot": "read complete footprint once before measurement; one page per bank fits buffers",
+  "checks": "all parent successes, symbolic expected-content validation, no resource leaks; cold sense count=1024, hot=0; mapping exact; chain invariant across nominal QD; peak outstanding bound; one-bank sense+ideal aggregate link upper bounds only",
+  "missing_external_evidence": ["paper request traces and random seed","paper queue depth grid","paper exact timing boundary","numeric Fig3 curve data","independent HBF hardware observations"],
+  "paper_curve_reproduced":false,
+  "hardware_calibrated":false,
+  "performance_ready":false
+}

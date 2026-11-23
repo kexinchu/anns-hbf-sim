@@ -1,0 +1,4 @@
+{
+  "valid": false,
+  "reason": "INVALID: runner reused executable path while rebuilds replaced the binary; points cannot be assigned one binary hash. Stopped explicitly."
+}

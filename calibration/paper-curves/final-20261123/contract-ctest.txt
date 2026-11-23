@@ -1,0 +1,19 @@
+Start testing: Nov 23 16:39 EST
+----------------------------------------------------------
+28/28 Testing: paper_curve_contract
+28/28 Test: paper_curve_contract
+Command: "/Users/kexin.chu/miniconda3/bin/python3.13" "/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/tests/paper_curve_contract.py" "/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/build/paper_curve_probe"
+Directory: /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/build
+"paper_curve_contract" start time: Nov 23 16:39 EST
+Output:
+----------------------------------------------------------
+PASS: five out-of-protocol inputs rejected before initialization
+<end of output>
+Test time =   0.66 sec
+----------------------------------------------------------
+Test Passed.
+"paper_curve_contract" end time: Nov 23 16:39 EST
+"paper_curve_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 23 16:39 EST

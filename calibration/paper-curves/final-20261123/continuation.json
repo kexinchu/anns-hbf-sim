@@ -1,0 +1,6 @@
+{
+  "workers": 4,
+  "wall_timeout_seconds": 180,
+  "purpose": "complete missing grid points without model changes",
+  "runner_sha256": "e0f74624998561d2c87f175dc5cbb898c2c69c95dddee605c8db5452fe26fa41"
+}

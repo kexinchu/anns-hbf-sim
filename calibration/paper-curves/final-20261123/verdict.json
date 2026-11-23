@@ -1,0 +1,8 @@
+{
+  "grid_points": 64,
+  "checked": 56,
+  "invalid": 8,
+  "paper_curve_reproduced": false,
+  "hardware_calibrated": false,
+  "performance_ready": false
+}

@@ -1,0 +1,8 @@
+{
+  "protocol_sha256": "4fddd12d574acb2f1752301dcaea3b438173325c1472373bb31903a6b84421a8",
+  "binary_sha256": "8d373277406db8d50eb678ba4684b7a133b5b898d0308d214c933564a6b6f82b",
+  "sources": {
+    "src/paper_curve_probe.cpp": "80f9ff657b9b8c9c18fb761e865825085d2000a7509b7ab61f584b4db430ab11",
+    "tests/paper_curves.py": "5ffc89dc4a77371300c95d903ee668a52dd4419a46d4f12d4c2b2b617b9e6115"
+  }
+}
