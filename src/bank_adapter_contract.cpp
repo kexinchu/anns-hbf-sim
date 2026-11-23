@@ -19,5 +19,6 @@ int main(){using U=std::uint64_t;struct E{U t,id;std::function<void()> f;};
  check(done==2&&bytes==192&&m.resident_bursts()==0);
  for(auto [a,n]:std::vector<std::pair<U,U>>{{0,0},{1<<20,1},{(1<<20)-1,2}}){
   bool rejected=false;try{m.submit(now,false,a,n,cb);}catch(const std::invalid_argument&){rejected=true;}check(rejected);}
+ bool stale=false;try{m.submit(now-1,false,0,64,cb);}catch(const std::invalid_argument&){stale=true;}check(stale);
  check(q.empty());std::cout<<"PASS split parent, atomic capacity, idle clock, physical bytes, invalid ranges\n";
 }
