@@ -21,9 +21,15 @@ std::uint32_t DeviceDriver::reset_csr_read(ChannelId ch,unsigned offset) const {
     if(offset==0x14)return c.type;
     throw std::invalid_argument("unsupported reset CSR");
 }
-void DeviceDriver::reset_fault(ChannelId ch,bool power_loss,int die) {
-    if(ch>=channels_.size()||die < -1||die>=int(description_.geometry().dies_per_channel))throw std::invalid_argument("reset target");
-    auto& control=reset_controls_[ch];control.ready=false;control.enabled=false;
+void DeviceDriver::reset_fault(ChannelId ch,bool power_loss,int die,unsigned type) {
+    if(type>2||ch>=channels_.size()||die < -1||die>=int(description_.geometry().dies_per_channel))throw std::invalid_argument("reset target");
+    auto& control=reset_controls_[ch];control.ready=false;
+    if(type==2)control.enabled=false;
+    control.type=type;control.fault_die=die;
+    if(die<0)control.link_epoch=checked_add(control.link_epoch,1);
+    if(type>=1)control.aou_epoch=checked_add(control.aou_epoch,1);
+    if(type==2)control.warm_epoch=checked_add(control.warm_epoch,1);
+    reset_external(ch,die,type);
     if(power_loss)control.power=false;
     control.boot=Tick{checked_add(events_.now().value,1000)}; // uncalibrated functional delay
     for(auto id:channels_[ch]->transactions){auto& t=transactions_.at(id);const auto& cmd=t.input.command;
@@ -40,20 +46,21 @@ void DeviceDriver::reset_fault(ChannelId ch,bool power_loss,int die) {
 void DeviceDriver::reset_csr_write(ChannelId ch,unsigned offset,std::uint32_t value) {
     if(ch>=channels_.size())throw std::invalid_argument("reset channel");
     auto& c=reset_controls_[ch];if(!c.power)throw std::invalid_argument("CSR power off");
-    if(offset==0x0c){if(value>1)throw std::invalid_argument("unsupported EN field");c.enabled=value;if(value)signals_.notify(WaitKey::channel_key(WaitReason::RequestLink,ch));return;}
+    if(offset==0x0c){if(value>1)throw std::invalid_argument("unsupported EN field");c.enabled=value;if(value&&c.ready)flush_external();if(value)signals_.notify(WaitKey::channel_key(WaitReason::RequestLink,ch));return;}
     if(offset!=0x14)throw std::invalid_argument("read-only CSR");
     if(value>>8!=0x484246)return;
     if((value&0xfc)||(value&3)==3)throw std::invalid_argument("reserved reset type");
-    reset_fault(ch);c.type=value&3;
+    reset_fault(ch,false,-1,value&3);
 }
 bool DeviceDriver::reset_recover(ChannelId ch) {
     if(ch>=channels_.size())throw std::invalid_argument("reset channel");
     auto& c=reset_controls_[ch];
-    // Conservative device-wide quiescence: includes assembly deadlines, waiter
-    // callbacks, cache leases, bank tickets, RX/TX reservations and feedback.
-    if(!activity().drained()||events_.now()<c.boot)return false;
+    // Reclaim local pipeline ownership, but do not wait for external packets or
+    // unrelated channels. Old external responses are fenced by connection epoch.
+    if(!channels_[ch]->transactions.empty()||events_.now()<c.boot)return false;
     writes_.reset_drained_channel(ch,reset_unknown_);
     c.power=true;c.ready=true;
+    flush_external();
     signals_.notify(WaitKey::channel_key(WaitReason::RequestLink,ch));return true;
 }
 }

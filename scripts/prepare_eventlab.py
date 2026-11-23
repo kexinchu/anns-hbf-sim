@@ -51,3 +51,5 @@ edit('include/hbf_eventlab/architecture/execution_configuration.hpp', '#include 
 # Checked reset integration in the full donor driver/host path.
 exec(compile((pathlib.Path(__file__).parent/'driver_reset_overlay.py').read_text(),
              str(pathlib.Path(__file__).parent/'driver_reset_overlay.py'),'exec'))
+exec(compile((pathlib.Path(__file__).parent/'external_reset_overlay.py').read_text(),
+             str(pathlib.Path(__file__).parent/'external_reset_overlay.py'),'exec'))

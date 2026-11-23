@@ -1,0 +1,3 @@
+{"type":0,"domains":[1,1,0,0],"en":1,"ready":0}
+{"recovered":true,"other_banks":1,"old_external_packets":1}
+{"old_success":true,"old_calls":1,"new_calls":2,"other_calls":1,"stale_accepted":false,"stale_request_accepted":false,"drained":true,"external_pending":0,"scores":[28603,28895,29171,29431,29675,29903,30115,30311,29488,28751,29035,29303,29555,29791,30011,30215,30403,28603,28895,29171,29431,29675,29903,30115,30311,29488,28751,29035,29303,29555,29791,30011]}

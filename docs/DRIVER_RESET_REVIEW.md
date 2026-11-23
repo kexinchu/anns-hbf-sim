@@ -82,3 +82,5 @@ The 36 schedules plus 2 mutations passed on CPU, A6000 GPU 0 and a fully
 ASan/UBSan-instrumented driver library; all 38 stdout traces matched exactly.
 Source hashes were checked against the remote run. These results establish the
 stated functional contract for these fixtures, not universal simulator correctness.
+
+Subsequent work: [external reset review](EXTERNAL_RESET_REVIEW.md) supersedes the external-old-packet and whole-device-drain limitations for its tested functional profiles. The evidence above remains historical.

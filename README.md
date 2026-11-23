@@ -88,3 +88,5 @@ All timings remain uncalibrated and performance experiments remain disabled.
 Reset/cancel and permanent-failure functional scope: [review](docs/RESET_CANCEL_REVIEW.md). Physical die reset and calibration remain open; performance stays disabled.
 
 The [device reset review](docs/DEVICE_RESET_REVIEW.md) documents the standalone endpoint. The [full DeviceDriver review](docs/DRIVER_RESET_REVIEW.md) documents physical reset integration through actual links, queues, assembly, bank service and feedback, its independent tests and remaining OCP/model gaps. Performance remains disabled.
+
+The [external reset review](docs/EXTERNAL_RESET_REVIEW.md) extends validation to post-recovery packets, request-ID reuse and distinct CSR reset profiles; all hardware/performance calibration gates remain closed.

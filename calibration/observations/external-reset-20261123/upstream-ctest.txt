@@ -1,0 +1,1005 @@
+Test project /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/build-upstream
+        Start   1: notification_benchmark
+  1/500 Test   #1: notification_benchmark ....................   Passed    1.95 sec
+        Start   2: notification_same_block
+  2/500 Test   #2: notification_same_block ...................   Passed    0.55 sec
+        Start   3: notification_same_block_many
+  3/500 Test   #3: notification_same_block_many ..............   Passed    0.56 sec
+        Start   4: notification_same_zone
+  4/500 Test   #4: notification_same_zone ....................   Passed    0.02 sec
+        Start   5: notification_other_zone
+  5/500 Test   #5: notification_other_zone ...................   Passed    0.09 sec
+        Start   6: notification_channels
+  6/500 Test   #6: notification_channels .....................   Passed    0.04 sec
+        Start   7: notification_health
+  7/500 Test   #7: notification_health .......................   Passed    0.03 sec
+        Start   8: notification_release_each
+  8/500 Test   #8: notification_release_each .................   Passed    0.02 sec
+        Start   9: notification_zone_cancel
+  9/500 Test   #9: notification_zone_cancel ..................   Passed    0.02 sec
+        Start  10: notification_zone_swap
+ 10/500 Test  #10: notification_zone_swap ....................   Passed    0.02 sec
+        Start  11: notification_shared_space
+ 11/500 Test  #11: notification_shared_space .................   Passed    0.02 sec
+        Start  12: notification_local_space
+ 12/500 Test  #12: notification_local_space ..................   Passed    0.03 sec
+        Start  13: notification_entry_budget
+ 13/500 Test  #13: notification_entry_budget .................   Passed    0.02 sec
+        Start  14: notification_terminal_space
+ 14/500 Test  #14: notification_terminal_space ...............   Passed    0.01 sec
+        Start  15: notification_terminal_error
+ 15/500 Test  #15: notification_terminal_error ...............   Passed    0.02 sec
+        Start  16: notification_registry
+ 16/500 Test  #16: notification_registry .....................   Passed    0.01 sec
+        Start  17: notification_reserved_rollback
+ 17/500 Test  #17: notification_reserved_rollback ............   Passed    0.01 sec
+        Start  18: notification_cached_rollback
+ 18/500 Test  #18: notification_cached_rollback ..............   Passed    0.01 sec
+        Start  19: notification_metadata_release
+ 19/500 Test  #19: notification_metadata_release .............   Passed    0.02 sec
+        Start  20: host_completion_empty
+ 20/500 Test  #20: host_completion_empty .....................   Passed    0.40 sec
+        Start  21: host_completion_partial
+ 21/500 Test  #21: host_completion_partial ...................   Passed    0.13 sec
+        Start  22: host_completion_admission
+ 22/500 Test  #22: host_completion_admission .................   Passed    0.27 sec
+        Start  23: host_completion_future
+ 23/500 Test  #23: host_completion_future ....................   Passed    0.13 sec
+        Start  24: host_completion_feedback
+ 24/500 Test  #24: host_completion_feedback ..................   Passed    0.70 sec
+        Start  25: host_completion_replay
+ 25/500 Test  #25: host_completion_replay ....................   Passed    0.62 sec
+        Start  26: host_completion_pending_retry
+ 26/500 Test  #26: host_completion_pending_retry .............   Passed    0.63 sec
+        Start  27: host_completion_timeout_retry
+ 27/500 Test  #27: host_completion_timeout_retry .............   Passed    0.11 sec
+        Start  28: host_completion_dependency_cancel
+ 28/500 Test  #28: host_completion_dependency_cancel .........   Passed    0.14 sec
+        Start  29: host_completion_recovery_failure
+ 29/500 Test  #29: host_completion_recovery_failure ..........   Passed    1.38 sec
+        Start  30: host_completion_history
+ 30/500 Test  #30: host_completion_history ...................   Passed    0.12 sec
+        Start  31: host_completion_burst_finite
+ 31/500 Test  #31: host_completion_burst_finite ..............   Passed    0.18 sec
+        Start  32: host_completion_index_burst_refs
+ 32/500 Test  #32: host_completion_index_burst_refs ..........   Passed    0.02 sec
+        Start  33: host_completion_index_retry_refs
+ 33/500 Test  #33: host_completion_index_retry_refs ..........   Passed    0.66 sec
+        Start  34: host_completion_index_read_reuse
+ 34/500 Test  #34: host_completion_index_read_reuse ..........   Passed    0.10 sec
+        Start  35: host_completion_index_cancel_read
+ 35/500 Test  #35: host_completion_index_cancel_read .........   Passed    0.14 sec
+        Start  36: runtime_profile_nested
+ 36/500 Test  #36: runtime_profile_nested ....................   Passed    0.57 sec
+        Start  37: runtime_profile_disabled
+ 37/500 Test  #37: runtime_profile_disabled ..................   Passed    0.03 sec
+        Start  38: runtime_profile_unwind
+ 38/500 Test  #38: runtime_profile_unwind ....................   Passed    0.02 sec
+        Start  39: runtime_profile_export
+ 39/500 Test  #39: runtime_profile_export ....................   Passed    0.03 sec
+        Start  40: runtime_profile_isolation
+ 40/500 Test  #40: runtime_profile_isolation .................   Passed    0.02 sec
+        Start  41: runtime_profile_admission
+ 41/500 Test  #41: runtime_profile_admission .................   Passed    0.04 sec
+        Start  42: runtime_profile_normal
+ 42/500 Test  #42: runtime_profile_normal ....................   Passed    0.06 sec
+        Start  43: runtime_profile_replay
+ 43/500 Test  #43: runtime_profile_replay ....................   Passed    0.18 sec
+        Start  44: runtime_profile_timeout
+ 44/500 Test  #44: runtime_profile_timeout ...................   Passed    0.16 sec
+        Start  45: runtime_profile_pending
+ 45/500 Test  #45: runtime_profile_pending ...................   Passed    0.67 sec
+        Start  46: runtime_profile_config
+ 46/500 Test  #46: runtime_profile_config ....................   Passed    0.02 sec
+        Start  47: runtime_profile_cli
+ 47/500 Test  #47: runtime_profile_cli .......................   Passed    2.42 sec
+        Start  48: tensor_compute_tail
+ 48/500 Test  #48: tensor_compute_tail .......................   Passed    0.44 sec
+        Start  49: tensor_compute_zero
+ 49/500 Test  #49: tensor_compute_zero .......................   Passed    0.06 sec
+        Start  50: tensor_compute_empty
+ 50/500 Test  #50: tensor_compute_empty ......................   Passed    0.06 sec
+        Start  51: tensor_compute_limit
+ 51/500 Test  #51: tensor_compute_limit ......................   Passed    0.01 sec
+        Start  52: tensor_compute_overflow
+ 52/500 Test  #52: tensor_compute_overflow ...................   Passed    0.02 sec
+        Start  53: tensor_compute_guards
+ 53/500 Test  #53: tensor_compute_guards .....................   Passed    0.08 sec
+        Start  54: tensor_compute_ranges
+ 54/500 Test  #54: tensor_compute_ranges .....................   Passed    0.01 sec
+        Start  55: tensor_compute_identity
+ 55/500 Test  #55: tensor_compute_identity ...................   Passed    0.12 sec
+        Start  56: tensor_bridge_demo
+ 56/500 Test  #56: tensor_bridge_demo ........................   Passed    0.44 sec
+        Start  57: session_handoff_handoff
+ 57/500 Test  #57: session_handoff_handoff ...................   Passed    0.54 sec
+        Start  58: session_handoff_zero_compute
+ 58/500 Test  #58: session_handoff_zero_compute ..............   Passed    0.08 sec
+        Start  59: session_handoff_future_no_skip
+ 59/500 Test  #59: session_handoff_future_no_skip ............   Passed    0.04 sec
+        Start  60: session_handoff_guards
+ 60/500 Test  #60: session_handoff_guards ....................   Passed    0.09 sec
+        Start  61: session_handoff_one_shot
+ 61/500 Test  #61: session_handoff_one_shot ..................   Passed    0.05 sec
+        Start  62: session_handoff_expired
+ 62/500 Test  #62: session_handoff_expired ...................   Passed    0.06 sec
+        Start  63: session_handoff_closed
+ 63/500 Test  #63: session_handoff_closed ....................   Passed    0.08 sec
+        Start  64: session_handoff_capacity
+ 64/500 Test  #64: session_handoff_capacity ..................   Passed    0.03 sec
+        Start  65: session_handoff_error
+ 65/500 Test  #65: session_handoff_error .....................   Passed    0.07 sec
+        Start  66: session_handoff_total_limit
+ 66/500 Test  #66: session_handoff_total_limit ...............   Passed    0.06 sec
+        Start  67: session_handoff_deadline
+ 67/500 Test  #67: session_handoff_deadline ..................   Passed    0.02 sec
+        Start  68: session_handoff_reentrant
+ 68/500 Test  #68: session_handoff_reentrant .................   Passed    0.06 sec
+        Start  69: session_handoff_empty
+ 69/500 Test  #69: session_handoff_empty .....................   Passed    0.01 sec
+        Start  70: tensor_bridge_round_trip
+ 70/500 Test  #70: tensor_bridge_round_trip ..................   Passed    0.64 sec
+        Start  71: tensor_bridge_backpressure
+ 71/500 Test  #71: tensor_bridge_backpressure ................   Passed    0.11 sec
+        Start  72: tensor_bridge_timing
+ 72/500 Test  #72: tensor_bridge_timing ......................   Passed    0.23 sec
+        Start  73: tensor_bridge_zero_compute
+ 73/500 Test  #73: tensor_bridge_zero_compute ................   Passed    0.05 sec
+        Start  74: tensor_bridge_aggregated
+ 74/500 Test  #74: tensor_bridge_aggregated ..................   Passed    0.20 sec
+        Start  75: tensor_bridge_multi_channel
+ 75/500 Test  #75: tensor_bridge_multi_channel ...............   Passed    0.15 sec
+        Start  76: tensor_bridge_identity
+ 76/500 Test  #76: tensor_bridge_identity ....................   Passed    0.11 sec
+        Start  77: tensor_bridge_range
+ 77/500 Test  #77: tensor_bridge_range .......................   Passed    0.01 sec
+        Start  78: tensor_bridge_registry
+ 78/500 Test  #78: tensor_bridge_registry ....................   Passed    0.01 sec
+        Start  79: tensor_bridge_too_large
+ 79/500 Test  #79: tensor_bridge_too_large ...................   Passed    0.01 sec
+        Start  80: tensor_bridge_timeout
+ 80/500 Test  #80: tensor_bridge_timeout .....................   Passed    0.02 sec
+        Start  81: tensor_bridge_stalled
+ 81/500 Test  #81: tensor_bridge_stalled .....................   Passed    0.02 sec
+        Start  82: tensor_bridge_limit
+ 82/500 Test  #82: tensor_bridge_limit .......................   Passed    0.02 sec
+        Start  83: tensor_bridge_replay
+ 83/500 Test  #83: tensor_bridge_replay ......................   Passed    0.16 sec
+        Start  84: tensor_bridge_failure
+ 84/500 Test  #84: tensor_bridge_failure .....................   Passed    0.17 sec
+        Start  85: tensor_bridge_no_retention
+ 85/500 Test  #85: tensor_bridge_no_retention ................   Passed    0.04 sec
+        Start  86: tensor_bridge_observer
+ 86/500 Test  #86: tensor_bridge_observer ....................   Passed    0.21 sec
+        Start  87: tensor_bridge_burst
+ 87/500 Test  #87: tensor_bridge_burst .......................   Passed    0.01 sec
+        Start  88: tensor_bridge_reentrant
+ 88/500 Test  #88: tensor_bridge_reentrant ...................   Passed    0.03 sec
+        Start  89: tensor_bridge_closed
+ 89/500 Test  #89: tensor_bridge_closed ......................   Passed    0.01 sec
+        Start  90: tensor_bridge_failure_drain
+ 90/500 Test  #90: tensor_bridge_failure_drain ...............   Passed    0.31 sec
+        Start  91: tensor_bridge_input_contract
+ 91/500 Test  #91: tensor_bridge_input_contract ..............   Passed    0.04 sec
+        Start  92: tensor_bridge_trace_error
+ 92/500 Test  #92: tensor_bridge_trace_error .................   Passed    0.05 sec
+        Start  93: bounded_input_demo
+ 93/500 Test  #93: bounded_input_demo ........................   Passed    0.37 sec
+        Start  94: statistics_stream_threshold
+ 94/500 Test  #94: statistics_stream_threshold ...............   Passed    0.62 sec
+        Start  95: statistics_stream_large_record
+ 95/500 Test  #95: statistics_stream_large_record ............   Passed    0.01 sec
+        Start  96: statistics_stream_finish
+ 96/500 Test  #96: statistics_stream_finish ..................   Passed    0.01 sec
+        Start  97: statistics_stream_escaping
+ 97/500 Test  #97: statistics_stream_escaping ................   Passed    0.01 sec
+        Start  98: statistics_stream_write_failure
+ 98/500 Test  #98: statistics_stream_write_failure ...........   Passed    0.01 sec
+        Start  99: statistics_stream_flush_failure
+ 99/500 Test  #99: statistics_stream_flush_failure ...........   Passed    0.02 sec
+        Start 100: statistics_stream_invalid
+100/500 Test #100: statistics_stream_invalid .................   Passed    0.01 sec
+        Start 101: statistics_stream_observational
+101/500 Test #101: statistics_stream_observational ...........   Passed    0.20 sec
+        Start 102: statistics_stream_replay
+102/500 Test #102: statistics_stream_replay ..................   Passed    0.28 sec
+        Start 103: statistics_stream_partial
+103/500 Test #103: statistics_stream_partial .................   Passed    0.04 sec
+        Start 104: host_resident_capacity
+104/500 Test #104: host_resident_capacity ....................   Passed    0.40 sec
+        Start 105: host_resident_oversized
+105/500 Test #105: host_resident_oversized ...................   Passed    0.33 sec
+        Start 106: host_resident_atomic_seal
+106/500 Test #106: host_resident_atomic_seal .................   Passed    0.10 sec
+        Start 107: host_resident_invalid_full
+107/500 Test #107: host_resident_invalid_full ................   Passed    0.04 sec
+        Start 108: host_resident_future_budget
+108/500 Test #108: host_resident_future_budget ...............   Passed    0.04 sec
+        Start 109: host_resident_burst_budget
+109/500 Test #109: host_resident_burst_budget ................   Passed    0.01 sec
+        Start 110: host_resident_strict_timeout
+110/500 Test #110: host_resident_strict_timeout ..............   Passed    0.02 sec
+        Start 111: host_resident_strict_stall
+111/500 Test #111: host_resident_strict_stall ................   Passed    0.02 sec
+        Start 112: host_resident_summaries
+112/500 Test #112: host_resident_summaries ...................   Passed    0.06 sec
+        Start 113: host_resident_sealed_summary
+113/500 Test #113: host_resident_sealed_summary ..............   Passed    0.06 sec
+        Start 114: host_resident_failed_summary
+114/500 Test #114: host_resident_failed_summary ..............   Passed    0.01 sec
+        Start 115: host_resident_replay_collected
+115/500 Test #115: host_resident_replay_collected ............   Passed    0.17 sec
+        Start 116: host_resident_replay_merged
+116/500 Test #116: host_resident_replay_merged ...............   Passed    0.37 sec
+        Start 117: host_resident_missing_retention
+117/500 Test #117: host_resident_missing_retention ...........   Passed    0.06 sec
+        Start 118: host_resident_pending_retry
+118/500 Test #118: host_resident_pending_retry ...............   Passed    0.28 sec
+        Start 119: host_resident_callback_retry
+119/500 Test #119: host_resident_callback_retry ..............   Passed    0.09 sec
+        Start 120: host_resident_offered_time
+120/500 Test #120: host_resident_offered_time ................   Passed    0.06 sec
+        Start 121: host_resident_origin_invalid
+121/500 Test #121: host_resident_origin_invalid ..............   Passed    0.01 sec
+        Start 122: host_resident_retained_failure
+122/500 Test #122: host_resident_retained_failure ............   Passed    0.01 sec
+        Start 123: host_resident_long_input
+123/500 Test #123: host_resident_long_input ..................   Passed    0.05 sec
+        Start 124: host_resident_lifetime_limit
+124/500 Test #124: host_resident_lifetime_limit ..............   Passed    0.03 sec
+        Start 125: host_resident_configuration
+125/500 Test #125: host_resident_configuration ...............   Passed    0.02 sec
+        Start 126: host_resident_timeout_retry
+126/500 Test #126: host_resident_timeout_retry ...............   Passed    0.06 sec
+        Start 127: host_resident_callback_backpressure
+127/500 Test #127: host_resident_callback_backpressure .......   Passed    0.17 sec
+        Start 128: session_demo
+128/500 Test #128: session_demo ..............................   Passed    0.37 sec
+        Start 129: backend_overlay_install_guards
+129/500 Test #129: backend_overlay_install_guards ............   Passed    0.33 sec
+        Start 130: backend_overlay_install_atomic
+130/500 Test #130: backend_overlay_install_atomic ............   Passed    0.03 sec
+        Start 131: backend_overlay_install_reentrant
+131/500 Test #131: backend_overlay_install_reentrant .........   Passed    0.03 sec
+        Start 132: backend_overlay_fault_override
+132/500 Test #132: backend_overlay_fault_override ............   Passed    0.04 sec
+        Start 133: backend_overlay_fault_exception
+133/500 Test #133: backend_overlay_fault_exception ...........   Passed    0.03 sec
+        Start 134: backend_overlay_history_normal
+134/500 Test #134: backend_overlay_history_normal ............   Passed    0.53 sec
+        Start 135: backend_overlay_history_late_failure
+135/500 Test #135: backend_overlay_history_late_failure ......   Passed    1.01 sec
+        Start 136: backend_overlay_persistent_failure
+136/500 Test #136: backend_overlay_persistent_failure ........   Passed    0.14 sec
+        Start 137: backend_overlay_read_failure_dependency
+137/500 Test #137: backend_overlay_read_failure_dependency ...   Passed    0.05 sec
+        Start 138: backend_overlay_abort_later_version
+138/500 Test #138: backend_overlay_abort_later_version .......   Passed    0.08 sec
+        Start 139: backend_overlay_zero_reclaim
+139/500 Test #139: backend_overlay_zero_reclaim ..............   Passed    0.07 sec
+        Start 140: session_exclusive
+140/500 Test #140: session_exclusive .........................   Passed    0.48 sec
+        Start 141: session_empty_frontier
+141/500 Test #141: session_empty_frontier ....................   Passed    0.04 sec
+        Start 142: session_endpoint_input
+142/500 Test #142: session_endpoint_input ....................   Passed    0.08 sec
+        Start 143: session_first_atomic
+143/500 Test #143: session_first_atomic ......................   Passed    0.04 sec
+        Start 144: session_late_atomic
+144/500 Test #144: session_late_atomic .......................   Passed    0.01 sec
+        Start 145: session_horizon_guard
+145/500 Test #145: session_horizon_guard .....................   Passed    0.01 sec
+        Start 146: session_open_drained
+146/500 Test #146: session_open_drained ......................   Passed    0.04 sec
+        Start 147: session_close_work
+147/500 Test #147: session_close_work ........................   Passed    0.07 sec
+        Start 148: session_close_empty
+148/500 Test #148: session_close_empty .......................   Passed    0.03 sec
+        Start 149: session_open_timeout
+149/500 Test #149: session_open_timeout ......................   Passed    0.02 sec
+        Start 150: session_closed_stalled
+150/500 Test #150: session_closed_stalled ....................   Passed    0.02 sec
+        Start 151: session_missing_predecessor
+151/500 Test #151: session_missing_predecessor ...............   Passed    0.12 sec
+        Start 152: session_feedback_closed
+152/500 Test #152: session_feedback_closed ...................   Passed    0.11 sec
+        Start 153: session_feedback_guard
+153/500 Test #153: session_feedback_guard ....................   Passed    0.04 sec
+        Start 154: session_feedback_future
+154/500 Test #154: session_feedback_future ...................   Passed    0.05 sec
+        Start 155: session_feedback_validation
+155/500 Test #155: session_feedback_validation ...............   Passed    0.04 sec
+        Start 156: session_callback_error
+156/500 Test #156: session_callback_error ....................   Passed    0.04 sec
+        Start 157: session_callback_model_error
+157/500 Test #157: session_callback_model_error ..............   Passed    0.04 sec
+        Start 158: session_limit_total
+158/500 Test #158: session_limit_total .......................   Passed    0.08 sec
+        Start 159: session_limit_tick
+159/500 Test #159: session_limit_tick ........................   Passed    0.08 sec
+        Start 160: session_limit_round
+160/500 Test #160: session_limit_round .......................   Passed    0.06 sec
+        Start 161: session_time_empty
+161/500 Test #161: session_time_empty ........................   Passed    0.02 sec
+        Start 162: session_time_future
+162/500 Test #162: session_time_future .......................   Passed    0.07 sec
+        Start 163: session_entered_tick
+163/500 Test #163: session_entered_tick ......................   Passed    0.19 sec
+        Start 164: session_equivalent
+164/500 Test #164: session_equivalent ........................   Passed    0.29 sec
+        Start 165: session_causal_time
+165/500 Test #165: session_causal_time .......................   Passed    0.04 sec
+        Start 166: session_recovery
+166/500 Test #166: session_recovery ..........................   Passed    0.12 sec
+        Start 167: session_clock_idle
+167/500 Test #167: session_clock_idle ........................   Passed    0.01 sec
+        Start 168: session_frozen_deadline
+168/500 Test #168: session_frozen_deadline ...................   Passed    0.01 sec
+        Start 169: session_deadline_endpoint
+169/500 Test #169: session_deadline_endpoint .................   Passed    0.02 sec
+        Start 170: session_deadline_feedback
+170/500 Test #170: session_deadline_feedback .................   Passed    0.06 sec
+        Start 171: session_maximum_boundary
+171/500 Test #171: session_maximum_boundary ..................   Passed    0.03 sec
+        Start 172: host_incremental_demo
+172/500 Test #172: host_incremental_demo .....................   Passed    0.43 sec
+        Start 173: host_incremental_split
+173/500 Test #173: host_incremental_split ....................   Passed    0.69 sec
+        Start 174: host_incremental_feedback
+174/500 Test #174: host_incremental_feedback .................   Passed    0.19 sec
+        Start 175: host_incremental_idle
+175/500 Test #175: host_incremental_idle .....................   Passed    0.03 sec
+        Start 176: host_incremental_atomic
+176/500 Test #176: host_incremental_atomic ...................   Passed    0.08 sec
+        Start 177: host_incremental_duplicate
+177/500 Test #177: host_incremental_duplicate ................   Passed    0.08 sec
+        Start 178: host_incremental_address_atomic
+178/500 Test #178: host_incremental_address_atomic ...........   Passed    0.10 sec
+        Start 179: host_incremental_sealed
+179/500 Test #179: host_incremental_sealed ...................   Passed    0.11 sec
+        Start 180: host_incremental_block_scope
+180/500 Test #180: host_incremental_block_scope ..............   Passed    0.29 sec
+        Start 181: host_incremental_dependencies
+181/500 Test #181: host_incremental_dependencies .............   Passed    0.03 sec
+        Start 182: host_incremental_invalid_dependencies
+182/500 Test #182: host_incremental_invalid_dependencies .....   Passed    0.01 sec
+        Start 183: host_incremental_burst
+183/500 Test #183: host_incremental_burst ....................   Passed    0.02 sec
+        Start 184: host_incremental_future
+184/500 Test #184: host_incremental_future ...................   Passed    0.04 sec
+        Start 185: host_incremental_future_cancel_reuse
+185/500 Test #185: host_incremental_future_cancel_reuse ......   Passed    0.01 sec
+        Start 186: host_incremental_recovered_sealed
+186/500 Test #186: host_incremental_recovered_sealed .........   Passed    0.53 sec
+        Start 187: host_incremental_recovery_append
+187/500 Test #187: host_incremental_recovery_append ..........   Passed    0.63 sec
+        Start 188: host_incremental_abort_append
+188/500 Test #188: host_incremental_abort_append .............   Passed    0.06 sec
+        Start 189: host_incremental_hints
+189/500 Test #189: host_incremental_hints ....................   Passed    0.27 sec
+        Start 190: host_incremental_limit_atomic
+190/500 Test #190: host_incremental_limit_atomic .............   Passed    0.14 sec
+        Start 191: host_incremental_equivalent
+191/500 Test #191: host_incremental_equivalent ...............   Passed    0.53 sec
+        Start 192: host_incremental_observer
+192/500 Test #192: host_incremental_observer .................   Passed    0.05 sec
+        Start 193: host_incremental_parser
+193/500 Test #193: host_incremental_parser ...................   Passed    0.01 sec
+        Start 194: host_incremental_guards
+194/500 Test #194: host_incremental_guards ...................   Passed    0.01 sec
+        Start 195: read_scheduling_policy_order
+195/500 Test #195: read_scheduling_policy_order ..............   Passed    0.33 sec
+        Start 196: read_scheduling_window_reasons
+196/500 Test #196: read_scheduling_window_reasons ............   Passed    0.04 sec
+        Start 197: read_scheduling_window_stale
+197/500 Test #197: read_scheduling_window_stale ..............   Passed    0.02 sec
+        Start 198: read_scheduling_cache_bypass
+198/500 Test #198: read_scheduling_cache_bypass ..............   Passed    0.05 sec
+        Start 199: read_scheduling_cache_removal
+199/500 Test #199: read_scheduling_cache_removal .............   Passed    0.04 sec
+        Start 200: read_scheduling_terminal_read
+200/500 Test #200: read_scheduling_terminal_read .............   Passed    0.02 sec
+        Start 201: read_scheduling_snapshot
+201/500 Test #201: read_scheduling_snapshot ..................   Passed    0.05 sec
+        Start 202: read_scheduling_observational
+202/500 Test #202: read_scheduling_observational .............   Passed    0.30 sec
+        Start 203: read_scheduling_guards
+203/500 Test #203: read_scheduling_guards ....................   Passed    0.02 sec
+        Start 204: read_scheduling_custom_reason
+204/500 Test #204: read_scheduling_custom_reason .............   Passed    0.08 sec
+        Start 205: pending_statistics_lifecycle
+205/500 Test #205: pending_statistics_lifecycle ..............   Passed    1.12 sec
+        Start 206: pending_statistics_occupancy
+206/500 Test #206: pending_statistics_occupancy ..............   Passed    0.14 sec
+        Start 207: pending_statistics_rejected
+207/500 Test #207: pending_statistics_rejected ...............   Passed    0.09 sec
+        Start 208: pending_statistics_timeout_reuse
+208/500 Test #208: pending_statistics_timeout_reuse ..........   Passed    0.04 sec
+        Start 209: pending_statistics_failure
+209/500 Test #209: pending_statistics_failure ................   Passed    0.02 sec
+        Start 210: pending_statistics_same_tick_burst
+210/500 Test #210: pending_statistics_same_tick_burst ........   Passed    0.02 sec
+        Start 211: pending_statistics_commit_failure
+211/500 Test #211: pending_statistics_commit_failure .........   Passed    0.03 sec
+        Start 212: pending_statistics_snapshot
+212/500 Test #212: pending_statistics_snapshot ...............   Passed    0.05 sec
+        Start 213: pending_statistics_teardown
+213/500 Test #213: pending_statistics_teardown ...............   Passed    0.04 sec
+        Start 214: pending_statistics_identity
+214/500 Test #214: pending_statistics_identity ...............   Passed    0.03 sec
+        Start 215: pending_statistics_guarded_attach
+215/500 Test #215: pending_statistics_guarded_attach .........   Passed    0.02 sec
+        Start 216: pending_statistics_device_delivery
+216/500 Test #216: pending_statistics_device_delivery ........   Passed    0.02 sec
+        Start 217: pending_statistics_device_limit
+217/500 Test #217: pending_statistics_device_limit ...........   Passed    0.07 sec
+        Start 218: pending_statistics_read_only
+218/500 Test #218: pending_statistics_read_only ..............   Passed    0.02 sec
+        Start 219: pending_statistics_curve_reconstruction
+219/500 Test #219: pending_statistics_curve_reconstruction ...   Passed    0.02 sec
+        Start 220: host_send_order
+220/500 Test #220: host_send_order ...........................   Passed    0.32 sec
+        Start 221: host_send_fcfs
+221/500 Test #221: host_send_fcfs ............................   Passed    0.09 sec
+        Start 222: host_send_fill_open
+222/500 Test #222: host_send_fill_open .......................   Passed    0.09 sec
+        Start 223: host_send_blocked_open
+223/500 Test #223: host_send_blocked_open ....................   Passed    0.13 sec
+        Start 224: host_send_release_order
+224/500 Test #224: host_send_release_order ...................   Passed    0.01 sec
+        Start 225: host_send_same_tick
+225/500 Test #225: host_send_same_tick .......................   Passed    0.01 sec
+        Start 226: host_send_dependency_age
+226/500 Test #226: host_send_dependency_age ..................   Passed    0.01 sec
+        Start 227: host_send_not_taken
+227/500 Test #227: host_send_not_taken .......................   Passed    0.01 sec
+        Start 228: host_send_retry_tail
+228/500 Test #228: host_send_retry_tail ......................   Passed    0.02 sec
+        Start 229: host_send_same_tick_retry
+229/500 Test #229: host_send_same_tick_retry .................   Passed    0.02 sec
+        Start 230: host_send_timeout_tail
+230/500 Test #230: host_send_timeout_tail ....................   Passed    0.37 sec
+        Start 231: host_send_timeout_unsent
+231/500 Test #231: host_send_timeout_unsent ..................   Passed    0.08 sec
+        Start 232: host_send_replay_followers
+232/500 Test #232: host_send_replay_followers ................   Passed    0.02 sec
+        Start 233: host_send_burst_mixed
+233/500 Test #233: host_send_burst_mixed .....................   Passed    0.01 sec
+        Start 234: host_send_cross_global_burst
+234/500 Test #234: host_send_cross_global_burst ..............   Passed    0.02 sec
+        Start 235: host_send_channels
+235/500 Test #235: host_send_channels ........................   Passed    0.01 sec
+        Start 236: host_send_preflight_busy
+236/500 Test #236: host_send_preflight_busy ..................   Passed    0.01 sec
+        Start 237: host_send_preflight_same_tick
+237/500 Test #237: host_send_preflight_same_tick .............   Passed    0.01 sec
+        Start 238: host_send_preflight_race
+238/500 Test #238: host_send_preflight_race ..................   Passed    0.01 sec
+        Start 239: host_send_preflight_reselect
+239/500 Test #239: host_send_preflight_reselect ..............   Passed    0.25 sec
+        Start 240: host_send_preflight_cancel
+240/500 Test #240: host_send_preflight_cancel ................   Passed    0.01 sec
+        Start 241: host_send_preflight_regression
+241/500 Test #241: host_send_preflight_regression ............   Passed    0.38 sec
+        Start 242: host_send_index_group_handoff
+242/500 Test #242: host_send_index_group_handoff .............   Passed    0.01 sec
+        Start 243: host_send_index_batch_accept
+243/500 Test #243: host_send_index_batch_accept ..............   Passed    0.01 sec
+        Start 244: host_send_index_group_future
+244/500 Test #244: host_send_index_group_future ..............   Passed    0.01 sec
+        Start 245: host_send_index_group_channels
+245/500 Test #245: host_send_index_group_channels ............   Passed    0.01 sec
+        Start 246: configuration_defaults
+246/500 Test #246: configuration_defaults ....................   Passed    0.33 sec
+        Start 247: configuration_parse_override
+247/500 Test #247: configuration_parse_override ..............   Passed    0.02 sec
+        Start 248: configuration_parser_errors
+248/500 Test #248: configuration_parser_errors ...............   Passed    0.01 sec
+        Start 249: configuration_unknown_fields
+249/500 Test #249: configuration_unknown_fields ..............   Passed    0.01 sec
+        Start 250: configuration_numeric
+250/500 Test #250: configuration_numeric .....................   Passed    0.01 sec
+        Start 251: configuration_grades
+251/500 Test #251: configuration_grades ......................   Passed    0.01 sec
+        Start 252: configuration_grade_limits
+252/500 Test #252: configuration_grade_limits ................   Passed    0.01 sec
+        Start 253: configuration_mocs_ranges
+253/500 Test #253: configuration_mocs_ranges .................   Passed    0.01 sec
+        Start 254: configuration_small_read
+254/500 Test #254: configuration_small_read ..................   Passed    0.01 sec
+        Start 255: configuration_small_write
+255/500 Test #255: configuration_small_write .................   Passed    0.03 sec
+        Start 256: configuration_small_burst
+256/500 Test #256: configuration_small_burst .................   Passed    0.01 sec
+        Start 257: configuration_capabilities
+257/500 Test #257: configuration_capabilities ................   Passed    0.01 sec
+        Start 258: configuration_geometry
+258/500 Test #258: configuration_geometry ....................   Passed    0.01 sec
+        Start 259: configuration_topology
+259/500 Test #259: configuration_topology ....................   Passed    0.01 sec
+        Start 260: configuration_capacity
+260/500 Test #260: configuration_capacity ....................   Passed    0.01 sec
+        Start 261: configuration_buffers
+261/500 Test #261: configuration_buffers .....................   Passed    0.01 sec
+        Start 262: configuration_timing
+262/500 Test #262: configuration_timing ......................   Passed    0.01 sec
+        Start 263: configuration_zeros
+263/500 Test #263: configuration_zeros .......................   Passed    0.01 sec
+        Start 264: configuration_policies
+264/500 Test #264: configuration_policies ....................   Passed    0.01 sec
+        Start 265: configuration_custom_policy
+265/500 Test #265: configuration_custom_policy ...............   Passed    0.01 sec
+        Start 266: configuration_address
+266/500 Test #266: configuration_address .....................   Passed    0.03 sec
+        Start 267: configuration_faults
+267/500 Test #267: configuration_faults ......................   Passed    0.01 sec
+        Start 268: configuration_roundtrip
+268/500 Test #268: configuration_roundtrip ...................   Passed    0.01 sec
+        Start 269: configuration_frozen
+269/500 Test #269: configuration_frozen ......................   Passed    0.01 sec
+        Start 270: configuration_all_keys
+270/500 Test #270: configuration_all_keys ....................   Passed    0.01 sec
+        Start 271: configuration_default_equivalence
+271/500 Test #271: configuration_default_equivalence .........   Passed    0.05 sec
+        Start 272: configuration_cli_precedence
+272/500 Test #272: configuration_cli_precedence ..............   Passed    0.27 sec
+        Start 273: configuration_cli_roundtrip
+273/500 Test #273: configuration_cli_roundtrip ...............   Passed    0.49 sec
+        Start 274: configuration_cli_invalid_grade
+274/500 Test #274: configuration_cli_invalid_grade ...........   Passed    0.02 sec
+        Start 275: configuration_cli_invalid_mocs
+275/500 Test #275: configuration_cli_invalid_mocs ............   Passed    0.02 sec
+        Start 276: configuration_cli_unknown
+276/500 Test #276: configuration_cli_unknown .................   Passed    0.02 sec
+        Start 277: configuration_cli_duplicate
+277/500 Test #277: configuration_cli_duplicate ...............   Passed    0.02 sec
+        Start 278: configuration_cli_policy
+278/500 Test #278: configuration_cli_policy ..................   Passed    0.02 sec
+        Start 279: configuration_cli_buffer
+279/500 Test #279: configuration_cli_buffer ..................   Passed    0.02 sec
+        Start 280: configuration_cli_collision
+280/500 Test #280: configuration_cli_collision ...............   Passed    0.02 sec
+        Start 281: configuration_cli_workload_guard
+281/500 Test #281: configuration_cli_workload_guard ..........   Passed    0.02 sec
+        Start 282: configuration_cli_config_guard
+282/500 Test #282: configuration_cli_config_guard ............   Passed    0.02 sec
+        Start 283: configuration_cli_read_small
+283/500 Test #283: configuration_cli_read_small ..............   Passed    0.02 sec
+        Start 284: configuration_cli_write_small
+284/500 Test #284: configuration_cli_write_small .............   Passed    0.03 sec
+        Start 285: configuration_cli_burst_small
+285/500 Test #285: configuration_cli_burst_small .............   Passed    0.02 sec
+        Start 286: configuration_cli_host_default
+286/500 Test #286: configuration_cli_host_default ............   Passed    0.26 sec
+        Start 287: configuration_cli_host_fill_open
+287/500 Test #287: configuration_cli_host_fill_open ..........   Passed    0.24 sec
+        Start 288: configuration_cli_host_override
+288/500 Test #288: configuration_cli_host_override ...........   Passed    0.23 sec
+        Start 289: statistics_boundaries
+289/500 Test #289: statistics_boundaries .....................   Passed    0.30 sec
+        Start 290: statistics_cross_global_burst
+290/500 Test #290: statistics_cross_global_burst .............   Passed    0.01 sec
+        Start 291: statistics_multi_channel
+291/500 Test #291: statistics_multi_channel ..................   Passed    0.06 sec
+        Start 292: statistics_pending_retry
+292/500 Test #292: statistics_pending_retry ..................   Passed    0.15 sec
+        Start 293: statistics_timeout_retry
+293/500 Test #293: statistics_timeout_retry ..................   Passed    0.05 sec
+        Start 294: statistics_replay
+294/500 Test #294: statistics_replay .........................   Passed    0.16 sec
+        Start 295: statistics_unfinished_resume
+295/500 Test #295: statistics_unfinished_resume ..............   Passed    0.03 sec
+        Start 296: statistics_ingress_wait
+296/500 Test #296: statistics_ingress_wait ...................   Passed    0.01 sec
+        Start 297: statistics_cancelled_future
+297/500 Test #297: statistics_cancelled_future ...............   Passed    0.01 sec
+        Start 298: statistics_partial_future_cancel
+298/500 Test #298: statistics_partial_future_cancel ..........   Passed    0.04 sec
+        Start 299: statistics_mismatch
+299/500 Test #299: statistics_mismatch .......................   Passed    0.03 sec
+        Start 300: statistics_backpressure
+300/500 Test #300: statistics_backpressure ...................   Passed    0.01 sec
+        Start 301: statistics_observational
+301/500 Test #301: statistics_observational ..................   Passed    0.21 sec
+        Start 302: statistics_event_time
+302/500 Test #302: statistics_event_time .....................   Passed    0.01 sec
+        Start 303: statistics_zero_and_status
+303/500 Test #303: statistics_zero_and_status ................   Passed    0.01 sec
+        Start 304: statistics_guards_empty
+304/500 Test #304: statistics_guards_empty ...................   Passed    0.01 sec
+        Start 305: statistics_stalled
+305/500 Test #305: statistics_stalled ........................   Passed    0.01 sec
+        Start 306: statistics_bank_lifetime
+306/500 Test #306: statistics_bank_lifetime ..................   Passed    0.01 sec
+        Start 307: statistics_bank_limit
+307/500 Test #307: statistics_bank_limit .....................   Passed    0.01 sec
+        Start 308: statistics_bank_guards
+308/500 Test #308: statistics_bank_guards ....................   Passed    0.01 sec
+        Start 309: statistics_cli_normal
+309/500 Test #309: statistics_cli_normal .....................   Passed    2.81 sec
+        Start 310: statistics_cli_limit
+310/500 Test #310: statistics_cli_limit ......................   Passed    0.03 sec
+        Start 311: statistics_cli_assembly_limit
+311/500 Test #311: statistics_cli_assembly_limit .............   Passed    0.04 sec
+        Start 312: host_retry_pending_root_first
+312/500 Test #312: host_retry_pending_root_first .............   Passed    0.35 sec
+        Start 313: host_retry_pending_follower_first
+313/500 Test #313: host_retry_pending_follower_first .........   Passed    0.07 sec
+        Start 314: host_retry_pending_late_followers
+314/500 Test #314: host_retry_pending_late_followers .........   Passed    0.06 sec
+        Start 315: host_retry_pending_exhausted
+315/500 Test #315: host_retry_pending_exhausted ..............   Passed    0.02 sec
+        Start 316: host_retry_pending_disabled
+316/500 Test #316: host_retry_pending_disabled ...............   Passed    0.02 sec
+        Start 317: host_retry_pending_progress
+317/500 Test #317: host_retry_pending_progress ...............   Passed    0.05 sec
+        Start 318: host_retry_pending_burst
+318/500 Test #318: host_retry_pending_burst ..................   Passed    0.01 sec
+        Start 319: host_retry_timeout_late_fragments
+319/500 Test #319: host_retry_timeout_late_fragments .........   Passed    0.03 sec
+        Start 320: host_retry_timeout_release
+320/500 Test #320: host_retry_timeout_release ................   Passed    0.03 sec
+        Start 321: host_retry_timeout_missing_retention
+321/500 Test #321: host_retry_timeout_missing_retention ......   Passed    0.01 sec
+        Start 322: host_retry_timeout_missing_coverage
+322/500 Test #322: host_retry_timeout_missing_coverage .......   Passed    0.01 sec
+        Start 323: host_retry_unexplained_order
+323/500 Test #323: host_retry_unexplained_order ..............   Passed    0.03 sec
+        Start 324: host_retry_real_pending
+324/500 Test #324: host_retry_real_pending ...................   Passed    0.14 sec
+        Start 325: host_retry_real_timeout_success
+325/500 Test #325: host_retry_real_timeout_success ...........   Passed    0.04 sec
+        Start 326: host_retry_real_timeout_budget
+326/500 Test #326: host_retry_real_timeout_budget ............   Passed    0.06 sec
+        Start 327: host_retry_pending_during_replay
+327/500 Test #327: host_retry_pending_during_replay ..........   Passed    0.03 sec
+        Start 328: host_retry_timeout_during_replay
+328/500 Test #328: host_retry_timeout_during_replay ..........   Passed    0.05 sec
+        Start 329: host_cli_normal
+329/500 Test #329: host_cli_normal ...........................   Passed    0.23 sec
+        Start 330: host_cli_burst
+330/500 Test #330: host_cli_burst ............................   Passed    0.17 sec
+        Start 331: host_cli_recovery
+331/500 Test #331: host_cli_recovery .........................   Passed    4.12 sec
+        Start 332: host_cli_merged_recovery
+332/500 Test #332: host_cli_merged_recovery ..................   Passed    4.34 sec
+        Start 333: host_cli_persistent
+333/500 Test #333: host_cli_persistent .......................   Passed    1.66 sec
+        Start 334: host_cli_missing
+334/500 Test #334: host_cli_missing ..........................   Passed    1.00 sec
+        Start 335: host_cli_timeout
+335/500 Test #335: host_cli_timeout ..........................   Passed    0.03 sec
+        Start 336: host_cli_limit
+336/500 Test #336: host_cli_limit ............................   Passed    0.02 sec
+        Start 337: host_cancelled_future_release
+337/500 Test #337: host_cancelled_future_release .............   Passed    0.30 sec
+        Start 338: host_late_read_second_pass
+338/500 Test #338: host_late_read_second_pass ................   Passed    0.31 sec
+        Start 339: host_delayed_old_attempts
+339/500 Test #339: host_delayed_old_attempts .................   Passed    0.29 sec
+        Start 340: host_ingress_old_attempts
+340/500 Test #340: host_ingress_old_attempts .................   Passed    0.81 sec
+        Start 341: host_burst_recovery
+341/500 Test #341: host_burst_recovery .......................   Passed    0.27 sec
+        Start 342: host_multi_channel_recovery
+342/500 Test #342: host_multi_channel_recovery ...............   Passed    0.95 sec
+        Start 343: host_prior_success_retained
+343/500 Test #343: host_prior_success_retained ...............   Passed    0.22 sec
+        Start 344: host_abort_new_content
+344/500 Test #344: host_abort_new_content ....................   Passed    0.05 sec
+        Start 345: host_teardown_host
+345/500 Test #345: host_teardown_host ........................   Passed    0.01 sec
+        Start 346: host_runner_device_activity
+346/500 Test #346: host_runner_device_activity ...............   Passed    0.01 sec
+        Start 347: host_round_limit
+347/500 Test #347: host_round_limit ..........................   Passed    0.01 sec
+        Start 348: host_normal
+348/500 Test #348: host_normal ...............................   Passed    0.06 sec
+        Start 349: host_sixteen_channels
+349/500 Test #349: host_sixteen_channels .....................   Passed    9.20 sec
+        Start 350: host_burst_compare
+350/500 Test #350: host_burst_compare ........................   Passed    0.08 sec
+        Start 351: host_burst_cross_global
+351/500 Test #351: host_burst_cross_global ...................   Passed    0.03 sec
+        Start 352: host_input_validation
+352/500 Test #352: host_input_validation .....................   Passed    0.01 sec
+        Start 353: host_content_validation
+353/500 Test #353: host_content_validation ...................   Passed    0.01 sec
+        Start 354: host_burst_validation
+354/500 Test #354: host_burst_validation .....................   Passed    0.01 sec
+        Start 355: host_splitter
+355/500 Test #355: host_splitter .............................   Passed    0.01 sec
+        Start 356: host_parser
+356/500 Test #356: host_parser ...............................   Passed    0.01 sec
+        Start 357: host_hints
+357/500 Test #357: host_hints ................................   Passed    0.05 sec
+        Start 358: host_ordered_reads
+358/500 Test #358: host_ordered_reads ........................   Passed    0.36 sec
+        Start 359: host_open_limit
+359/500 Test #359: host_open_limit ...........................   Passed    0.18 sec
+        Start 360: host_fill_open
+360/500 Test #360: host_fill_open ............................   Passed    0.07 sec
+        Start 361: host_recovery_once
+361/500 Test #361: host_recovery_once ........................   Passed    0.74 sec
+        Start 362: host_follower_before_root
+362/500 Test #362: host_follower_before_root .................   Passed    0.76 sec
+        Start 363: host_replay_merge
+363/500 Test #363: host_replay_merge .........................   Passed    1.02 sec
+        Start 364: host_persistent_failure
+364/500 Test #364: host_persistent_failure ...................   Passed    0.18 sec
+        Start 365: host_missing_retention
+365/500 Test #365: host_missing_retention ....................   Passed    0.08 sec
+        Start 366: host_replacement_recovery
+366/500 Test #366: host_replacement_recovery .................   Passed    0.09 sec
+        Start 367: host_zero_budget
+367/500 Test #367: host_zero_budget ..........................   Passed    0.03 sec
+        Start 368: host_partial_timeout
+368/500 Test #368: host_partial_timeout ......................   Passed    0.01 sec
+        Start 369: host_mocs_one
+369/500 Test #369: host_mocs_one .............................   Passed    0.26 sec
+        Start 370: host_mocs_partial
+370/500 Test #370: host_mocs_partial .........................   Passed    0.07 sec
+        Start 371: host_empty
+371/500 Test #371: host_empty ................................   Passed    0.01 sec
+        Start 372: host_not_started
+372/500 Test #372: host_not_started ..........................   Passed    0.01 sec
+        Start 373: host_stalled_dependency
+373/500 Test #373: host_stalled_dependency ...................   Passed    0.01 sec
+        Start 374: host_time_limit
+374/500 Test #374: host_time_limit ...........................   Passed    0.03 sec
+        Start 375: host_event_limit
+375/500 Test #375: host_event_limit ..........................   Passed    0.03 sec
+        Start 376: host_same_tick_limit
+376/500 Test #376: host_same_tick_limit ......................   Passed    0.01 sec
+        Start 377: host_ordered_pending
+377/500 Test #377: host_ordered_pending ......................   Passed    0.01 sec
+        Start 378: host_read_during_recovery
+378/500 Test #378: host_read_during_recovery .................   Passed    0.05 sec
+        Start 379: host_versions
+379/500 Test #379: host_versions .............................   Passed    0.13 sec
+        Start 380: host_data_mismatch
+380/500 Test #380: host_data_mismatch ........................   Passed    0.03 sec
+        Start 381: host_delayed_release
+381/500 Test #381: host_delayed_release ......................   Passed    0.03 sec
+        Start 382: host_retention_pins
+382/500 Test #382: host_retention_pins .......................   Passed    0.03 sec
+        Start 383: host_recovery_snapshot
+383/500 Test #383: host_recovery_snapshot ....................   Passed    0.01 sec
+        Start 384: host_policy_guard
+384/500 Test #384: host_policy_guard .........................   Passed    0.01 sec
+        Start 385: device_demo
+385/500 Test #385: device_demo ...............................   Passed    0.28 sec
+        Start 386: device_auto_write_read
+386/500 Test #386: device_auto_write_read ....................   Passed    0.27 sec
+        Start 387: device_split_write
+387/500 Test #387: device_split_write ........................   Passed    0.04 sec
+        Start 388: device_bank_parallel
+388/500 Test #388: device_bank_parallel ......................   Passed    0.01 sec
+        Start 389: device_bank_serial
+389/500 Test #389: device_bank_serial ........................   Passed    0.01 sec
+        Start 390: device_mocs_ingress
+390/500 Test #390: device_mocs_ingress .......................   Passed    0.01 sec
+        Start 391: device_rx_reservation
+391/500 Test #391: device_rx_reservation .....................   Passed    0.01 sec
+        Start 392: device_window_batch_timer
+392/500 Test #392: device_window_batch_timer .................   Passed    0.01 sec
+        Start 393: device_window_threshold
+393/500 Test #393: device_window_threshold ...................   Passed    0.01 sec
+        Start 394: device_window_channel_isolation
+394/500 Test #394: device_window_channel_isolation ...........   Passed    0.01 sec
+        Start 395: device_batch_pending
+395/500 Test #395: device_batch_pending ......................   Passed    0.01 sec
+        Start 396: device_batch_missing
+396/500 Test #396: device_batch_missing ......................   Passed    0.01 sec
+        Start 397: device_cache_hit
+397/500 Test #397: device_cache_hit ..........................   Passed    0.01 sec
+        Start 398: device_miss_becomes_hit
+398/500 Test #398: device_miss_becomes_hit ...................   Passed    0.01 sec
+        Start 399: device_ordered_pages
+399/500 Test #399: device_ordered_pages ......................   Passed    0.01 sec
+        Start 400: device_ordered_error
+400/500 Test #400: device_ordered_error ......................   Passed    0.01 sec
+        Start 401: device_pending_order_diagnostic
+401/500 Test #401: device_pending_order_diagnostic ...........   Passed    0.01 sec
+        Start 402: device_tx_cache_pressure
+402/500 Test #402: device_tx_cache_pressure ..................   Passed    0.01 sec
+        Start 403: device_cache_rewrite
+403/500 Test #403: device_cache_rewrite ......................   Passed    0.01 sec
+        Start 404: device_pending_frozen
+404/500 Test #404: device_pending_frozen .....................   Passed    0.01 sec
+        Start 405: device_pending_tx_full
+405/500 Test #405: device_pending_tx_full ....................   Passed    0.01 sec
+        Start 406: device_rejected_batch_no_effect
+406/500 Test #406: device_rejected_batch_no_effect ...........   Passed    0.01 sec
+        Start 407: device_ingress_bypass
+407/500 Test #407: device_ingress_bypass .....................   Passed    0.04 sec
+        Start 408: device_fault_fanout
+408/500 Test #408: device_fault_fanout .......................   Passed    0.01 sec
+        Start 409: device_replacement_replay
+409/500 Test #409: device_replacement_replay .................   Passed    0.01 sec
+        Start 410: device_remap_cache
+410/500 Test #410: device_remap_cache ........................   Passed    0.01 sec
+        Start 411: device_duplicate_handoff
+411/500 Test #411: device_duplicate_handoff ..................   Passed    0.01 sec
+        Start 412: device_response_feedback
+412/500 Test #412: device_response_feedback ..................   Passed    0.01 sec
+        Start 413: device_configuration
+413/500 Test #413: device_configuration ......................   Passed    0.01 sec
+        Start 414: device_cache_pin_invalidation
+414/500 Test #414: device_cache_pin_invalidation .............   Passed    0.01 sec
+        Start 415: device_teardown
+415/500 Test #415: device_teardown ...........................   Passed    0.01 sec
+        Start 416: device_unsupported
+416/500 Test #416: device_unsupported ........................   Passed    0.01 sec
+        Start 417: device_policies
+417/500 Test #417: device_policies ...........................   Passed    0.01 sec
+        Start 418: device_invalid_policy
+418/500 Test #418: device_invalid_policy .....................   Passed    0.01 sec
+        Start 419: device_link_latency
+419/500 Test #419: device_link_latency .......................   Passed    0.01 sec
+        Start 420: device_pending_recheck
+420/500 Test #420: device_pending_recheck ....................   Passed    0.01 sec
+        Start 421: device_deadline_link_boundary
+421/500 Test #421: device_deadline_link_boundary .............   Passed    0.07 sec
+        Start 422: device_sense_order_policy
+422/500 Test #422: device_sense_order_policy .................   Passed    0.01 sec
+        Start 423: device_sense_order_blocked
+423/500 Test #423: device_sense_order_blocked ................   Passed    0.01 sec
+        Start 424: device_ordered_late_error
+424/500 Test #424: device_ordered_late_error .................   Passed    0.01 sec
+        Start 425: device_rewrite_saved_read
+425/500 Test #425: device_rewrite_saved_read .................   Passed    0.01 sec
+        Start 426: device_retirement_loop
+426/500 Test #426: device_retirement_loop ....................   Passed    0.01 sec
+        Start 427: device_teardown_cache_hit
+427/500 Test #427: device_teardown_cache_hit .................   Passed    0.01 sec
+        Start 428: device_callback_limit
+428/500 Test #428: device_callback_limit .....................   Passed    0.01 sec
+        Start 429: device_multi_channel_bandwidth
+429/500 Test #429: device_multi_channel_bandwidth ............   Passed    0.01 sec
+        Start 430: device_channel_preflight
+430/500 Test #430: device_channel_preflight ..................   Passed    0.01 sec
+        Start 431: device_preflight_rx_fit
+431/500 Test #431: device_preflight_rx_fit ...................   Passed    0.01 sec
+        Start 432: lifecycle_issue_rollback
+432/500 Test #432: lifecycle_issue_rollback ..................   Passed    0.26 sec
+        Start 433: lifecycle_issue_sampling
+433/500 Test #433: lifecycle_issue_sampling ..................   Passed    0.01 sec
+        Start 434: lifecycle_guard_multiple_readers
+434/500 Test #434: lifecycle_guard_multiple_readers ..........   Passed    0.01 sec
+        Start 435: lifecycle_pending_fixed_missing
+435/500 Test #435: lifecycle_pending_fixed_missing ...........   Passed    0.01 sec
+        Start 436: lifecycle_physical_zone_wakeup
+436/500 Test #436: lifecycle_physical_zone_wakeup ............   Passed    0.01 sec
+        Start 437: lifecycle_fixture_capabilities
+437/500 Test #437: lifecycle_fixture_capabilities ............   Passed    0.01 sec
+        Start 438: lifecycle_event_rounds
+438/500 Test #438: lifecycle_event_rounds ....................   Passed    0.01 sec
+        Start 439: lifecycle_deadline_batch
+439/500 Test #439: lifecycle_deadline_batch ..................   Passed    0.01 sec
+        Start 440: lifecycle_deadline_limits
+440/500 Test #440: lifecycle_deadline_limits .................   Passed    0.01 sec
+        Start 441: lifecycle_deadline_exception
+441/500 Test #441: lifecycle_deadline_exception ..............   Passed    0.01 sec
+        Start 442: lifecycle_event_cancel_limits
+442/500 Test #442: lifecycle_event_cancel_limits .............   Passed    0.01 sec
+        Start 443: lifecycle_wait_targeting
+443/500 Test #443: lifecycle_wait_targeting ..................   Passed    0.01 sec
+        Start 444: lifecycle_wait_race_cancel
+444/500 Test #444: lifecycle_wait_race_cancel ................   Passed    0.01 sec
+        Start 445: lifecycle_wait_reregister
+445/500 Test #445: lifecycle_wait_reregister .................   Passed    0.01 sec
+        Start 446: lifecycle_read_accept_issue
+446/500 Test #446: lifecycle_read_accept_issue ...............   Passed    0.01 sec
+        Start 447: lifecycle_read_bounded_results
+447/500 Test #447: lifecycle_read_bounded_results ............   Passed    0.01 sec
+        Start 448: lifecycle_read_order
+448/500 Test #448: lifecycle_read_order ......................   Passed    0.01 sec
+        Start 449: lifecycle_read_order_errors
+449/500 Test #449: lifecycle_read_order_errors ...............   Passed    0.01 sec
+        Start 450: lifecycle_pending_order_diagnostic
+450/500 Test #450: lifecycle_pending_order_diagnostic ........   Passed    0.01 sec
+        Start 451: lifecycle_pending_capacity
+451/500 Test #451: lifecycle_pending_capacity ................   Passed    0.01 sec
+        Start 452: lifecycle_read_failure_revalidation
+452/500 Test #452: lifecycle_read_failure_revalidation .......   Passed    0.02 sec
+        Start 453: lifecycle_read_repair_revalidation
+453/500 Test #453: lifecycle_read_repair_revalidation ........   Passed    0.01 sec
+        Start 454: lifecycle_read_quiesce_drain
+454/500 Test #454: lifecycle_read_quiesce_drain ..............   Passed    0.01 sec
+        Start 455: lifecycle_read_stale_candidate
+455/500 Test #455: lifecycle_read_stale_candidate ............   Passed    0.01 sec
+        Start 456: lifecycle_write_probes
+456/500 Test #456: lifecycle_write_probes ....................   Passed    0.01 sec
+        Start 457: lifecycle_program_stale_candidate
+457/500 Test #457: lifecycle_program_stale_candidate .........   Passed    0.01 sec
+        Start 458: lifecycle_write_ready_notifications
+458/500 Test #458: lifecycle_write_ready_notifications .......   Passed    0.02 sec
+        Start 459: lifecycle_physical_release_notification
+459/500 Test #459: lifecycle_physical_release_notification ...   Passed    0.01 sec
+        Start 460: lifecycle_deadline_credit_chain
+460/500 Test #460: lifecycle_deadline_credit_chain ...........   Passed    0.03 sec
+        Start 461: lifecycle_deadline_resident_only
+461/500 Test #461: lifecycle_deadline_resident_only ..........   Passed    0.01 sec
+        Start 462: lifecycle_deadline_two_dlus
+462/500 Test #462: lifecycle_deadline_two_dlus ...............   Passed    0.01 sec
+        Start 463: lifecycle_window_membership
+463/500 Test #463: lifecycle_window_membership ...............   Passed    0.01 sec
+        Start 464: lifecycle_group_channel_isolation
+464/500 Test #464: lifecycle_group_channel_isolation .........   Passed    0.01 sec
+        Start 465: lifecycle_teardown_queued_read
+465/500 Test #465: lifecycle_teardown_queued_read ............   Passed    0.01 sec
+        Start 466: address_mapping
+466/500 Test #466: address_mapping ...........................   Passed    0.28 sec
+        Start 467: admission
+467/500 Test #467: admission .................................   Passed    0.09 sec
+        Start 468: write_lifecycle
+468/500 Test #468: write_lifecycle ...........................   Passed    0.01 sec
+        Start 469: events_dispatch
+469/500 Test #469: events_dispatch ...........................   Passed    0.01 sec
+        Start 470: basic_errors
+470/500 Test #470: basic_errors ..............................   Passed    0.23 sec
+        Start 471: shared_credit
+471/500 Test #471: shared_credit .............................   Passed    0.01 sec
+        Start 472: pending_forward
+472/500 Test #472: pending_forward ...........................   Passed    0.01 sec
+        Start 473: media_lifetime
+473/500 Test #473: media_lifetime ............................   Passed    0.01 sec
+        Start 474: recovery_reads
+474/500 Test #474: recovery_reads ............................   Passed    0.01 sec
+        Start 475: merged_read_gate
+475/500 Test #475: merged_read_gate ..........................   Passed    0.01 sec
+        Start 476: replacement_timeout_gate
+476/500 Test #476: replacement_timeout_gate ..................   Passed    0.01 sec
+        Start 477: retirement_reads
+477/500 Test #477: retirement_reads ..........................   Passed    0.01 sec
+        Start 478: remap_read_generation
+478/500 Test #478: remap_read_generation .....................   Passed    0.01 sec
+        Start 479: event_error_order
+479/500 Test #479: event_error_order .........................   Passed    0.01 sec
+        Start 480: deadline_forward
+480/500 Test #480: deadline_forward ..........................   Passed    0.01 sec
+        Start 481: quiesce_reads
+481/500 Test #481: quiesce_reads .............................   Passed    0.01 sec
+        Start 482: read_issue_snapshot
+482/500 Test #482: read_issue_snapshot .......................   Passed    0.01 sec
+        Start 483: ingress_scope
+483/500 Test #483: ingress_scope .............................   Passed    0.01 sec
+        Start 484: read_teardown
+484/500 Test #484: read_teardown .............................   Passed    0.01 sec
+        Start 485: capacity_compensation
+485/500 Test #485: capacity_compensation .....................   Passed    0.15 sec
+        Start 486: capacity_density
+486/500 Test #486: capacity_density ..........................   Passed    0.00 sec
+        Start 487: capacity_atomicity
+487/500 Test #487: capacity_atomicity ........................   Passed    0.01 sec
+        Start 488: capacity_hole_failure
+488/500 Test #488: capacity_hole_failure .....................   Passed    0.01 sec
+        Start 489: capacity_lease_boundary
+489/500 Test #489: capacity_lease_boundary ...................   Passed    0.01 sec
+        Start 490: capacity_chain
+490/500 Test #490: capacity_chain ............................   Passed    0.97 sec
+        Start 491: replacement_pipeline
+491/500 Test #491: replacement_pipeline ......................   Passed    0.22 sec
+        Start 492: overlap_restart
+492/500 Test #492: overlap_restart ...........................   Passed    0.01 sec
+        Start 493: timeout_retry
+493/500 Test #493: timeout_retry .............................   Passed    0.01 sec
+        Start 494: replay_prefix
+494/500 Test #494: replay_prefix .............................   Passed    0.01 sec
+        Start 495: replacement_failure
+495/500 Test #495: replacement_failure .......................   Passed    0.01 sec
+        Start 496: admission_boundaries
+496/500 Test #496: admission_boundaries ......................   Passed    0.01 sec
+        Start 497: replay_merge
+497/500 Test #497: replay_merge ..............................   Passed    0.01 sec
+        Start 498: replay_replacement_merge
+498/500 Test #498: replay_replacement_merge ..................   Passed    0.01 sec
+        Start 499: replay_remap_generation
+499/500 Test #499: replay_remap_generation ...................   Passed    0.01 sec
+        Start 500: retirement_write_swap
+500/500 Test #500: retirement_write_swap .....................   Passed    0.01 sec
+
+100% tests passed out of 500
+
+Total Test time (real) =  79.37 sec
