@@ -64,3 +64,11 @@ negative test that fails when the behavior is broken. Never turn a missing gate
 into PASS by deleting the test. CI retains failing-run artifacts as well.
 
 Apache-2.0 for project-authored code. See [third-party notices](THIRD_PARTY_NOTICES.md).
+
+### Bank adapter and read recovery policy
+
+`anns_loop_bank` integrates the cycle-stepped bank backend into the same ANNS
+functional dependency path. `read_recovery_probe` separately tests OCP read-error
+host actions; it does **not** yet implement device ECC or transport retry metadata
+through EventLab. See [the extension audit](docs/RECOVERY_BANK_REVIEW.md).
+All timings remain uncalibrated and performance experiments remain disabled.

@@ -4,6 +4,7 @@
 #include "hbf_eventlab/runtime/simulation_session.hpp"
 #include "physical/hbm/hbm_device.hpp"
 #include "online_hbm.hpp"
+#include "bank_adapter.hpp"
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -32,7 +33,11 @@ struct Slot{bool busy=false,visible=false;int q=-1,page=-1;std::array<unsigned c
 class Run {
   el::SimulationSession hbf;
 #ifdef ANNS_CONCURRENT
+  #ifdef ANNS_BANK
+  BankAdapter hbm;
+  #else
   OnlineHbm hbm;
+  #endif
 #else
   ph::hbm::HbmDevice hbm;
 #endif
