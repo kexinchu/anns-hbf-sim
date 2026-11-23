@@ -5,11 +5,11 @@ Passing software tests does not change this flag automatically.
 
 | Gate | Current scope | Remaining evidence |
 |---|---|---|
-| OCP protocol subset | 64B, 4KiB assembly, pending forwarding, overlap, credits, explicit ID group | Full ID adapter, deadline boundary ordering, faults/remap/recovery |
-| Timeout | Explicit deadline drain and retry generations | Exact deadline races and host recovery policy |
+| OCP protocol subset | 64B, 4KiB assembly, pending forwarding, overlap, credits, explicit ID group | Full ID adapter, broader faults/remap/recovery |
+| Timeout | Explicit deadline drain and retry generations | Selected same-tick policy now tested; broader interleavings and autonomous host recovery remain |
 | Cache | Two retained pages and same-bank issue order | Conflict/replacement/fault differential reference |
 | Core Channel | Finite shared serialization, independent channels | Die ports, packet overhead, parameter provenance |
-| HBM | Bounded per-PC concurrent bursts | Bank-level online commands, refresh stress, independent timing model |
+| HBM | Bounded per-PC concurrent bursts | Isolated bank candidate tested; integration, refresh stress and hardware timing still pending |
 | ANNS | CPU toy IVF/rerank exact output equivalence | Real GPU transfers, production ANN implementation, scale |
 | Calibration | None | Hardware or bounded physical evidence, held-out error tests |
 | Performance | CLOSED | Arrival protocol, recall/resource budget, P99 and cache state frozen |
@@ -25,3 +25,5 @@ upstream self-tests from independent oracles; report unsupported scenarios as
 unsupported; publish configuration and pinned code; keep calibration data separate
 from evaluation. Similar predictions from related simulators are not independent
 hardware validation. No blanket conservative-bound claim is supported.
+
+See [new recovery/deadline/bank evidence](RECOVERY_BANK_REVIEW.md). New candidate tests do not change the performance gate.

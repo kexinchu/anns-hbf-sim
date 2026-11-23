@@ -12,6 +12,8 @@ jobs:
       - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON
       - run: cmake --build build -j 4
       - run: ctest --test-dir build --output-on-failure
+      - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g src/bank_probe.cpp -o build/bank_probe_sanitized
+      - run: python3 tests/bank_diff.py build/bank_probe_sanitized build/bank-sanitized-validation
       - run: cmake -S build/eventlab-overlay -B build-upstream -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DHBF_EVENTLAB_EXPERIMENT_TESTS=OFF
       - run: cmake --build build-upstream -j 4
       - run: ctest --test-dir build-upstream --output-on-failure
@@ -25,3 +27,6 @@ jobs:
             build/validation/
             build/protocol-validation/
             build/concurrent-validation/
+            build/recovery-validation/
+            build/bank-validation/
+            build/bank-sanitized-validation/

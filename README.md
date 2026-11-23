@@ -50,6 +50,12 @@ under these assumptions does not establish accurate device performance.
 
 Normative reference: [OCP HBF v0.7.0, August 3, 2026](https://www.opencompute.org/documents/ocp-hbf-architecture-specification-v0-7-0-final-pdf/).
 
+## Additional correctness modules
+
+See [recovery/deadline/bank review](docs/RECOVERY_BANK_REVIEW.md). The new bank-level
+controller is an isolated candidate with synthetic cycle timings; the production
+ANNS fixture still uses the explicitly bounded PC-level model.
+
 ## Development
 
 Use branches and pull requests; run all tests before merging. New behavior must

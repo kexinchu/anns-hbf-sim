@@ -23,3 +23,14 @@ this test. Raw traces are regenerated and retained by CTest/CI.
 A test-step count is not a clause-coverage percentage. Seed variation is not
 exhaustive model checking. None of these results validate physical HBF latency,
 real GPU residency, whole-library recall, P99, throughput or power.
+
+
+## Recovery/deadline/bank extension
+
+Local CTest: 9/9 passed. Additional tests: six deadline boundaries with six
+negative expectations; seven program-failure/replay/retirement sequences;
+35 bank-level differential traces plus early-completion and invalid-input checks.
+The macOS combined ASan/UBSan executable failed to link because the installed
+sanitizer runtime lacks a libc++ deque annotation symbol; this is not a passing
+sanitizer result. Local UBSan-only execution passed all 35 bank traces. CI separately builds and runs the candidate with Linux sanitizers.
+See RECOVERY_BANK_REVIEW.md for the limited claim and remaining unsupported paths.
