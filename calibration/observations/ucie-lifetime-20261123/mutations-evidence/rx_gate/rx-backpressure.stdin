@@ -1,0 +1,55 @@
+req 0 1
+sts 0
+req 1 1
+sts 1
+tick
+sts 0
+state 0 1
+sts 1
+state 1 1
+send 0 0
+launch 0
+arrive 0
+ack 0 1
+send 0 1
+launch 0
+arrive 0
+ack 0 2
+send 0 2
+launch 0
+arrive 0
+ack 0 3
+send 0 3
+launch 0
+arrive 0
+ack 0 4
+send 0 4
+launch 0
+arrive 0
+ack 0 5
+send 0 5
+launch 0
+arrive 0
+ack 0 6
+send 0 6
+launch 0
+arrive 0
+ack 0 7
+send 0 7
+launch 0
+arrive 0
+ack 0 8
+send 0 99
+launch 0
+arrive 0
+consume 1
+arrive 0
+consume 1
+consume 1
+consume 1
+consume 1
+consume 1
+consume 1
+consume 1
+consume 1
+ack 0 9

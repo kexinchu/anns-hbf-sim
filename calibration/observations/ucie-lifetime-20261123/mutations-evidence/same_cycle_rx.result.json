@@ -1,0 +1,5 @@
+{
+  "exit": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/tmp/anns-ucie.Ms5s9v/tests/ucie_diff.py\", line 44, in <module>\n    s.verify('wrap-retry')\n  File \"/tmp/anns-ucie.Ms5s9v/tests/ucie_diff.py\", line 29, in verify\n    assert all(row[k]==v for k,v in want.items()),(name,op,row,want)\nAssertionError: ('wrap-retry', 'sts 0', [1, -1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0], {0: 0})\n"
+}

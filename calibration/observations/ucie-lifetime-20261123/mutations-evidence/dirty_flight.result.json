@@ -1,0 +1,5 @@
+{
+  "exit": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/tmp/anns-ucie.Ms5s9v/tests/ucie_diff.py\", line 84, in <module>\n    s=Schedule();s.boot();s.add('send 1 31');s.add('launch 1');s.close();s.add('clean 1');s.add('reset',0);s.add('arrive 1');s.at(4,1);s.add('reset');s.verify('flight-fence')\n  File \"/tmp/anns-ucie.Ms5s9v/tests/ucie_diff.py\", line 29, in verify\n    assert all(row[k]==v for k,v in want.items()),(name,op,row,want)\nAssertionError: ('flight-fence', 'reset', [1, -1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1], {0: 0})\n"
+}

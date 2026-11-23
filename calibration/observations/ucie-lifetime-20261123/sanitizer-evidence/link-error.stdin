@@ -1,0 +1,16 @@
+req 0 1
+sts 0
+req 1 1
+sts 1
+tick
+sts 0
+state 0 1
+sts 1
+state 1 1
+send 1 32
+launch 1
+state 0 5
+arrive 1
+consume 0
+reset
+state 0 1

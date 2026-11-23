@@ -1,0 +1,64 @@
+req 0 1
+sts 0
+req 1 1
+sts 1
+tick
+sts 0
+state 0 1
+sts 1
+state 1 1
+send 1 1
+send 1 2
+send 1 3
+send 1 4
+send 1 5
+send 1 6
+launch 1
+launch 1
+launch 1
+launch 1
+launch 1
+launch 1
+reset
+req 0 0
+state 0 3
+sts 0
+state 0 3
+req 1 0
+state 1 3
+sts 1
+state 1 3
+send 1 99
+replay 1
+ack 1 1
+consume 0
+reset
+arrive 1
+arrive 1
+arrive 1
+arrive 1
+arrive 1
+arrive 1
+clean 1
+clean 1
+clean 1
+clean 1
+clean 1
+clean 1
+clean 0
+clean 1
+reset
+req 0 1
+sts 0
+req 1 1
+sts 1
+tick
+sts 0
+state 0 1
+sts 1
+state 1 1
+send 1 99
+launch 1
+arrive 1
+consume 0
+ack 1 1

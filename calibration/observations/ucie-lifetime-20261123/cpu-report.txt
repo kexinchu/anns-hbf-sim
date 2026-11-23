@@ -1,0 +1,1 @@
+PASS: 43 transport schedules (300-payload wrap/retry, capacity/retrain/backpressure, 36 reset permutations, one-sided reset, flight fence, LinkError, delayed ACK), 9 DeviceDriver/CUDA flows, distance mutant; full wire/PCIe/PHY conformance OPEN; performance CLOSED

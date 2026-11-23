@@ -92,3 +92,5 @@ The [device reset review](docs/DEVICE_RESET_REVIEW.md) documents the standalone 
 The [external reset review](docs/EXTERNAL_RESET_REVIEW.md) extends validation to post-recovery packets, request-ID reuse and distinct CSR reset profiles; all hardware/performance calibration gates remain closed.
 
 The [AoU wire audit](docs/AOU_WIRE_REVIEW.md) adds a metadata-free HBF message path and records why Time Sync cannot replace a verified lower-link stale-packet isolation mechanism. The post-reset arbitrary-stale-byte blocker remains open.
+
+UCIe lower-transport work: [retry ownership and FDI/reset audit](docs/UCIE_LIFETIME_REVIEW.md). This is a bounded decoded-event model; full wire/PHY conformance and performance remain gated.

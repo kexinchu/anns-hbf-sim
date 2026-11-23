@@ -1,0 +1,7 @@
+{
+  "source_hashes_match": true,
+  "cpu_cuda_sanitizer_stdout_match": 53,
+  "gpu_processes_before_launch": 0,
+  "performance_ready": false,
+  "wire_conformance": false
+}
