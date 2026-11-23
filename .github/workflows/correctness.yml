@@ -28,6 +28,8 @@ jobs:
       - run: build/page_group_sanitized
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ibuild/eventlab-overlay/include src/reset_race.cpp build/eventlab/libhbf_eventlab.a -o build/reset_sanitized
       - run: python3 tests/reset_diff.py build/reset_sanitized build/reset-sanitized CPU
+      - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ibuild/eventlab-overlay/include src/device_reset_probe.cpp build/eventlab/libhbf_eventlab.a -o build/device_reset_sanitized
+      - run: python3 tests/device_reset_diff.py build/device_reset_sanitized build/device-reset-sanitized
       - run: cmake -S build/eventlab-overlay -B build-upstream -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DHBF_EVENTLAB_EXPERIMENT_TESTS=OFF
       - run: cmake --build build-upstream -j 4
       - run: ctest --test-dir build-upstream --output-on-failure
@@ -50,6 +52,8 @@ jobs:
             build/multichannel-mapping/
             build/multichannel-race/
             build/reset-validation/
+            build/device-reset-validation/
+            build/device-reset-sanitized/
             build/reset-sanitized/
             build/page-wire-validation/
             build/wire-anns-validation/

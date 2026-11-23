@@ -105,3 +105,5 @@ GPU 0, CPU and Linux ASan/UBSan each passed 18 positive variants and detected al
 three mutations. Complete positive traces match across the three backends after
 removing the backend label. These results close only the bounded contracts above;
 physical die-reset implementation and calibration are still open.
+
+The [device reset review](DEVICE_RESET_REVIEW.md) documents the new physical-media/CSR endpoint, uncertainty assumptions and remaining full-transport integration gap. Performance remains disabled.

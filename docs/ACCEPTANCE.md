@@ -35,3 +35,5 @@ See [writeback identity and EventLab integration review](WIRE_ACK_REVIEW.md). Th
 See [multichannel aggregation and joint race review](MULTICHANNEL_REVIEW.md). Directed reusable program-fail/CUDA races supplement, but do not exhaust, asynchronous fault coverage.
 
 Reset/cancel and permanent-failure functional scope: [review](RESET_CANCEL_REVIEW.md). Physical die reset and calibration remain open; performance stays disabled.
+
+The [device reset review](DEVICE_RESET_REVIEW.md) documents the new physical-media/CSR endpoint, uncertainty assumptions and remaining full-transport integration gap. Performance remains disabled.
