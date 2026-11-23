@@ -104,7 +104,7 @@ independently specified action transcripts, not an independently coded ECC engin
 
 ## Calibration remains blocked
 
-No target GPU/HBM part or held-out device trace is identified for this extension.
+The user selected cloudsys01 RTX A6000. Live inventory and NVIDIA specifications identify GDDR6, not HBM. No HBM device trace is available for this extension.
 The upstream [Ramulator HBM3 implementation](https://github.com/CMU-SAFARI/ramulator2/blob/main/python/ramulator/dram/hbm3.py)
 is a useful reference for the missing bank-group, refresh and directional timing
 constraints. Its presets are model inputs, not measurements of our target GPU.
@@ -117,3 +117,17 @@ row-hit/conflict, multi-bank, read/write and refresh-contention observations wit
 predeclared error bounds. GPU caches and address mapping must be controlled or
 explicitly included. Do not run ANNS performance experiments to fit these values.
 `performance_ready=false`; no full-OCP compliance claim.
+
+
+### A6000 observation evidence
+
+GPU 1 on cloudsys01 was checked idle before each probe; no other jobs or device
+settings were changed. The selected A6000 reports a 6MiB L2 and ECC disabled.
+[Protocol](../calibration/PROTOCOL.md), source hashes, compiler/driver information,
+clock snapshots, raw samples and exit statuses are retained in `calibration/`.
+Both the pilot and full-ring revision verified every result against CPU traversal.
+The pilot touched only part of each allocation and is explicitly retained as such.
+The full-ring revision traversed every 64B-spaced node; it still includes L2/TLB,
+interconnect, controller and dynamic-clock effects. This is not a DRAM latency
+isolation experiment and supplies no HBM parameter fit or held-out calibration.
+The HBM calibration gate remains CLOSED.

@@ -1,0 +1,17 @@
+{"device":"NVIDIA RTX A6000","l2_bytes":6291456,"scope":"GDDR6_DEPENDENT_LOAD_ONLY","performance_ready":false}
+{"bytes":16777216,"sample":-1,"steps":262161,"elapsed_ms":78.492,"sm_cycles":141206773,"verified":true}
+{"bytes":16777216,"sample":0,"steps":262161,"elapsed_ms":78.4228,"sm_cycles":144637510,"verified":true}
+{"bytes":16777216,"sample":1,"steps":262161,"elapsed_ms":78.372,"sm_cycles":144709202,"verified":true}
+{"bytes":16777216,"sample":2,"steps":262161,"elapsed_ms":76.3315,"sm_cycles":147665820,"verified":true}
+{"bytes":16777216,"sample":3,"steps":262161,"elapsed_ms":76.3377,"sm_cycles":147675955,"verified":true}
+{"bytes":16777216,"sample":4,"steps":262161,"elapsed_ms":76.3512,"sm_cycles":147699754,"verified":true}
+{"bytes":16777216,"sample":5,"steps":262161,"elapsed_ms":76.3376,"sm_cycles":147675461,"verified":true}
+{"bytes":16777216,"sample":6,"steps":262161,"elapsed_ms":76.4552,"sm_cycles":147671646,"verified":true}
+{"bytes":67108864,"sample":-1,"steps":1048593,"elapsed_ms":307.719,"sm_cycles":595316223,"verified":true}
+{"bytes":67108864,"sample":0,"steps":1048593,"elapsed_ms":308.06,"sm_cycles":596018395,"verified":true}
+{"bytes":67108864,"sample":1,"steps":1048593,"elapsed_ms":308.021,"sm_cycles":595963915,"verified":true}
+{"bytes":67108864,"sample":2,"steps":1048593,"elapsed_ms":308.014,"sm_cycles":595954804,"verified":true}
+{"bytes":67108864,"sample":3,"steps":1048593,"elapsed_ms":308.05,"sm_cycles":596030261,"verified":true}
+{"bytes":67108864,"sample":4,"steps":1048593,"elapsed_ms":308.037,"sm_cycles":596014111,"verified":true}
+{"bytes":67108864,"sample":5,"steps":1048593,"elapsed_ms":308.051,"sm_cycles":596041001,"verified":true}
+{"bytes":67108864,"sample":6,"steps":1048593,"elapsed_ms":308.033,"sm_cycles":596005529,"verified":true}

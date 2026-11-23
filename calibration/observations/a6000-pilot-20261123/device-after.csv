@@ -1,0 +1,2 @@
+name, driver_version, clocks.current.graphics [MHz], clocks.current.memory [MHz], ecc.mode.current
+NVIDIA RTX A6000, 610.57.04, 1935 MHz, 8001 MHz, Disabled
