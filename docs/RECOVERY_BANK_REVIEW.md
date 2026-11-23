@@ -17,7 +17,7 @@ Reference: [OCP HBF v0.7.0](https://www.opencompute.org/documents/ocp-hbf-archit
 | Table13, §11.5.2.8 | One spare used, second unusable failure exhausts it; status8/info1 then status1 | Block-level retirement. Info1 encodes NAND-block granularity, not generic success/default metadata. |
 
 Seven recovery traces compare admission, credit counts, response IDs, status,
-additional information and read-back tokens after every command/control step.
+additional information, physical block identity and read-back tokens after every command/control step.
 The Python reference never imports donor state. Two initial oracle omissions
 (info2 propagation and block-retirement info1) were corrected against these
 clauses, with failed traces retained locally. No mismatch was hidden by removing

@@ -5,7 +5,7 @@ import json,pathlib,subprocess,sys
 class Ref:
     def __init__(self):
         self.seq=0;self.live={};self.reply={};self.pending={};self.media={}
-        self.next=0;self.replay=None;self.failed=False;self.unusable=False;self.spares=1;self.retired=False
+        self.physical=0;self.next=0;self.replay=None;self.failed=False;self.unusable=False;self.spares=1;self.retired=False
     def step(self,line):
         op,p,v=line.split();p=int(p);v=int(v);a='none'
         def response(i,status,info=0,data=None):self.reply[i]=[i,self.live[i],status,info,data]
@@ -24,7 +24,7 @@ class Ref:
                     self.retired=True;response(i,8,1) # Table 13: NAND-block granularity
                 else:
                     if self.failed:
-                        if self.unusable:self.spares-=1
+                        if self.unusable:self.spares-=1;self.physical=2
                         self.failed=False;self.unusable=False;self.media={};self.next=0
                     if p!=self.next:response(i,6,1)
                     else:self.pending[p]=(i,v);self.next+=1
@@ -42,7 +42,7 @@ class Ref:
             self.reply={}
         elif op=='E':pass
         else:raise ValueError(op)
-        return {'acceptance':a,'outstanding':len(self.live),'responses':sorted(self.reply.values())}
+        return {'acceptance':a,'outstanding':len(self.live),'responses':sorted(self.reply.values()),'physical_block':None if self.retired else self.physical}
 def compare(a,e):
     if len(a)!=len(e):raise AssertionError('missing receipt')
     for n,(x,y) in enumerate(zip(a,e)):
@@ -73,4 +73,9 @@ for page,hard,repeated in cases:
     try:compare(bad,expected)
     except AssertionError:pass
     else:raise AssertionError('false success escaped')
+    for field in ('physical_block','outstanding'):
+        bad=json.loads(json.dumps(actual));bad[0][field]=999
+        try:compare(bad,expected)
+        except AssertionError:pass
+        else:raise AssertionError('mapping/credit mutation escaped')
 print(json.dumps({'status':'PASS','recovery_traces':len(cases),'performance_ready':False}))

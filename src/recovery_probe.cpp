@@ -30,6 +30,8 @@ int main(){try{
   }else throw std::invalid_argument("unknown recovery action");
   std::cout<<"{\"acceptance\":\""<<accepted<<"\",\"outstanding\":"<<admission.outstanding(0)<<",\"responses\":[";
   bool first=true;for(auto r:writes.responses()){if(!first)std::cout<<',';first=false;std::cout<<'['<<r.command.value<<",\"W\","<<unsigned(r.status)<<','<<unsigned(r.additional_info)<<",null]";}
-  for(auto r:reads.responses()){if(!first)std::cout<<',';first=false;std::cout<<'['<<r.command.value<<",\"R\","<<unsigned(r.status)<<",0,";if(r.data)std::cout<<r.data->value;else std::cout<<"null";std::cout<<']';}std::cout<<"]}\n";
+  for(auto r:reads.responses()){if(!first)std::cout<<',';first=false;std::cout<<'['<<r.command.value<<",\"R\","<<unsigned(r.status)<<",0,";if(r.data)std::cout<<r.data->value;else std::cout<<"null";std::cout<<']';}std::cout<<"],\"physical_block\":";
+  if(capacity.retired({0,0,0,0}))std::cout<<"null";else std::cout<<capacity.inspect({0,LocalByteAddress{0}}).block;
+  std::cout<<"}\n";
  }
 }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}
