@@ -1,0 +1,6 @@
+{
+  "EventLab": {"url": "https://github.com/sjtu-epcc/HBF-EventLab.git", "commit": "be69dfa0d7e297e7081ad4d68b900bd9ca62dab5"},
+  "HBXim": {"url": "https://github.com/HBXim/HBFSim.git", "commit": "5a35025738b48605d4949fd523ad16f57125005d"},
+  "FlashLab": {"url": "https://github.com/FlashLabAE/HBFSim.git", "commit": "8ab183cc511770649c084eb58b048aabfc60afbc"},
+  "SlugLab": {"url": "https://github.com/SlugLab/HBFSim.git", "commit": "696cc8418e2d2375cdfd249ca5833dfd97e1e0f2"}
+}

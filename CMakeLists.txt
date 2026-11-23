@@ -1,0 +1,57 @@
+cmake_minimum_required(VERSION 3.20)
+project(anns_closed_loop LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# Scope donor test settings without overwriting the parent cache.
+include(CTest)
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+execute_process(COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/prepare_eventlab.py
+  ${CMAKE_CURRENT_SOURCE_DIR}/vendor/EventLab ${CMAKE_CURRENT_BINARY_DIR}/eventlab-overlay
+  COMMAND_ERROR_IS_FATAL ANY)
+function(add_donors)
+  set(BUILD_TESTING OFF)
+  add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/eventlab-overlay eventlab)
+
+endfunction()
+add_donors()
+# Reuse only HBM. Donor CLI assumes it owns CMAKE_SOURCE_DIR.
+add_library(anns_hbm vendor/HBXim/src/physical/hbm/hbm_device.cpp
+  vendor/HBXim/src/physical/address_heatmap.cpp)
+target_include_directories(anns_hbm PUBLIC vendor/HBXim/src)
+add_executable(anns_loop src/anns_loop.cpp)
+target_link_libraries(anns_loop PRIVATE HBFEventLab::core anns_hbm)
+target_compile_options(anns_loop PRIVATE -Wall -Wextra -Wpedantic)
+add_executable(hbm_contract src/hbm_contract.cpp)
+target_link_libraries(hbm_contract PRIVATE anns_hbm)
+
+add_executable(ocp_profile_contract src/ocp_profile_contract.cpp)
+target_link_libraries(ocp_profile_contract PRIVATE HBFEventLab::core)
+if(BUILD_TESTING)
+  find_package(Python3 REQUIRED COMPONENTS Interpreter)
+  add_test(NAME hbm_contract COMMAND hbm_contract)
+  add_test(NAME ocp_profile_contract COMMAND ocp_profile_contract)
+  # Each run preserves evidence in a fresh directory; concurrent runs cannot overwrite.
+  add_test(NAME anns_closed_loop COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/run_fresh.py
+    --binary $<TARGET_FILE:anns_loop> --root ${CMAKE_CURRENT_BINARY_DIR}/validation)
+  set_tests_properties(anns_closed_loop PROPERTIES TIMEOUT 180)
+endif()
+add_executable(protocol_probe src/protocol_probe.cpp)
+target_link_libraries(protocol_probe PRIVATE HBFEventLab::core)
+
+add_executable(anns_loop_concurrent src/anns_loop.cpp)
+target_compile_definitions(anns_loop_concurrent PRIVATE ANNS_CONCURRENT=1)
+target_link_libraries(anns_loop_concurrent PRIVATE HBFEventLab::core anns_hbm)
+add_executable(resource_contract src/resource_contract.cpp)
+target_link_libraries(resource_contract PRIVATE HBFEventLab::core anns_hbm)
+if(BUILD_TESTING)
+  add_test(NAME resource_contract COMMAND resource_contract)
+endif()
+
+if(BUILD_TESTING)
+  add_test(NAME protocol_diff COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/run_fresh.py
+    --protocol --binary $<TARGET_FILE:protocol_probe> --root ${CMAKE_CURRENT_BINARY_DIR}/protocol-validation)
+  add_test(NAME anns_concurrent COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/run_fresh.py
+    --concurrent --binary $<TARGET_FILE:anns_loop_concurrent> --root ${CMAKE_CURRENT_BINARY_DIR}/concurrent-validation)
+  set_tests_properties(protocol_diff anns_concurrent PROPERTIES TIMEOUT 180)
+endif()

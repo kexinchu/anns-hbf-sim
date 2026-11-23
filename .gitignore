@@ -1,0 +1,7 @@
+vendor/
+build*/
+__pycache__/
+*.pyc
+*.log
+results/
+.DS_Store

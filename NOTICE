@@ -1,0 +1,7 @@
+ANNS HBF Simulator
+Copyright 2026 ANNS HBF Simulator contributors
+
+This project builds upon HBF-EventLab (Apache-2.0) and HBXim HBFSim (MIT).
+Upstream licenses remain applicable. See THIRD_PARTY_NOTICES.md and pins.json.
+The EventLab build overlay adds finite Core transfer scheduling and configuration.
+No affiliation with, endorsement by, or certification from OCP is asserted.

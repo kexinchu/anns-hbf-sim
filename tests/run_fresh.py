@@ -1,0 +1,10 @@
+import argparse, datetime, pathlib, subprocess, sys, uuid
+p=argparse.ArgumentParser()
+p.add_argument('--binary',required=True)
+p.add_argument('--root',required=True)
+p.add_argument('--concurrent',action='store_true')
+p.add_argument('--protocol',action='store_true')
+a=p.parse_args()
+out=pathlib.Path(a.root)/(datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+uuid.uuid4().hex[:8])
+print('Evidence:',out,flush=True)
+raise SystemExit(subprocess.call([sys.executable,str(pathlib.Path(__file__).resolve().parents[1]/('tests/protocol_diff.py' if a.protocol else 'verify.py')),'--binary',a.binary,'--out',str(out)]+(['--concurrent'] if a.concurrent else [])))
