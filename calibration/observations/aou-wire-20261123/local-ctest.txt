@@ -1,0 +1,53 @@
+Test project /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/build
+      Start  1: hbm_contract
+ 1/24 Test  #1: hbm_contract .....................   Passed    0.01 sec
+      Start  2: ocp_profile_contract
+ 2/24 Test  #2: ocp_profile_contract .............   Passed    0.21 sec
+      Start  3: anns_closed_loop
+ 3/24 Test  #3: anns_closed_loop .................   Passed    9.39 sec
+      Start  4: resource_contract
+ 4/24 Test  #4: resource_contract ................   Passed    0.80 sec
+      Start  5: protocol_diff
+ 5/24 Test  #5: protocol_diff ....................   Passed    2.70 sec
+      Start  6: anns_concurrent
+ 6/24 Test  #6: anns_concurrent ..................   Passed    9.36 sec
+      Start  7: deadline_diff
+ 7/24 Test  #7: deadline_diff ....................   Passed    0.37 sec
+      Start  8: recovery_diff
+ 8/24 Test  #8: recovery_diff ....................   Passed    0.46 sec
+      Start  9: bank_diff
+ 9/24 Test  #9: bank_diff ........................   Passed    0.24 sec
+      Start 10: anns_bank
+10/24 Test #10: anns_bank ........................   Passed    9.08 sec
+      Start 11: read_recovery_contract
+11/24 Test #11: read_recovery_contract ...........   Passed    0.12 sec
+      Start 12: bank_adapter_contract
+12/24 Test #12: bank_adapter_contract ............   Passed    0.01 sec
+      Start 13: page_lifecycle_diff
+13/24 Test #13: page_lifecycle_diff ..............   Passed    0.22 sec
+      Start 14: page_wire_diff
+14/24 Test #14: page_wire_diff ...................   Passed    1.99 sec
+      Start 15: page_wire_anns
+15/24 Test #15: page_wire_anns ...................   Passed    4.80 sec
+      Start 16: page_writeback_contract
+16/24 Test #16: page_writeback_contract ..........   Passed    0.41 sec
+      Start 17: multichannel_mapping
+17/24 Test #17: multichannel_mapping .............   Passed    2.20 sec
+      Start 18: multichannel_race
+18/24 Test #18: multichannel_race ................   Passed    4.52 sec
+      Start 19: page_group_contract
+19/24 Test #19: page_group_contract ..............   Passed    0.34 sec
+      Start 20: reset_race_diff
+20/24 Test #20: reset_race_diff ..................   Passed    3.27 sec
+      Start 21: device_reset_diff
+21/24 Test #21: device_reset_diff ................   Passed    0.33 sec
+      Start 22: driver_reset_diff
+22/24 Test #22: driver_reset_diff ................   Passed    5.73 sec
+      Start 23: external_reset_diff
+23/24 Test #23: external_reset_diff ..............   Passed    2.21 sec
+      Start 24: aou_diff
+24/24 Test #24: aou_diff .........................   Passed    0.43 sec
+
+100% tests passed out of 24
+
+Total Test time (real) =  59.35 sec

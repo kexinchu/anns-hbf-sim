@@ -31,7 +31,8 @@ jobs:
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ibuild/eventlab-overlay/include src/device_reset_probe.cpp build/eventlab/libhbf_eventlab.a -o build/device_reset_sanitized
       - run: python3 tests/device_reset_diff.py build/device_reset_sanitized build/device-reset-sanitized
       - run: cmake -S . -B build-driver-sanitized -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer -g"
-      - run: cmake --build build-driver-sanitized --target driver_reset_probe external_reset_probe -j 4
+      - run: cmake --build build-driver-sanitized --target driver_reset_probe external_reset_probe aou_probe -j 4
+      - run: python3 tests/aou_diff.py build-driver-sanitized/aou_probe build/aou-sanitized
       - run: python3 tests/external_reset_diff.py build-driver-sanitized/external_reset_probe build/external-reset-sanitized
       - run: python3 tests/driver_reset_diff.py build-driver-sanitized/driver_reset_probe build/driver-reset-sanitized
       - run: cmake -S build/eventlab-overlay -B build-upstream -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DHBF_EVENTLAB_EXPERIMENT_TESTS=OFF
@@ -59,6 +60,8 @@ jobs:
             build/device-reset-validation/
             build/driver-reset-validation/
             build/external-reset-validation/
+            build/aou-validation/
+            build/aou-sanitized/
             build/external-reset-sanitized/
             build/driver-reset-sanitized/
             build/device-reset-sanitized/

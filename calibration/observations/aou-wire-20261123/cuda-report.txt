@@ -1,0 +1,1 @@
+PASS: 100 independent wire vectors, 11 malformed/range negatives, 3 driver/CUDA flows, 2 oracle mutants; arbitrary stale-byte ambiguity remains OPEN
