@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/tmp/anns-lifecycle.Hxa1uD/gpu/verify_lifecycle.py", line 118, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/anns-lifecycle.Hxa1uD/gpu/verify_lifecycle.py", line 109, in main
+    ref=Reference();expected=[ref.apply(s) for s in lines];p,actual=run(binary,lines)
+  File "/tmp/anns-lifecycle.Hxa1uD/gpu/verify_lifecycle.py", line 101, in run
+    p=subprocess.run([binary,*args],input='\n'.join(lines)+'\n',text=True,capture_output=True,timeout=30)
+  File "/usr/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1154, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 2022, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.10/subprocess.py", line 1198, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./page_lifecycle']' timed out after 30 seconds

@@ -1,6 +1,7 @@
 // Functional IVF2/4 fixture, actual CUDA distance/top-k. No performance claims.
 #include <cuda_runtime.h>
 #include "../src/read_recovery.hpp"
+#include "../src/versioned_pages.hpp"
 #include <algorithm>
 #include <array>
 #include <cstring>
@@ -50,13 +51,23 @@ int main(int argc,char**argv){try{
  log("refresh_complete",page);need(recovery.issue(++command,0),"refresh reread");recovery.response(command,0,0,true);}
  received.insert(received.end(),media.begin()+page*1024,media.begin()+(page+1)*1024);for(int j=0;j<32;++j)ids.push_back(page*32+j);log("publish",page);
  }
- int *d,*dq,*di,*out;long long* ds;ck(cudaMalloc(&d,received.size()*4));ck(cudaMalloc(&dq,128));ck(cudaMalloc(&di,ids.size()*4));ck(cudaMalloc(&ds,ids.size()*8));ck(cudaMalloc(&out,40));
- bool visible=false;
- if(mode=="early_publish")need(visible,"device data not visible before H2D completion");
+ int *d,*dq,*di,*out;long long* ds;ck(cudaMalloc(&d,2*4096));ck(cudaMalloc(&dq,128));ck(cudaMalloc(&di,ids.size()*4));ck(cudaMalloc(&ds,ids.size()*8));ck(cudaMalloc(&out,40));
+ cudaStream_t stream;cudaEvent_t done;ck(cudaStreamCreateWithFlags(&stream,cudaStreamNonBlocking));ck(cudaEventCreateWithFlags(&done,cudaEventDisableTiming));
+ ck(cudaMemcpy(dq,backup.data()+qi*32,128,cudaMemcpyHostToDevice));ck(cudaMemcpy(di,ids.data(),ids.size()*4,cudaMemcpyHostToDevice));
+ VersionedPages pages;
  if(mode=="corrupt_gpu")received[0]^=511;
- ck(cudaMemcpy(d,received.data(),received.size()*4,cudaMemcpyHostToDevice));ck(cudaMemcpy(dq,backup.data()+qi*32,128,cudaMemcpyHostToDevice));ck(cudaMemcpy(di,ids.data(),ids.size()*4,cudaMemcpyHostToDevice));visible=true;log("h2d_complete",q);
- need(visible,"compute before fill");
- distances<<<1,256>>>(d,dq,di,ids.size(),ds);ck(cudaGetLastError());topk<<<1,1>>>(ds,di,ids.size(),out);ck(cudaGetLastError());ck(cudaDeviceSynchronize());log("gpu_complete",q);
+ for(int offset=0;offset<int(ids.size());offset+=32){int page=ids[offset]/32,ticket=offset+1;
+  need(pages.begin(ticket,page)=="accepted","frame admission");int f=pages.fills.at(ticket).frame;
+  if(mode=="early_publish")need(pages.acquire(ticket,page)=="acquired","device data not visible before H2D completion");
+  ck(cudaMemcpyAsync(d+f*1024,received.data()+offset*32,4096,cudaMemcpyHostToDevice,stream));
+  ck(cudaEventRecord(done,stream));ck(cudaEventSynchronize(done));need(pages.publish(ticket,cudaEventQuery(done)==cudaSuccess)=="ready","fill event permit");log("h2d_complete",page);
+  need(pages.acquire(ticket,page)=="acquired","consume permit");
+  distances<<<1,32,0,stream>>>(d+f*1024,dq,di+offset,32,ds+offset);ck(cudaGetLastError());
+  ck(cudaEventRecord(done,stream));ck(cudaEventSynchronize(done));need(pages.release(ticket,cudaEventQuery(done)==cudaSuccess)=="released","consumer event permit");
+  need(pages.evict(page)=="evicted","frame reclamation");
+ }
+ topk<<<1,1,0,stream>>>(ds,di,ids.size(),out);ck(cudaGetLastError());ck(cudaStreamSynchronize(stream));log("gpu_complete",q);
+ ck(cudaEventDestroy(done));ck(cudaStreamDestroy(stream));
  std::vector<long long> score(ids.size());std::array<int,10> index;ck(cudaMemcpy(score.data(),ds,score.size()*8,cudaMemcpyDeviceToHost));ck(cudaMemcpy(index.data(),out,40,cudaMemcpyDeviceToHost));
  std::cout<<"{\"query\":"<<q<<",\"candidates\":[";for(size_t i=0;i<ids.size();++i)std::cout<<(i?",":"")<<"["<<ids[i]<<","<<score[i]<<"]";
  std::cout<<"],\"topk\":[";for(int k=0;k<10;++k)std::cout<<(k?",":"")<<ids[index[k]];std::cout<<"]}\n";

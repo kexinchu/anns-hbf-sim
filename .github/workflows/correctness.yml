@@ -18,6 +18,8 @@ jobs:
       - run: python3 tests/read_recovery_contract.py build/read_recovery_sanitized
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ivendor/HBXim/src src/bank_adapter_contract.cpp -o build/bank_adapter_sanitized
       - run: build/bank_adapter_sanitized
+      - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g src/page_lifecycle_probe.cpp -o build/page_lifecycle_sanitized
+      - run: python3 gpu/verify_lifecycle.py build/page_lifecycle_sanitized build/lifecycle-sanitized-validation CPU
       - run: cmake -S build/eventlab-overlay -B build-upstream -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DHBF_EVENTLAB_EXPERIMENT_TESTS=OFF
       - run: cmake --build build-upstream -j 4
       - run: ctest --test-dir build-upstream --output-on-failure
@@ -35,3 +37,5 @@ jobs:
             build/bank-validation/
             build/bank-sanitized-validation/
             build/bank-anns-validation/
+            build/lifecycle-validation/
+            build/lifecycle-sanitized-validation/

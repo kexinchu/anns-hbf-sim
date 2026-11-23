@@ -2,8 +2,13 @@
 
 A correctness-first research scaffold for ANNS across GPU, HBM and HBF.
 **Experimental software: not an OCP-certified implementation, not a calibrated
-hardware predictor. Performance experiments remain disabled.** GPU computation
-is currently a synthetic resource; vector payloads are checked by a CPU sidecar.
+hardware predictor. Performance experiments remain disabled.** EventLab GPU computation
+is a synthetic resource with CPU-side payload checks. The separate A6000 functional
+path executes real CUDA distance/top-k and event-gated page lifetimes; it does not
+calibrate HBM/HBF or integrate EventLab wire traffic.
+
+See [versioned page lifecycle acceptance](docs/PAGE_LIFECYCLE_REVIEW.md) for
+finite frames, refresh/read races, writeback failure and die isolation evidence.
 
 ## Reproduce
 

@@ -1,0 +1,3 @@
+Local clang ASan startup failure before test execution (not a product failure or passing test):
+AddressSanitizer: CHECK failed: sanitizer_malloc_mac.inc:189 "((!asan_init_is_running)) != (0)" (0x0, 0x0)
+<empty stack>
