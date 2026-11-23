@@ -14,6 +14,9 @@ finite frames, refresh/read races, writeback failure and die isolation evidence.
 See [writeback token/epoch and EventLab review](docs/WIRE_ACK_REVIEW.md) for the
 current integration scope and remaining gates.
 
+See [multichannel groups and joint recovery/CUDA review](docs/MULTICHANNEL_REVIEW.md)
+for the complete-group API and combined fault/race validation scope.
+
 ## Reproduce
 
 Requires Python 3, Git, CMake >=3.20 and a C++20 compiler. No GPU required.

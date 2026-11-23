@@ -1,0 +1,11 @@
+{
+  "args": [
+    "64",
+    "0",
+    "10",
+    "misbind_ack"
+  ],
+  "stdout": "{\"event\":\"old_retired\",\"frames\":[[2,1,\"retired\",1,0],[-1,0,\"free\",0,0],[-1,0,\"free\",0,0],[-1,0,\"free\",0,0]],\"accepted\":320,\"responses\":320,\"errors\":0,\"replay\":0,\"old_pending\":true}\n{\"event\":\"before_group\",\"frames\":[[2,1,\"retired\",1,0],[0,1,\"ready\",0,1],[1,1,\"ready\",0,1],[-1,0,\"free\",0,0]],\"accepted\":320,\"responses\":320,\"errors\":0,\"replay\":0,\"old_pending\":true}\n{\"event\":\"submitted\",\"frames\":[[2,1,\"retired\",1,0],[0,1,\"writeback\",0,1],[1,1,\"writeback\",0,1],[-1,0,\"free\",0,0]],\"accepted\":320,\"responses\":320,\"errors\":0,\"replay\":0,\"old_pending\":true}\n{\"event\":\"program_fail\",\"frames\":[[2,1,\"retired\",1,0],[0,1,\"writeback\",0,1],[1,1,\"writeback\",0,1],[-1,0,\"free\",0,0]],\"accepted\":448,\"responses\":320,\"errors\":0,\"replay\":0,\"old_pending\":true}\n{\"event\":\"partial_parent\",\"frames\":[[2,1,\"retired\",1,0],[0,1,\"writeback\",0,1],[1,1,\"writeback\",0,1],[-1,0,\"free\",0,0]],\"accepted\":512,\"responses\":512,\"errors\":64,\"replay\":64,\"old_pending\":true}\n{\"event\":\"recovered_held\",\"frames\":[[2,1,\"retired\",1,0],[0,1,\"writeback\",0,1],[1,1,\"writeback\",0,1],[-1,0,\"free\",0,0]],\"accepted\":512,\"responses\":512,\"errors\":64,\"replay\":64,\"old_pending\":true}\n{\"event\":\"first_commit\",\"frames\":[[2,1,\"retired\",1,0],[0,1,\"ready\",0,0],[1,1,\"ready\",0,0],[-1,0,\"free\",0,0]],\"accepted\":512,\"responses\":512,\"errors\":64,\"replay\":64,\"old_pending\":true}\n{\"event\":\"old_ack_rejected\",\"frames\":[[2,1,\"retired\",1,0],[0,1,\"ready\",0,0],[1,1,\"ready\",0,0],[-1,0,\"free\",0,0]],\"accepted\":512,\"responses\":512,\"errors\":64,\"replay\":64,\"old_pending\":true}\n{\"event\":\"partial_parent\",\"frames\":[[2,1,\"retired\",1,0],[0,1,\"ready\",0,0],[1,1,\"ready\",0,0],[-1,0,\"free\",0,0]],\"accepted\":640,\"responses\":576,\"errors\":64,\"replay\":64,\"old_pending\":true}\n",
+  "stderr": "second aggregate\n",
+  "exit": 1
+}

@@ -1,0 +1,10 @@
+{
+  "args": [
+    "4",
+    "64",
+    "6"
+  ],
+  "stdout": "",
+  "stderr": "incomplete or unsupported interleave group\n",
+  "exit": 1
+}

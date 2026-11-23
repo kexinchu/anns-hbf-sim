@@ -31,3 +31,5 @@ See [new recovery/deadline/bank evidence](RECOVERY_BANK_REVIEW.md). New candidat
 See [A6000 functional recovery evidence](../gpu/README.md). CUDA execution does not change the calibration or performance gate.
 
 See [writeback identity and EventLab integration review](WIRE_ACK_REVIEW.md). The performance gate remains CLOSED.
+
+See [multichannel aggregation and joint race review](MULTICHANNEL_REVIEW.md). Directed reusable program-fail/CUDA races supplement, but do not exhaust, asynchronous fault coverage.

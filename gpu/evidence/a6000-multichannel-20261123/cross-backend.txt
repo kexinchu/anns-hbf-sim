@@ -1,0 +1,1 @@
+PASS: all six positive state/score/command traces match CPU, GPU 1 and GPU 0 exactly after removing backend label.

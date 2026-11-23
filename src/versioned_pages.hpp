@@ -1,5 +1,6 @@
 #pragma once
-#include <array>
+#include <vector>
+#include <stdexcept>
 #include <map>
 #include <set>
 #include <string>
@@ -15,16 +16,17 @@ public:
  std::map<int,Write> writebacks;std::map<int,std::uint64_t> epochs;std::uint64_t next_write=0;
  bool matches(int page,std::uint64_t token,std::uint64_t epoch)const{auto i=writebacks.find(page);return i!=writebacks.end()&&i->second.token==token&&i->second.epoch==epoch;}
  struct Lease {int frame;unsigned generation;};
- std::array<Frame,2> frames{};std::map<int,unsigned> versions;
+ explicit VersionedPages(unsigned n=2):frames(n){if(!n||n>8)throw std::invalid_argument("frame capacity");}
+ std::vector<Frame> frames;std::map<int,unsigned> versions;
  std::map<int,Fill> fills;std::map<int,Lease> leases;std::set<int> blocked;
  unsigned version(int page){auto [i,_]=versions.emplace(page,1);return i->second;}
- int resident(int page)const{for(int i=0;i<2;++i)if(frames[i].page==page&&(frames[i].state=="ready"||frames[i].state=="writeback"))return i;return -1;}
+ int resident(int page)const{for(int i=0;i<int(frames.size());++i)if(frames[i].page==page&&(frames[i].state=="ready"||frames[i].state=="writeback"))return i;return -1;}
  std::string begin(int ticket,int page){
   if(ticket<0||page<0||page>=8||fills.count(ticket))return "invalid";
   if(blocked.count(page/4))return "blocked";
   unsigned g=version(page);
   for(auto&f:frames)if(f.page==page&&f.generation==g&&f.state!="free")return "busy";
-  for(int i=0;i<2;++i)if(frames[i].state=="free"){
+  for(int i=0;i<int(frames.size());++i)if(frames[i].state=="free"){
    frames[i]={page,g,"filling",0,false};fills.emplace(ticket,Fill{i,g});return "accepted";}
   return "full";
  }
@@ -44,7 +46,7 @@ public:
  }
  std::string acquire(int lease,int page){if(lease<0||page<0||page>=8||leases.count(lease))return "invalid";
   if(blocked.count(page/4))return "blocked";
-  for(int i=0;i<2;++i){auto&f=frames[i];if(f.page==page&&f.generation==version(page)&&f.state=="ready"){
+  for(int i=0;i<int(frames.size());++i){auto&f=frames[i];if(f.page==page&&f.generation==version(page)&&f.state=="ready"){
     ++f.pins;leases.emplace(lease,Lease{i,f.generation});return "acquired";}}
   return "unavailable";
  }
