@@ -1,0 +1,1 @@
+PASS registration rollback, incomplete/unknown/duplicate completion, counter exhaustion

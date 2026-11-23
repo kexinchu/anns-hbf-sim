@@ -1,0 +1,546 @@
+{
+  "input": [
+    "fill 1 0",
+    "dirty 0",
+    "send 120 0 0",
+    "evict 0",
+    "send 120 0 1",
+    "ack 120",
+    "pump",
+    "ack 120",
+    "dirty 0",
+    "send 120 0 1",
+    "send 121 0 1",
+    "oldfail 120",
+    "ack 120",
+    "refresh 0",
+    "evict 0",
+    "pump",
+    "ack 121",
+    "ack 121",
+    "evict 0"
+  ],
+  "expected_results": [
+    "ready",
+    "dirty",
+    "rejected",
+    "busy",
+    "sent",
+    "invalid",
+    "drained",
+    "committed",
+    "dirty",
+    "rejected",
+    "sent",
+    "stale_ack",
+    "stale_ack",
+    "busy",
+    "unavailable",
+    "drained",
+    "committed",
+    "stale_ack",
+    "evicted"
+  ],
+  "expected_states": [
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "writeback",
+    "writeback",
+    "writeback",
+    "ready",
+    "ready",
+    "ready",
+    "writeback",
+    "writeback",
+    "writeback",
+    "writeback",
+    "writeback",
+    "writeback",
+    "ready",
+    "ready",
+    "free"
+  ],
+  "expected_dirty": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+  ],
+  "actual": [
+    {
+      "result": "ready",
+      "completed": 0,
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 0,
+      "responses": 0,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "dirty",
+      "completed": 0,
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 0,
+      "responses": 0,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "rejected",
+      "completed": 0,
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 0,
+      "responses": 0,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "busy",
+      "completed": 0,
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 0,
+      "responses": 0,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "sent",
+      "completed": 0,
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 0,
+      "responses": 0,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "invalid",
+      "completed": 0,
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 0,
+      "responses": 0,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "drained",
+      "completed": 1,
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 64,
+      "responses": 64,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "committed",
+      "completed": 1,
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 64,
+      "responses": 64,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "dirty",
+      "completed": 1,
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 64,
+      "responses": 64,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "rejected",
+      "completed": 1,
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 64,
+      "responses": 64,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "sent",
+      "completed": 1,
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 64,
+      "responses": 64,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "stale_ack",
+      "completed": 1,
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 64,
+      "responses": 64,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "stale_ack",
+      "completed": 1,
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 64,
+      "responses": 64,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "busy",
+      "completed": 1,
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 64,
+      "responses": 64,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "unavailable",
+      "completed": 1,
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 64,
+      "responses": 64,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "drained",
+      "completed": 2,
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 128,
+      "responses": 128,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "committed",
+      "completed": 2,
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 128,
+      "responses": 128,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "stale_ack",
+      "completed": 2,
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 128,
+      "responses": 128,
+      "errors": 0,
+      "replay": 0
+    },
+    {
+      "result": "evicted",
+      "completed": 2,
+      "frames": [
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "accepted": 128,
+      "responses": 128,
+      "errors": 0,
+      "replay": 0
+    }
+  ],
+  "stderr": "D2H event incomplete\nrequest ID reuse\n",
+  "exit": 0
+}

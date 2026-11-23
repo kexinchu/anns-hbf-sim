@@ -4,12 +4,16 @@
 #include <set>
 #include <string>
 #include <cstdint>
+#include <limits>
 // Generation-checked finite frame owner. GPU event readiness is supplied only by
 // the CUDA adapter. No timing estimate may authorize publication/reclamation.
 class VersionedPages {
 public:
  struct Frame {int page=-1;unsigned generation=0;std::string state="free";unsigned pins=0;bool dirty=false;};
  struct Fill {int frame;unsigned generation;};
+ struct Write {std::uint64_t token,epoch;int frame;unsigned generation;};
+ std::map<int,Write> writebacks;std::map<int,std::uint64_t> epochs;std::uint64_t next_write=0;
+ bool matches(int page,std::uint64_t token,std::uint64_t epoch)const{auto i=writebacks.find(page);return i!=writebacks.end()&&i->second.token==token&&i->second.epoch==epoch;}
  struct Lease {int frame;unsigned generation;};
  std::array<Frame,2> frames{};std::map<int,unsigned> versions;
  std::map<int,Fill> fills;std::map<int,Lease> leases;std::set<int> blocked;
@@ -53,8 +57,13 @@ public:
  std::string evict(int page){for(auto&f:frames)if(f.page==page&&f.state=="ready"){
    if(f.pins||f.dirty)return "busy";f=Frame{};return "evicted";}return "unavailable";}
  std::string writeback(int page){for(auto&f:frames)if(f.page==page&&f.state=="ready"){
-   if(blocked.count(page/4))return "blocked";if(f.pins)return "busy";if(!f.dirty)return "clean";f.state="writeback";return "writing";}return "unavailable";}
- std::string written(int page,bool ready,bool success){for(auto&f:frames)if(f.page==page&&f.state=="writeback"){
-   if(!ready)return "pending";f.state="ready";if(success)f.dirty=false;return success?"committed":"failed";}return "invalid";}
+   if(blocked.count(page/4))return "blocked";if(f.pins)return "busy";if(!f.dirty)return "clean";if(next_write==std::numeric_limits<std::uint64_t>::max()||epochs[page]==std::numeric_limits<std::uint64_t>::max())return "exhausted";f.state="writeback";writebacks[page]={++next_write,++epochs[page],int(&f-frames.data()),f.generation};return "writing";}return "unavailable";}
+ std::string written(int page,std::uint64_t token,std::uint64_t epoch,bool ready,bool success){
+  if(!matches(page,token,epoch))return "stale_ack";
+  auto w=writebacks.at(page);auto&f=frames[w.frame];
+  if(f.page!=page||f.generation!=w.generation||f.state!="writeback")return "stale_ack";
+  if(!ready)return "pending";writebacks.erase(page);f.state="ready";if(success)f.dirty=false;
+  return success?"committed":"failed";
+ }
  std::string block(int die,bool value){if(die<0||die>=2)return "invalid";if(value)blocked.insert(die);else blocked.erase(die);return value?"blocked":"resumed";}
 };

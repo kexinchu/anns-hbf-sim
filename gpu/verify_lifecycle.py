@@ -5,7 +5,7 @@ No C++ state or simulator output is used to generate expected answers.
 import copy,json,pathlib,random,subprocess,sys,uuid
 class Reference:
  def __init__(self):
-  self.f=[[-1,0,'free',0,0] for _ in range(2)];self.v={};self.fill={};self.lease={};self.write={};self.blocked=set();self.values={};self.backing={}
+  self.f=[[-1,0,'free',0,0] for _ in range(2)];self.v={};self.fill={};self.lease={};self.write={};self.blocked=set();self.values={};self.backing={};self.tokens={};self.epochs={};self.serial=0
  def free(self,i):self.f[i]=[-1,0,'free',0,0]
  def apply(self,line):
   op,*raw=line.split();a,b,c,d=(list(map(int,raw))+[0]*4)[:4];r='invalid';gpu=[]
@@ -61,15 +61,19 @@ class Reference:
     elif op=='dirty':f[4]=1;r='dirty'
     elif op=='evict':self.free(i);r='evicted'
     elif not f[4]:r='clean'
-    else:f[2]='writeback';self.write[a]=[i,bool(b),True,self.values[i]];r='writing'
+    else:
+     f[2]='writeback';self.write[a]=[i,bool(b),True,self.values[i]];r='writing'
+     self.serial+=1;self.epochs[a]=self.epochs.get(a,0)+1;self.tokens[a]=(self.serial,self.epochs[a])
     break
-  elif op=='commit' and a in self.write:
+  elif op=='ack' and (a not in self.tokens or self.tokens[a]!=(b,c)):r='stale_ack'
+  elif op in ('commit','ack') and a in self.write:
    i,held,_,value=self.write[a]
    if self.f[i][0]==a and self.f[i][2]=='writeback':
     if held:r='pending'
     else:
-     self.f[i][2]='ready';r='committed' if c else 'failed'
-     if c:self.f[i][4]=0;self.backing[a]=[a,value,value+1023%17]
+     success=d if op=='ack' else c
+     self.f[i][2]='ready';self.tokens.pop(a,None);r='committed' if success else 'failed'
+     if success:self.f[i][4]=0;self.backing[a]=[a,value,value+1023%17]
   elif op=='block' and 0<=a<2:
    if b:self.blocked.add(a)
    else:self.blocked.discard(a)
@@ -81,6 +85,7 @@ class Reference:
 
 def cases(value=10):
  return {
+ 'old_ack':[f'fill 1 0 {value} 0','publish 1 1','dirty 0','writeback 0 0','commit 0 1 0','writeback 0 1','ack 0 1 1 1','ack 0 2 1 1','ack 4 2 2 1','ack 0 2 2 1','open 2 0','commit 0 1 1','ack 0 2 2 1','evict 0','refresh 0',f'fill 2 0 {value+100} 0','publish 2 1','dirty 0','writeback 0 1','ack 0 2 2 1','open 2 0','commit 0 1 1'],
  'late_response':[f'fill 1 0 {value} 1','publish 1 0','refresh 0',f'fill 2 0 {value+100} 0','publish 2 1','acquire 1 0 0','release 1 1','open 0 1','publish 1 1','publish 1 1','acquire 2 0 0','release 2 1'],
  'refresh_reader':[f'fill 1 0 {value} 0','publish 1 1','acquire 1 0 1','refresh 0',f'fill 2 0 {value+100} 0','publish 2 1','release 1 0',f'fill 3 2 {value} 0','acquire 2 0 0','release 2 1','open 1 1','release 1 1','release 1 1',f'fill 3 2 {value} 0','publish 3 1'],
  'writeback_failure':[f'fill 1 0 {value} 0','publish 1 1','dirty 0','refresh 0','writeback 0 1','commit 0 0 0','refresh 0','acquire 1 0 0','open 2 0','commit 0 1 0','evict 0','acquire 1 0 0','release 1 1','writeback 0 0','commit 0 1 1','evict 0'],

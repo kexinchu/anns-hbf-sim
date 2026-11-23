@@ -5,6 +5,11 @@
 #include "physical/hbm/hbm_device.hpp"
 #include "online_hbm.hpp"
 #include "bank_adapter.hpp"
+#include "versioned_pages.hpp"
+#include "eventlab_page_writeback.hpp"
+#ifdef ANNS_CUDA
+#include "../gpu/page_backend.h"
+#endif
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -29,9 +34,11 @@ std::int64_t distance(const Vec&a,const Vec&b){std::int64_t x=0;for(int j=0;j<D;
 struct Task{U at,serial;std::function<void()> fn;};
 struct Later{bool operator()(const Task&a,const Task&b)const{return std::tie(a.at,a.serial)>std::tie(b.at,b.serial);}};
 struct Query{Vec v{};std::vector<int> pages;std::vector<Score> scores;int consumed=0;U produced=0;};
-struct Slot{bool busy=false,visible=false;int q=-1,page=-1;std::array<unsigned char,PS> bytes{};};
+struct Slot{int ticket=0;bool busy=false,visible=false;int q=-1,page=-1;std::array<unsigned char,PS> bytes{};};
 class Run {
   el::SimulationSession hbf;
+  VersionedPages pages;
+  EventLabPageWriteback writeback{pages};unsigned write_acks=0;
 #ifdef ANNS_CONCURRENT
   #ifdef ANNS_BANK
   BankAdapter hbm;
@@ -91,10 +98,12 @@ class Run {
     while(!waiting.empty()){
       auto it=std::find_if(slots.begin(),slots.end(),[](auto&s){return !s.busy;});
       if(it==slots.end()){blocked++;return;}
-      int s=int(it-slots.begin());auto [q,p]=waiting.front();waiting.pop_front();
+      int s=int(it-slots.begin());auto [q,p]=waiting.front();
+      auto admission=pages.begin(int(request),p);if(admission=="busy")return;check(admission=="accepted","page admission");
+      check(pages.fills.at(int(request)).frame==s,"frame ownership mismatch");waiting.pop_front();
       check(now>=queries[q].produced,"request before producer");
       *it=Slot{};it->busy=true;it->q=q;it->page=p;
-      U id=request++;reads+=PS;
+      U id=request++;it->ticket=int(id);reads+=PS;
       peak=std::max(peak,U(std::count_if(slots.begin(),slots.end(),[](auto&a){return a.busy;})));
       log("hbf_submit",q,s,p,0,0,PS);
       el::GlobalRequest r{el::GlobalRequestId{id},el::Op::Read,el::GlobalByteAddress{U(p)*PS},PS};
@@ -105,14 +114,25 @@ class Run {
   }
   void consume(int s){auto& slot=slots[s];check(slot.busy&&slot.visible,"consume before HBM visibility");
     int q=slot.q,p=slot.page;
+#ifdef ANNS_CUDA
+    long long gpu_scores[PER];cuda_page_score(s,queries[q].v.data(),gpu_scores);
+#endif
     for(int j=0;j<PER;j++){Vec v;std::memcpy(v.data(),slot.bytes.data()+j*sizeof(Vec),sizeof(Vec));
-      check(v==db[p*PER+j],"payload mismatch");queries[q].scores.emplace_back(distance(v,queries[q].v),p*PER+j);}
+      check(v==db[p*PER+j],"payload mismatch");
+#ifdef ANNS_CUDA
+      check(gpu_scores[j]==distance(v,queries[q].v),"CUDA distance mismatch");queries[q].scores.emplace_back(gpu_scores[j],p*PER+j);
+#else
+      queries[q].scores.emplace_back(distance(v,queries[q].v),p*PER+j);
+#endif
+    }
+    check(pages.release(slot.ticket,true)=="released","consumer completion");check(pages.evict(p)=="evicted","page eviction");
     log("consume",q,s,p);slot.busy=false;slot.visible=false;queries[q].consumed++;admit();
     if(queries[q].consumed==int(queries[q].pages.size())){
       memory(q,-1,true,65536+q*256,128,[this,q]{compute(q,-1,gpu_ps,[this,q]{finish(q);});});
     }
   }
   void returned(const el::GlobalCompletion& c){
+    if(c.result.id.value>=100000){auto ack=writeback.completion(c);check(writeback.deliver(ack)=="committed","wire writeback failed");++write_acks;return;}
     check(c.result.state==el::LogicalResult::Success,"HBF failure");
     if(c.result.id.value<1000)return;
     now=c.at.value;auto i=pending.find(c.result.id.value);check(i!=pending.end(),"unknown completion");
@@ -123,6 +143,11 @@ class Run {
       auto& slot=slots[s];check(slot.busy&&slot.page==p&&slot.q==q,"buffer overwritten during fill");
       std::memcpy(slot.bytes.data(),reinterpret_cast<const unsigned char*>(db.data())+address,PS);
       if(mutation=="corrupt_payload")slot.bytes[0]^=1;
+      #ifdef ANNS_CUDA
+      cuda_page_fill(s,slot.bytes.data()); // Returns only after a real H2D event.
+#endif
+      check(pages.publish(slot.ticket,true)=="ready","page publication");
+      check(pages.acquire(slot.ticket,p)=="acquired","page consume permit");
       slot.visible=true;log("visible",q,s,p);
       memory(q,s,false,U(s)*PS,PS,[this,s,q]{compute(q,s,gpu_ps,[this,s]{consume(s);});});
     });
@@ -157,6 +182,9 @@ public:
     hbm(hbm_config()),
 #endif
     slots(buffers),gpu_ps(compute_ps),producer_ps(delay),mutation(std::move(fault)){
+#ifdef ANNS_CUDA
+    cuda_pages_init();std::cout<<"{\"backend\":\"CUDA_A6000\",\"performance_ready\":false}\n";
+#endif
     check(buffers>=1&&buffers<=2&&gpu_ps>0&&producer_ps>0,"invalid fixture setting");
     for(int i=0;i<N;i++)for(int j=0;j<D;j++)db[i][j]=(i/64)*100+((i*17+j*13)%23)-11;
     queries[0].v=db[27];queries[1].v=db[172];
@@ -186,9 +214,30 @@ public:
     check(hbm.resident_bursts()==0,"HBM queue leak");
 #endif
     check(std::none_of(slots.begin(),slots.end(),[](auto&s){return s.busy;}),"buffer leak");
+    if(mutation=="wire_writeback"){
+      // Rewrite the full fixture prefix in NAND order, not arbitrary dirty eviction.
+      for(int p=0;p<8;p++){
+        int t=200000+p;check(pages.begin(t,p)=="accepted","writeback frame admission");int f=pages.fills.at(t).frame;
+#ifdef ANNS_CUDA
+        cuda_page_fill(f,db.data()+p*PER);
+#endif
+        check(pages.publish(t,true)=="ready","writeback staging");check(pages.dirty(p)=="dirty","writeback dirty");
+#ifdef ANNS_CUDA
+        std::array<unsigned char,PS> copy{};cuda_page_readback(f,copy.data());
+        check(std::memcmp(copy.data(),db.data()+p*PER,PS)==0,"writeback D2H payload");
+#endif
+        writeback.submit(hbf,100000+p,p,2,true);auto w=hbf.advance_until_yield();
+        check(w.run.status==el::RunStatus::WaitingForInput&&write_acks==unsigned(p+1),"wire writeback drain");
+        check(pages.evict(p)=="evicted","wire ACK must precede eviction");
+      }
+      std::cout<<"{\"wire_writebacks\":"<<write_acks<<",\"performance_ready\":false}\n";
+    }
+#ifdef ANNS_CUDA
+    cuda_pages_close();
+#endif
     hbf.close_input();auto r=hbf.run_to_completion();check(r.run.status==el::RunStatus::Completed&&r.run.workload_success,"drain failed");
     check(reads==8*PS&&writes==reads+256&&hbm_reads==reads+1024,"byte accounting");
-    std::cout<<"{\"status\":\"PASS\",\"scope\":\"CPU_FUNCTIONAL_UNCALIBRATED\",\"peak_slots\":"<<peak
+    std::cout<<"{\"status\":\"PASS\",\"scope\":\"EVENTLAB_PAGE_FUNCTIONAL_UNCALIBRATED\",\"peak_slots\":"<<peak
       <<",\"blocked_admissions\":"<<blocked<<",\"hbf_bytes\":"<<reads<<",\"hbm_write_bytes\":"<<writes<<",\"hbm_read_bytes\":"<<hbm_reads<<"}\n";
   }
 };

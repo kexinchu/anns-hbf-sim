@@ -20,6 +20,8 @@ jobs:
       - run: build/bank_adapter_sanitized
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g src/page_lifecycle_probe.cpp -o build/page_lifecycle_sanitized
       - run: python3 gpu/verify_lifecycle.py build/page_lifecycle_sanitized build/lifecycle-sanitized-validation CPU
+      - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ibuild/eventlab-overlay/include src/page_wire_probe.cpp build/eventlab/libhbf_eventlab.a -o build/page_wire_sanitized
+      - run: python3 tests/page_wire_diff.py build/page_wire_sanitized build/wire-sanitizer-validation
       - run: cmake -S build/eventlab-overlay -B build-upstream -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DHBF_EVENTLAB_EXPERIMENT_TESTS=OFF
       - run: cmake --build build-upstream -j 4
       - run: ctest --test-dir build-upstream --output-on-failure
@@ -37,5 +39,8 @@ jobs:
             build/bank-validation/
             build/bank-sanitized-validation/
             build/bank-anns-validation/
+            build/wire-sanitizer-validation/
+            build/page-wire-validation/
+            build/wire-anns-validation/
             build/lifecycle-validation/
             build/lifecycle-sanitized-validation/

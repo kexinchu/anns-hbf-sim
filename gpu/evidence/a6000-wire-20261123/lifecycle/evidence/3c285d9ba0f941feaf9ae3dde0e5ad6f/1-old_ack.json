@@ -1,0 +1,1087 @@
+{
+  "input": [
+    "fill 1 0 54 0",
+    "publish 1 1",
+    "dirty 0",
+    "writeback 0 0",
+    "commit 0 1 0",
+    "writeback 0 1",
+    "ack 0 1 1 1",
+    "ack 0 2 1 1",
+    "ack 4 2 2 1",
+    "ack 0 2 2 1",
+    "open 2 0",
+    "commit 0 1 1",
+    "ack 0 2 2 1",
+    "evict 0",
+    "refresh 0",
+    "fill 2 0 154 0",
+    "publish 2 1",
+    "dirty 0",
+    "writeback 0 1",
+    "ack 0 2 2 1",
+    "open 2 0",
+    "commit 0 1 1"
+  ],
+  "expected": [
+    {
+      "result": "accepted",
+      "frames": [
+        [
+          0,
+          1,
+          "filling",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "ready",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "dirty",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "writing",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "failed",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "writing",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "pending",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "opened",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "committed",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "evicted",
+      "frames": [
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "refreshed",
+      "frames": [
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "accepted",
+      "frames": [
+        [
+          0,
+          2,
+          "filling",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "ready",
+      "frames": [
+        [
+          0,
+          2,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "dirty",
+      "frames": [
+        [
+          0,
+          2,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "writing",
+      "frames": [
+        [
+          0,
+          2,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          2,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "opened",
+      "frames": [
+        [
+          0,
+          2,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "committed",
+      "frames": [
+        [
+          0,
+          2,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          154,
+          157
+        ]
+      ]
+    }
+  ],
+  "actual": [
+    {
+      "result": "accepted",
+      "frames": [
+        [
+          0,
+          1,
+          "filling",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "ready",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "dirty",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "writing",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "failed",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "writing",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "pending",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "opened",
+      "frames": [
+        [
+          0,
+          1,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": []
+    },
+    {
+      "result": "committed",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          1,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "evicted",
+      "frames": [
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "refreshed",
+      "frames": [
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "accepted",
+      "frames": [
+        [
+          0,
+          2,
+          "filling",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "ready",
+      "frames": [
+        [
+          0,
+          2,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "dirty",
+      "frames": [
+        [
+          0,
+          2,
+          "ready",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "writing",
+      "frames": [
+        [
+          0,
+          2,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "stale_ack",
+      "frames": [
+        [
+          0,
+          2,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "opened",
+      "frames": [
+        [
+          0,
+          2,
+          "writeback",
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "result": "committed",
+      "frames": [
+        [
+          0,
+          2,
+          "ready",
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          "free",
+          0,
+          0
+        ]
+      ],
+      "gpu": [],
+      "backing": [
+        [
+          0,
+          154,
+          157
+        ]
+      ]
+    }
+  ],
+  "stderr": ""
+}

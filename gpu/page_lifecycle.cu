@@ -11,7 +11,7 @@ void ck(cudaError_t e){if(e!=cudaSuccess)throw std::runtime_error(cudaGetErrorSt
 struct Gate {std::mutex mutex;std::condition_variable cv;bool open=false;
  void release(){std::lock_guard<std::mutex> l(mutex);open=true;cv.notify_all();}
  static void CUDART_CB wait(void*p){auto&g=*static_cast<Gate*>(p);std::unique_lock<std::mutex> l(g.mutex);g.cv.wait(l,[&]{return g.open;});}};
-struct Work {cudaStream_t stream;cudaEvent_t event;Gate gate;void* host=nullptr;long long* output=nullptr;
+struct Work {std::uint64_t token=0,epoch=0;cudaStream_t stream;cudaEvent_t event;Gate gate;void* host=nullptr;long long* output=nullptr;
  Work(){ck(cudaStreamCreateWithFlags(&stream,cudaStreamNonBlocking));ck(cudaEventCreateWithFlags(&event,cudaEventDisableTiming));ck(cudaMallocHost(&host,4096));ck(cudaMalloc(&output,42*8));}
  void start(bool hold){if(hold)ck(cudaLaunchHostFunc(stream,Gate::wait,&gate));else gate.release();}
  bool ready(bool wait){if(wait)ck(cudaEventSynchronize(event));auto e=cudaEventQuery(event);if(e==cudaErrorNotReady)return false;ck(e);return true;}
@@ -46,9 +46,11 @@ int main(int argc,char**argv){try{
  }else if(op=="dirty")result=m.dirty(a);
  else if(op=="evict")result=m.evict(a);
  else if(op=="writeback"){
-  result=m.writeback(a);if(result=="writing"){auto w=work(b);int frame=m.resident(a);ck(cudaMemcpyAsync(w->host,device+frame*1024,4096,cudaMemcpyDeviceToHost,w->stream));ck(cudaEventRecord(w->event,w->stream));writes[a]=std::move(w);}
+  result=m.writeback(a);if(result=="writing"){auto w=work(b);auto t=m.writebacks.at(a);w->token=t.token;w->epoch=t.epoch;int frame=m.resident(a);ck(cudaMemcpyAsync(w->host,device+frame*1024,4096,cudaMemcpyDeviceToHost,w->stream));ck(cudaEventRecord(w->event,w->stream));writes[a]=std::move(w);}
  }else if(op=="commit"){
-  if(writes.count(a)){bool ready=writes.at(a)->ready(b);result=m.written(a,ready,c);if(result=="committed"){auto p=static_cast<int*>(writes.at(a)->host);backing[a]=std::vector<int>(p,p+1024);}}
+  if(writes.count(a)){bool ready=writes.at(a)->ready(b);result=m.written(a,writes.at(a)->token,writes.at(a)->epoch,ready,c);if(result=="committed"){auto p=static_cast<int*>(writes.at(a)->host);backing[a]=std::vector<int>(p,p+1024);}}
+ }else if(op=="ack"){
+  result="stale_ack";if(m.matches(a,b,c)){bool ready=writes.at(a)->ready(false);result=m.written(a,b,c,ready,d);if(result=="committed"){auto p=static_cast<int*>(writes.at(a)->host);backing[a]=std::vector<int>(p,p+1024);}}
  }else if(op=="block")result=m.block(a,b);
  else if(op=="open"){
   auto& group=a==0?fills:a==1?leases:writes;auto i=group.find(b);if(i!=group.end()){i->second->gate.release();result="opened";}

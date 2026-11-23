@@ -5,10 +5,14 @@ A correctness-first research scaffold for ANNS across GPU, HBM and HBF.
 hardware predictor. Performance experiments remain disabled.** EventLab GPU computation
 is a synthetic resource with CPU-side payload checks. The separate A6000 functional
 path executes real CUDA distance/top-k and event-gated page lifetimes; it does not
-calibrate HBM/HBF or integrate EventLab wire traffic.
+calibrate HBM/HBF. The optional integrated CUDA target now follows EventLab
+Host/Device command responses; it does not model serialized AXI/UCIe packets.
 
 See [versioned page lifecycle acceptance](docs/PAGE_LIFECYCLE_REVIEW.md) for
 finite frames, refresh/read races, writeback failure and die isolation evidence.
+
+See [writeback token/epoch and EventLab review](docs/WIRE_ACK_REVIEW.md) for the
+current integration scope and remaining gates.
 
 ## Reproduce
 
