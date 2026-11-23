@@ -84,3 +84,5 @@ functional dependency path. `read_recovery_probe` separately tests OCP read-erro
 host actions; it does **not** yet implement device ECC or transport retry metadata
 through EventLab. See [the extension audit](docs/RECOVERY_BANK_REVIEW.md).
 All timings remain uncalibrated and performance experiments remain disabled.
+
+Reset/cancel and permanent-failure functional scope: [review](docs/RESET_CANCEL_REVIEW.md). Physical die reset and calibration remain open; performance stays disabled.

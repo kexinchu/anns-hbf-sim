@@ -113,3 +113,5 @@ hashes, device UUIDs, compiler version, commands, exits and complete output:
 These checks establish the directed functional contract above. They do not close
 physical HBM/HBF calibration or the explicitly excluded OCP cases. Performance
 experiments remain disabled.
+
+The later [reset/cancellation review](RESET_CANCEL_REVIEW.md) adds actual permanent-program-failure tests and host drain/fence semantics. Physical reset and calibration remain open.

@@ -1,0 +1,1 @@
+PASS 18 directed variants (9 families), 3 detected mutations

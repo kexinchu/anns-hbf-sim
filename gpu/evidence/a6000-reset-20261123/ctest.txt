@@ -1,0 +1,45 @@
+Test project /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/build
+      Start  1: hbm_contract
+ 1/20 Test  #1: hbm_contract .....................   Passed    0.01 sec
+      Start  2: ocp_profile_contract
+ 2/20 Test  #2: ocp_profile_contract .............   Passed    0.35 sec
+      Start  3: anns_closed_loop
+ 3/20 Test  #3: anns_closed_loop .................   Passed    9.86 sec
+      Start  4: resource_contract
+ 4/20 Test  #4: resource_contract ................   Passed    0.78 sec
+      Start  5: protocol_diff
+ 5/20 Test  #5: protocol_diff ....................   Passed    2.55 sec
+      Start  6: anns_concurrent
+ 6/20 Test  #6: anns_concurrent ..................   Passed    9.38 sec
+      Start  7: deadline_diff
+ 7/20 Test  #7: deadline_diff ....................   Passed    0.37 sec
+      Start  8: recovery_diff
+ 8/20 Test  #8: recovery_diff ....................   Passed    0.44 sec
+      Start  9: bank_diff
+ 9/20 Test  #9: bank_diff ........................   Passed    0.29 sec
+      Start 10: anns_bank
+10/20 Test #10: anns_bank ........................   Passed    9.18 sec
+      Start 11: read_recovery_contract
+11/20 Test #11: read_recovery_contract ...........   Passed    0.12 sec
+      Start 12: bank_adapter_contract
+12/20 Test #12: bank_adapter_contract ............   Passed    0.01 sec
+      Start 13: page_lifecycle_diff
+13/20 Test #13: page_lifecycle_diff ..............   Passed    0.21 sec
+      Start 14: page_wire_diff
+14/20 Test #14: page_wire_diff ...................   Passed    1.88 sec
+      Start 15: page_wire_anns
+15/20 Test #15: page_wire_anns ...................   Passed    4.79 sec
+      Start 16: page_writeback_contract
+16/20 Test #16: page_writeback_contract ..........   Passed    0.40 sec
+      Start 17: multichannel_mapping
+17/20 Test #17: multichannel_mapping .............   Passed    2.22 sec
+      Start 18: multichannel_race
+18/20 Test #18: multichannel_race ................   Passed    4.55 sec
+      Start 19: page_group_contract
+19/20 Test #19: page_group_contract ..............   Passed    0.32 sec
+      Start 20: reset_race_diff
+20/20 Test #20: reset_race_diff ..................   Passed    3.21 sec
+
+100% tests passed out of 20
+
+Total Test time (real) =  51.02 sec

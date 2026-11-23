@@ -40,7 +40,42 @@ public:
   auto group=it->second;auto&g=groups.at(group);parents.erase(it);++g.done;
   g.success &= c.result.state==hbf_eventlab::LogicalResult::Success;
   if(g.done!=g.acks.size())return std::nullopt;
-  auto ack=g.acks;for(auto&a:ack)a.success=g.success;groups.erase(group);terminal.emplace(ack.front().token,ack);return ack;
+  auto ack=g.acks;for(auto&a:ack)a.success=g.success;groups.erase(group);terminal.emplace(ack.front().token,ack);completed.emplace(group,ack.front().token);return ack;
+ }
+ // Cancellation revokes host commit permission; accepted wire work still drains.
+ bool cancel(std::uint64_t id){
+  auto it=groups.find(id);if(it!=groups.end()){it->second.success=false;return true;}
+  auto t=completed.find(id);if(t==completed.end())return false;
+  auto& a=terminal.at(t->second);
+  bool live=false;for(auto&w:a)live |= pages.matches(w.page,w.token,w.epoch);
+  if(!live)return false;
+  for(auto&w:a)w.success=false;
+  return true;
+ }
+ Ack terminal_ack(std::uint64_t id)const{return terminal.at(completed.at(id));}
+ void reset_begin(int die){
+  if(die<0||die>=2||resetting.count(die))throw std::invalid_argument("invalid reset scope");
+  resetting.insert(die);pages.block(die,true);
+  for(auto&[id,g]:groups)for(auto&a:g.acks)if(a.page/4==die){g.success=false;break;}
+  for(auto&[token,ack]:terminal){bool affected=false;for(auto&a:ack)affected |= a.page/4==die;
+   if(affected)for(auto&a:ack)a.success=false;
+  }
+ }
+ std::string reset_finish(hbf_eventlab::SimulationSession& session,int die,bool ready){
+  if(!resetting.count(die))return "invalid";
+  // Outstanding parents must drain even after cancellation; no synthetic ACKs.
+  for(auto&[id,g]:groups)for(auto&a:g.acks)if(a.page/4==die)return "draining";
+  for(auto&[p,w]:pages.writebacks)if(p/4==die)return "draining";
+  auto stats=session.host().statistics();
+  if(stats.accepted!=stats.responses||session.next_event_time())return "draining";
+  if(!ready)return "not_ready";
+  pages.block(die,false);
+  // Clean cached versions are invalidated, pinned consumers retain their frame.
+  // Dirty backup remains authoritative until explicit ordered replay succeeds.
+  for(int p=die*4;p<die*4+4;p++){bool dirty=false;for(auto&f:pages.frames)if(f.page==p&&f.dirty)dirty=true;
+   if(!dirty)pages.refresh(p);
+  }
+  resetting.erase(die);return "resumed";
  }
  std::string deliver(const Ack& ack){
   if(ack.empty())return "stale_ack";
@@ -53,5 +88,6 @@ public:
 private:
  struct Group {Ack acks;unsigned done=0;bool success=true;};
  std::map<std::uint64_t,Ack> terminal;
+ std::map<std::uint64_t,std::uint64_t> completed;std::set<int> resetting;
  VersionedPages& pages;std::map<std::uint64_t,Group> groups;std::map<std::uint64_t,std::uint64_t> parents;std::set<std::uint64_t> used;
 };

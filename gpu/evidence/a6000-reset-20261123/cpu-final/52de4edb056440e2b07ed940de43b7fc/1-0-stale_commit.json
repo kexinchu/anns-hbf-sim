@@ -1,0 +1,10 @@
+{
+  "args": [
+    "1",
+    "0",
+    "stale_commit"
+  ],
+  "exit": 1,
+  "stdout": "{\"event\":\"submitted\",\"frames\":[[2,1,\"ready\",1,0],[4,1,\"ready\",0,0],[0,1,\"writeback\",0,1],[1,1,\"writeback\",0,1]],\"accepted\":0,\"responses\":0,\"errors\":0,\"replay\":0,\"faults\":0,\"parents\":0,\"old_pending\":true}\n{\"event\":\"parent\",\"frames\":[[2,1,\"ready\",1,0],[4,1,\"ready\",0,0],[0,1,\"writeback\",0,1],[1,1,\"writeback\",0,1]],\"accepted\":128,\"responses\":64,\"errors\":0,\"replay\":0,\"faults\":0,\"parents\":1,\"old_pending\":true}\n{\"event\":\"parent\",\"frames\":[[2,1,\"ready\",1,0],[4,1,\"ready\",0,0],[0,1,\"writeback\",0,1],[1,1,\"writeback\",0,1]],\"accepted\":128,\"responses\":128,\"errors\":0,\"replay\":0,\"faults\":0,\"parents\":2,\"old_pending\":true}\n{\"event\":\"fenced\",\"frames\":[[2,1,\"ready\",1,0],[4,1,\"ready\",0,0],[0,1,\"writeback\",0,1],[1,1,\"writeback\",0,1]],\"accepted\":128,\"responses\":128,\"errors\":0,\"replay\":0,\"faults\":0,\"parents\":2,\"old_pending\":true}\n",
+  "stderr": "terminal policy\n"
+}

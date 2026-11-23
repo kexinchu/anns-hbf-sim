@@ -1,0 +1,1 @@
+PASS: 18 complete positive traces identical across CPU, A6000 GPU 0, and sanitized CPU after removing backend label. Source hashes match checkout.

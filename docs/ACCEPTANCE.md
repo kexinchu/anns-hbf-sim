@@ -33,3 +33,5 @@ See [A6000 functional recovery evidence](../gpu/README.md). CUDA execution does 
 See [writeback identity and EventLab integration review](WIRE_ACK_REVIEW.md). The performance gate remains CLOSED.
 
 See [multichannel aggregation and joint race review](MULTICHANNEL_REVIEW.md). Directed reusable program-fail/CUDA races supplement, but do not exhaust, asynchronous fault coverage.
+
+Reset/cancel and permanent-failure functional scope: [review](RESET_CANCEL_REVIEW.md). Physical die reset and calibration remain open; performance stays disabled.
