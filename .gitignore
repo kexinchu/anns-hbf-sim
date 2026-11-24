@@ -6,3 +6,5 @@ __pycache__/
 results/
 .DS_Store
 calibration/paper-curves/**/probe.bin
+
+calibration/fcfs-index/**/probe.bin

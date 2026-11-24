@@ -1,0 +1,6 @@
+{
+  "points": 64,
+  "invalid_points": 0,
+  "corrupt_outputs_rejected": 256,
+  "scope": "output and arrival contract; not independent physical timing model"
+}

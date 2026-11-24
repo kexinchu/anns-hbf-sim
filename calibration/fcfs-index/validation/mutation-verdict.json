@@ -1,0 +1,27 @@
+[
+  {
+    "mutant": "omit_cursor_reset",
+    "case": "cursor",
+    "diagnostic": "FCFS scan differential mismatch"
+  },
+  {
+    "mutant": "reverse_age",
+    "case": "release_order",
+    "diagnostic": "FAIL: FCFS scan differential mismatch"
+  },
+  {
+    "mutant": "omit_handoff_cleanup",
+    "case": "release_order",
+    "diagnostic": "FAIL: stale FCFS age index"
+  },
+  {
+    "mutant": "omit_terminal_completion",
+    "case": "split",
+    "diagnostic": "FAIL terminal index membership mismatch"
+  },
+  {
+    "mutant": "omit_terminal_requeue",
+    "case": "retry",
+    "diagnostic": "terminal index membership mismatch"
+  }
+]

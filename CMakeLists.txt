@@ -5,8 +5,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Scope donor test settings without overwriting the parent cache.
 include(CTest)
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
+set(ANNS_FCFS_INDEX "ON" CACHE STRING "FCFS execution optimization: ON, OFF, CHECK")
+if(NOT ANNS_FCFS_INDEX MATCHES "^(ON|OFF|CHECK)$")
+  message(FATAL_ERROR "Invalid ANNS_FCFS_INDEX")
+endif()
 execute_process(COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/prepare_eventlab.py
-  ${CMAKE_CURRENT_SOURCE_DIR}/vendor/EventLab ${CMAKE_CURRENT_BINARY_DIR}/eventlab-overlay
+  ${CMAKE_CURRENT_SOURCE_DIR}/vendor/EventLab ${CMAKE_CURRENT_BINARY_DIR}/eventlab-overlay ${ANNS_FCFS_INDEX}
   COMMAND_ERROR_IS_FATAL ANY)
 function(add_donors)
   set(BUILD_TESTING OFF)
@@ -14,6 +18,9 @@ function(add_donors)
 
 endfunction()
 add_donors()
+if(ANNS_FCFS_INDEX STREQUAL "CHECK")
+  target_compile_definitions(hbf_eventlab PRIVATE HBF_FCFS_SCAN_ORACLE=1)
+endif()
 # Reuse only HBM. Donor CLI assumes it owns CMAKE_SOURCE_DIR.
 add_library(anns_hbm vendor/HBXim/src/physical/hbm/hbm_device.cpp
   vendor/HBXim/src/physical/address_heatmap.cpp)
@@ -235,4 +242,25 @@ add_executable(paper_curve_probe src/paper_curve_probe.cpp)
 target_link_libraries(paper_curve_probe PRIVATE HBFEventLab::core)
 if(BUILD_TESTING)
   add_test(NAME paper_curve_contract COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/paper_curve_contract.py $<TARGET_FILE:paper_curve_probe>)
+endif()
+
+if(BUILD_TESTING)
+  foreach(suite host host_send_policy host_retry host_incremental)
+    add_executable(fcfs_${suite}_contract vendor/EventLab/tests/${suite}.cpp)
+    target_link_libraries(fcfs_${suite}_contract PRIVATE HBFEventLab::core hbf_eventlab_workload_io)
+    add_test(NAME fcfs_${suite}_contract COMMAND ${Python3_EXECUTABLE}
+      ${CMAKE_CURRENT_SOURCE_DIR}/tests/fcfs_donor_contract.py
+      $<TARGET_FILE:fcfs_${suite}_contract>
+      ${CMAKE_CURRENT_SOURCE_DIR}/vendor/EventLab/tests/${suite}.cpp)
+  endforeach()
+endif()
+add_executable(fcfs_cursor_contract src/fcfs_cursor_contract.cpp)
+target_link_libraries(fcfs_cursor_contract PRIVATE HBFEventLab::core)
+if(BUILD_TESTING)
+  add_test(NAME fcfs_cursor_contract COMMAND fcfs_cursor_contract)
+endif()
+add_executable(fcfs_incremental_retry_contract src/fcfs_incremental_retry_contract.cpp)
+target_link_libraries(fcfs_incremental_retry_contract PRIVATE HBFEventLab::core)
+if(BUILD_TESTING)
+  add_test(NAME fcfs_incremental_retry_contract COMMAND fcfs_incremental_retry_contract)
 endif()

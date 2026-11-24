@@ -1,0 +1,18 @@
+Internal ctest changing into directory: /tmp/fcfs-validation-20261123-NgB4zI/build-o1
+Test project /tmp/fcfs-validation-20261123-NgB4zI/build-o1
+    Start 29: fcfs_host_contract
+1/6 Test #29: fcfs_host_contract ................   Passed   22.06 sec
+    Start 30: fcfs_host_send_policy_contract
+2/6 Test #30: fcfs_host_send_policy_contract ....   Passed    3.10 sec
+    Start 31: fcfs_host_retry_contract
+3/6 Test #31: fcfs_host_retry_contract ..........   Passed    2.00 sec
+    Start 32: fcfs_host_incremental_contract
+4/6 Test #32: fcfs_host_incremental_contract ....   Passed    4.35 sec
+    Start 33: fcfs_cursor_contract
+5/6 Test #33: fcfs_cursor_contract ..............   Passed    0.06 sec
+    Start 34: fcfs_incremental_retry_contract
+6/6 Test #34: fcfs_incremental_retry_contract ...   Passed    0.08 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =  31.65 sec

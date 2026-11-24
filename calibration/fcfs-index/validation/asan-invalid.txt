@@ -1,0 +1,58 @@
+Test project /private/tmp/anns-fcfs-sanitized
+    Start 29: fcfs_host_contract
+1/6 Test #29: fcfs_host_contract ................***Failed    1.18 sec
+Traceback (most recent call last):
+  File "/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/tests/fcfs_donor_contract.py", line 9, in <module>
+    assert r.returncode==0,(case,r.stderr,r.stdout)
+           ^^^^^^^^^^^^^^^
+AssertionError: ('delayed_old_attempts', 'AddressSanitizer: CHECK failed: sanitizer_malloc_mac.inc:189 "((!asan_init_is_running)) != (0)" (0x0, 0x0) (tid=18095030)\n    <empty stack>\n\n', '')
+
+    Start 30: fcfs_host_send_policy_contract
+2/6 Test #30: fcfs_host_send_policy_contract ....***Failed    0.78 sec
+Traceback (most recent call last):
+  File "/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/tests/fcfs_donor_contract.py", line 9, in <module>
+    assert r.returncode==0,(case,r.stderr,r.stdout)
+           ^^^^^^^^^^^^^^^
+AssertionError: ('order', 'AddressSanitizer: CHECK failed: sanitizer_malloc_mac.inc:189 "((!asan_init_is_running)) != (0)" (0x0, 0x0) (tid=18095083)\n    <empty stack>\n\n', '')
+
+    Start 31: fcfs_host_retry_contract
+3/6 Test #31: fcfs_host_retry_contract ..........***Failed    0.78 sec
+Traceback (most recent call last):
+  File "/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/tests/fcfs_donor_contract.py", line 9, in <module>
+    assert r.returncode==0,(case,r.stderr,r.stdout)
+           ^^^^^^^^^^^^^^^
+AssertionError: ('pending_root_first', 'AddressSanitizer: CHECK failed: sanitizer_malloc_mac.inc:189 "((!asan_init_is_running)) != (0)" (0x0, 0x0) (tid=18095093)\n    <empty stack>\n\n', '')
+
+    Start 32: fcfs_host_incremental_contract
+4/6 Test #32: fcfs_host_incremental_contract ....***Failed    0.85 sec
+Traceback (most recent call last):
+  File "/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/tests/fcfs_donor_contract.py", line 9, in <module>
+    assert r.returncode==0,(case,r.stderr,r.stdout)
+           ^^^^^^^^^^^^^^^
+AssertionError: ('split', 'AddressSanitizer: CHECK failed: sanitizer_malloc_mac.inc:189 "((!asan_init_is_running)) != (0)" (0x0, 0x0) (tid=18095108)\n    <empty stack>\n\n', '')
+
+    Start 33: fcfs_cursor_contract
+5/6 Test #33: fcfs_cursor_contract ..............Subprocess aborted***Exception:   0.48 sec
+AddressSanitizer: CHECK failed: sanitizer_malloc_mac.inc:189 "((!asan_init_is_running)) != (0)" (0x0, 0x0) (tid=18095121)
+    <empty stack>
+
+
+    Start 34: fcfs_incremental_retry_contract
+6/6 Test #34: fcfs_incremental_retry_contract ...Subprocess aborted***Exception:   0.47 sec
+AddressSanitizer: CHECK failed: sanitizer_malloc_mac.inc:189 "((!asan_init_is_running)) != (0)" (0x0, 0x0) (tid=18095134)
+    <empty stack>
+
+
+
+0% tests passed, 6 tests failed out of 6
+
+Total Test time (real) =   4.61 sec
+
+The following tests FAILED:
+	 29 - fcfs_host_contract (Failed)
+	 30 - fcfs_host_send_policy_contract (Failed)
+	 31 - fcfs_host_retry_contract (Failed)
+	 32 - fcfs_host_incremental_contract (Failed)
+	 33 - fcfs_cursor_contract (Subprocess aborted)
+	 34 - fcfs_incremental_retry_contract (Subprocess aborted)
+Errors while running CTest

@@ -1,0 +1,474 @@
+Analysis of sampling probe.bin (pid 45104) every 1 millisecond
+Process:         probe.bin [45104]
+Path:            /Users/USER/*/probe.bin
+Load Address:    0x104014000
+Identifier:      probe.bin
+Version:         0
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  Python [45079]
+Target Type:     live task
+
+Date/Time:       2026-11-23 19:20:45.525 -0500
+Launch Time:     2026-11-23 19:20:08.431 -0500
+OS Version:      macOS 26.4 (25E246)
+Report Version:  7
+Analysis Tool:   /usr/bin/sample
+
+Physical footprint:         54.1M
+Physical footprint (peak):  72.7M
+Idle exit:                  untracked
+----
+
+Call graph:
+    738 Thread_18087339   DispatchQueue_1: com.apple.main-thread  (serial)
+      738 start  (in dyld) + 6992  [0x1808bbda4]
+        738 main  (in probe.bin) + 3320  [0x104016aec]
+          738 hbf_eventlab::EventQueue::run()  (in probe.bin) + 24  [0x104066508]
+            732 hbf_eventlab::EventQueue::run_next()  (in probe.bin) + 1692  [0x1040662fc]
+            + 732 hbf_eventlab::EventQueue::invoke(hbf_eventlab::EventQueue::Event)  (in probe.bin) + 264  [0x104065c20]
+            +   559 std::__function::__func<hbf_eventlab::HostDriver::schedule(hbf_eventlab::Quantity<hbf_eventlab::TickTag>, std::function<void ()>)::$_4, void ()>::operator()()  (in probe.bin) + 212  [0x104027f5c]
+            +   ! 192 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 3360,4164,...  [0x10402142c,0x104021750,...]
+            +   ! 57 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2456  [0x1040210a4]
+            +   ! : 38 hbf_eventlab::DeviceDriver::try_submit(hbf_eventlab::LocalTransaction const&, std::function<void (hbf_eventlab::DeliveredResponse const&)>, std::function<void (hbf_eventlab::AcceptedNotice const&)>)  (in probe.bin) + 328,276,...  [0x10403a7cc,0x10403a798,...]
+            +   ! : 18 hbf_eventlab::DeviceDriver::try_submit(hbf_eventlab::LocalTransaction const&, std::function<void (hbf_eventlab::DeliveredResponse const&)>, std::function<void (hbf_eventlab::AcceptedNotice const&)>)  (in probe.bin) + 996  [0x10403aa68]
+            +   ! : | 18 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+            +   ! : |   11 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 104,260,...  [0x180a99f3c,0x180a99fd8,...]
+            +   ! : |   5 <deduplicated_symbol>  (in libsystem_malloc.dylib) + 112,0,...  [0x180a94144,0x180a940d4,...]
+            +   ! : |   2 _xzm_xzone_malloc  (in libsystem_malloc.dylib) + 184,192  [0x180a94978,0x180a94980]
+            +   ! : 1 hbf_eventlab::DeviceDriver::try_submit(hbf_eventlab::LocalTransaction const&, std::function<void (hbf_eventlab::DeliveredResponse const&)>, std::function<void (hbf_eventlab::AcceptedNotice const&)>)  (in probe.bin) + 2592  [0x10403b0a4]
+            +   ! :   1 hbf_eventlab::DeviceDriver::schedule(hbf_eventlab::Quantity<hbf_eventlab::TickTag>, hbf_eventlab::EventPhase, std::function<void ()>)  (in probe.bin) + 68  [0x104039f54]
+            +   ! :     1 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+            +   ! :       1 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 488  [0x180a9a0bc]
+            +   ! 46 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 6100  [0x104021ee0]
+            +   ! : 30 hbf_eventlab::AdmissionWaitRegistry::subscribe(std::vector<hbf_eventlab::WaitObservation> const&, std::function<void ()>)  (in probe.bin) + 408  [0x1040615d4]
+            +   ! : | 30 std::__tree<std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, std::__map_value_compare<hbf_eventlab::WaitKey, std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, true>>::find<hbf_eventlab::WaitKey>(hbf_eventlab::WaitKey const&) const  (in probe.bin) + 52,60,...  [0x104061e84,0x104061e8c,...]
+            +   ! : 14 hbf_eventlab::AdmissionWaitRegistry::subscribe(std::vector<hbf_eventlab::WaitObservation> const&, std::function<void ()>)  (in probe.bin) + 468  [0x104061610]
+            +   ! : | 14 std::__tree_node_base<void*>*& std::__tree<std::__value_type<hbf_eventlab::WaitKey, std::set<hbf_eventlab::Quantity<hbf_eventlab::WaitTag>>>, std::__map_value_compare<hbf_eventlab::WaitKey, std::__value_type<hbf_eventlab::WaitKey, std::set<hbf_eventlab::Quantity<hbf_eventlab::WaitTag>>>, true>>::__find_equal<hbf_eventlab::WaitKey>(std::__tree_end_node<std::__tree_node_base<void*>*>*&, hbf_eventlab::WaitKey const&)  (in probe.bin) + 48,212,...  [0x104062520,0x1040625c4,...]
+            +   ! : 1 hbf_eventlab::AdmissionWaitRegistry::subscribe(std::vector<hbf_eventlab::WaitObservation> const&, std::function<void ()>)  (in probe.bin) + 488  [0x104061624]
+            +   ! : | 1 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+            +   ! : |   1 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 176  [0x180a99f84]
+            +   ! : 1 hbf_eventlab::AdmissionWaitRegistry::subscribe(std::vector<hbf_eventlab::WaitObservation> const&, std::function<void ()>)  (in probe.bin) + 628  [0x1040616b0]
+            +   ! 44 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 3032  [0x1040212e4]
+            +   ! : 44 hbf_eventlab::AdmissionWaitRegistry::observe(hbf_eventlab::WaitKey) const  (in probe.bin) + 36  [0x1040610c8]
+            +   ! :   44 std::__tree<std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, std::__map_value_compare<hbf_eventlab::WaitKey, std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, true>>::find<hbf_eventlab::WaitKey>(hbf_eventlab::WaitKey const&) const  (in probe.bin) + 52,60,...  [0x104061e84,0x104061e8c,...]
+            +   ! 39 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 372  [0x104020880]
+            +   ! : 34 hbf_eventlab::DeviceDriver::channel_send_blockers(unsigned int) const  (in probe.bin) + 96  [0x10403a550]
+            +   ! : | 33 hbf_eventlab::AdmissionWaitRegistry::observe(hbf_eventlab::WaitKey) const  (in probe.bin) + 36  [0x1040610c8]
+            +   ! : | + 33 std::__tree<std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, std::__map_value_compare<hbf_eventlab::WaitKey, std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, true>>::find<hbf_eventlab::WaitKey>(hbf_eventlab::WaitKey const&) const  (in probe.bin) + 52,60,...  [0x104061e84,0x104061e8c,...]
+            +   ! : | 1 hbf_eventlab::AdmissionWaitRegistry::observe(hbf_eventlab::WaitKey) const  (in probe.bin) + 36  [0x1040610c8]
+            +   ! : 5 hbf_eventlab::DeviceDriver::channel_send_blockers(unsigned int) const  (in probe.bin) + 184,220,...  [0x10403a5a8,0x10403a5cc,...]
+            +   ! 29 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 5208  [0x104021b64]
+            +   ! : 14 _xzm_free  (in libsystem_malloc.dylib) + 1048  [0x180a95484]
+            +   ! : | 14 mach_absolute_time  (in libsystem_kernel.dylib) + 108,36,...  [0x180c3410c,0x180c340c4,...]
+            +   ! : 8 _xzm_free  (in libsystem_malloc.dylib) + 136,120,...  [0x180a950f4,0x180a950e4,...]
+            +   ! : 4 _free  (in libsystem_malloc.dylib) + 44,56,...  [0x180aa4c78,0x180aa4c84,...]
+            +   ! : 2 free  (in libsystem_malloc.dylib) + 0  [0x180a6b6b8]
+            +   ! : 1 _xzm_free  (in libsystem_malloc.dylib) + 352  [0x180a951cc]
+            +   ! :   1 __bzero  (in libsystem_platform.dylib) + 0  [0x180c81090]
+            +   ! 21 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 6196  [0x104021f40]
+            +   ! : 12 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | 6 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + 5 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! 4 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! : 4 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :   2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :   | 2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :   |   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :   |   + 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :   |   +   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :   |   +     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 60  [0x104027384]
+            +   ! : | + ! :   |   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | + ! :   |     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | + ! :   |       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :   |         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :   |           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 0  [0x104027348]
+            +   ! : | + ! :   2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | + ! :     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :     + 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | + ! :     +   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :     +     1 DYLD-STUB$$operator delete(void*)  (in probe.bin) + 0  [0x104068a20]
+            +   ! : | + ! :     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | + ! :       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | + ! :         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | + ! :           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + ! :             1 DYLD-STUB$$operator delete(void*)  (in probe.bin) + 4  [0x104068a24]
+            +   ! : | + ! 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | + !   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + !     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | + !       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | + !         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 4  [0x10402734c]
+            +   ! : | + 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | +   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | +     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : | +       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | +         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | +           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | +             1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : | +               1 DYLD-STUB$$free  (in libc++abi.dylib) + 8  [0x180c2ebd8]
+            +   ! : | 6 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   3 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   ! 2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   ! : 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   ! : | 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   ! : |   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   ! : |     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   ! : |       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   ! : |         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   ! : |           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 60  [0x104027384]
+            +   ! : |   ! : 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   ! :   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   ! :     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   ! :       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   ! :         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   ! :           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   ! :             1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   ! 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   !   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   !     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   !       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |   !         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   !           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   !             1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |   !               1 _xzm_free  (in libsystem_malloc.dylib) + 304  [0x180a9519c]
+            +   ! : |   3 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |     2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |     : 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |     : | 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |     : |   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |     : |     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |     : |       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |     : |         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |     : |           1 _xzm_free  (in libsystem_malloc.dylib) + 232  [0x180a95154]
+            +   ! : |     : 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |     :   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |     :     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |     :       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |     :         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |     :           1 operator delete(void*)  (in libc++abi.dylib) + 0  [0x180c194b4]
+            +   ! : |     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |             1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! : |               1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |                 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! : |                   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 4  [0x10402734c]
+            +   ! : 9 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :   9 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     7 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + 4 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + ! 3 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + ! : 2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + ! : | 1 _xzm_free  (in libsystem_malloc.dylib) + 352  [0x180a951cc]
+            +   ! :     + ! : | + 1 DYLD-STUB$$_platform_bzero  (in libsystem_malloc.dylib) + 8  [0x180aac7f4]
+            +   ! :     + ! : | 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + ! : |   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + ! : |     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + ! : |       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + ! : |         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + ! : |           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + ! : |             1 _free  (in libsystem_malloc.dylib) + 76  [0x180aa4c98]
+            +   ! :     + ! : 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + ! :   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + ! :     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + ! :       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + ! :         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + ! :           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + ! :             1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 48  [0x104027378]
+            +   ! :     + ! 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + !   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + !     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + !       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + !         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + !           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + !             1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     + !               1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     + !                 1 _xzm_free  (in libsystem_malloc.dylib) + 64  [0x180a950ac]
+            +   ! :     + 3 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +   2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +   : 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +   : | 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +   : |   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +   : |     1 _xzm_free  (in libsystem_malloc.dylib) + 352  [0x180a951cc]
+            +   ! :     +   : 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     +   :   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +   :     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +   :       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +   :         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +   :           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 8  [0x104027350]
+            +   ! :     +   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     +     1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :     +       1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     +         1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     +           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     +             1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     +               1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :     +                 1 _free  (in libsystem_malloc.dylib) + 100  [0x180aa4cb0]
+            +   ! :     2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :       2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :         2 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :           ! 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :           !   1 _free  (in libsystem_malloc.dylib) + 96  [0x180aa4cac]
+            +   ! :           1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :             1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :               1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :                 1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+            +   ! :                   1 std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+            +   ! :                     1 _free  (in libsystem_malloc.dylib) + 44  [0x180aa4c78]
+            +   ! 19 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2564  [0x104021110]
+            +   ! : 10 _xzm_free  (in libsystem_malloc.dylib) + 1332,232,...  [0x180a955a0,0x180a95154,...]
+            +   ! : 2 DYLD-STUB$$operator delete(void*)  (in probe.bin) + 4  [0x104068a24]
+            +   ! : 2 _xzm_free  (in libsystem_malloc.dylib) + 352  [0x180a951cc]
+            +   ! : | 2 _platform_memset  (in libsystem_platform.dylib) + 180  [0x180c811a4]
+            +   ! : 2 std::__function::__func<hbf_eventlab::HostDriver::pump(unsigned int)::$_1, void (hbf_eventlab::DeliveredResponse const&)>::destroy_deallocate()  (in probe.bin) + 28  [0x104028424]
+            +   ! : | 2 std::__shared_weak_count::__release_weak()  (in libc++.1.dylib) + 20  [0x180b8b580]
+            +   ! : 2 std::__function::__func<hbf_eventlab::HostDriver::pump(unsigned int)::$_1, void (hbf_eventlab::DeliveredResponse const&)>::destroy_deallocate()  (in probe.bin) + 0  [0x104028408]
+            +   ! : 1 _free  (in libsystem_malloc.dylib) + 0  [0x180aa4c4c]
+            +   ! 18 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 4288  [0x1040217cc]
+            +   ! : 18 hbf_eventlab::HostDriver::eligible(hbf_eventlab::HostDriver::Unit const&) const  (in probe.bin) + 240,228,...  [0x104020268,0x10402025c,...]
+            +   ! 16 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2292  [0x104021000]
+            +   ! : 15 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+            +   ! : | 10 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 76,12,...  [0x180a99f20,0x180a99ee0,...]
+            +   ! : | 2 <deduplicated_symbol>  (in libsystem_malloc.dylib) + 212  [0x180a941a8]
+            +   ! : | 2 _xzm_xzone_malloc  (in libsystem_malloc.dylib) + 8,324  [0x180a948c8,0x180a94a04]
+            +   ! : | 1 malloc_type_malloc  (in libsystem_malloc.dylib) + 72  [0x180a8802c]
+            +   ! : 1 DYLD-STUB$$operator new(unsigned long)  (in probe.bin) + 4  [0x104068a30]
+            +   ! 14 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2380  [0x104021058]
+            +   ! : 14 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+            +   ! :   11 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 488,420,...  [0x180a9a0bc,0x180a9a078,...]
+            +   ! :   3 <deduplicated_symbol>  (in libsystem_malloc.dylib) + 164,0  [0x180a94178,0x180a940d4]
+            +   ! 13 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2880  [0x10402124c]
+            +   ! : 13 std::__tree_balance_after_insert[abi:ne180100]<std::__tree_node_base<void*>*>(std::__tree_node_base<void*>*, std::__tree_node_base<void*>*)  (in probe.bin) + 84,24,...  [0x104018194,0x104018158,...]
+            +   ! 12 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2832  [0x10402121c]
+            +   ! : 12 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+            +   ! :   8 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 420,96,...  [0x180a9a078,0x180a99f34,...]
+            +   ! :   3 <deduplicated_symbol>  (in libsystem_malloc.dylib) + 112,164  [0x180a94144,0x180a94178]
+            +   ! :   1 xzm_malloc_zone_malloc_type_malloc  (in libsystem_malloc.dylib) + 0  [0x180aa011c]
+            +   ! 12 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 5860  [0x104021df0]
+            +   ! : 12 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+            +   ! :   8 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 488,96,...  [0x180a9a0bc,0x180a99f34,...]
+            +   ! :   3 <deduplicated_symbol>  (in libsystem_malloc.dylib) + 112,120,...  [0x180a94144,0x180a9414c,...]
+            +   ! :   1 malloc_type_malloc  (in libsystem_malloc.dylib) + 84  [0x180a88038]
+            +   ! 11 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2504  [0x1040210d4]
+            +   ! : 5 _xzm_free  (in libsystem_malloc.dylib) + 352,304,...  [0x180a951cc,0x180a9519c,...]
+            +   ! : 2 _free  (in libsystem_malloc.dylib) + 36,56  [0x180aa4c70,0x180aa4c84]
+            +   ! : 2 _xzm_free  (in libsystem_malloc.dylib) + 352  [0x180a951cc]
+            +   ! : | 2 _platform_memset  (in libsystem_platform.dylib) + 180,208  [0x180c811a4,0x180c811c0]
+            +   ! : 2 std::__function::__func<hbf_eventlab::HostDriver::pump(unsigned int)::$_2, void (hbf_eventlab::AcceptedNotice const&)>::destroy_deallocate()  (in probe.bin) + 28  [0x10402867c]
+            +   ! :   2 std::__shared_weak_count::__release_weak()  (in libc++.1.dylib) + 8,20  [0x180b8b574,0x180b8b580]
+            +   ! 6 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 5256  [0x104021b94]
+            +   ! : 5 _xzm_free  (in libsystem_malloc.dylib) + 260,992,...  [0x180a95170,0x180a9544c,...]
+            +   ! : 1 DYLD-STUB$$operator delete(void*)  (in probe.bin) + 0  [0x104068a20]
+            +   ! 3 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2576  [0x10402111c]
+            +   ! : 2 DYLD-STUB$$std::__shared_weak_count::__release_weak()  (in probe.bin) + 4  [0x104068940]
+            +   ! : 1 std::__shared_weak_count::__release_weak()  (in libc++.1.dylib) + 12  [0x180b8b578]
+            +   ! 2 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 2516  [0x1040210e0]
+            +   ! : 2 std::__shared_weak_count::__release_weak()  (in libc++.1.dylib) + 8  [0x180b8b574]
+            +   ! 1 hbf_eventlab::FcfsHostSendPolicy::select(std::vector<hbf_eventlab::HostSendCandidate> const&) const  (in probe.bin) + 104  [0x104026c24]
+            +   ! 1 hbf_eventlab::HostDriver::eligible(hbf_eventlab::HostDriver::Unit const&) const  (in probe.bin) + 156  [0x104020214]
+            +   ! 1 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 124  [0x104020788]
+            +   ! : 1 hbf_eventlab::AdmissionWaitRegistry::cancel(hbf_eventlab::Quantity<hbf_eventlab::WaitTag>)  (in probe.bin) + 160  [0x104061a30]
+            +   ! :   1 hbf_eventlab::EventQueue::cancel(hbf_eventlab::Quantity<hbf_eventlab::EventIdTag>)  (in probe.bin) + 64  [0x104065694]
+            +   ! 1 hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin) + 584  [0x104020954]
+            +   ! : 1 hbf_eventlab::FcfsHostSendPolicy::select(std::vector<hbf_eventlab::HostSendCandidate> const&) const  (in probe.bin) + 24  [0x104026bd4]
+            +   ! 1 operator new(unsigned long)  (in libc++abi.dylib) + 76  [0x180c2e800]
+            +   52 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 136,116,...  [0x10403d39c,0x10403d388,...]
+            +   44 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 576  [0x10403d554]
+            +   ! 23 hbf_eventlab::DeviceDriver::execute_media(unsigned int)  (in probe.bin) + 2756  [0x10403e09c]
+            +   ! : 13 hbf_eventlab::DeviceDriver::prior_sense(hbf_eventlab::DeviceDriver::Transaction const&, hbf_eventlab::BankKey) const  (in probe.bin) + 232  [0x10403fd9c]
+            +   ! : | 6 hbf_eventlab::ReadPath::probe(hbf_eventlab::ReadCandidate, bool) const  (in probe.bin) + 388  [0x10405c668]
+            +   ! : | + 2 hbf_eventlab::ReadPath::observe(hbf_eventlab::HostCommand const&) const  (in probe.bin) + 176  [0x10405b790]
+            +   ! : | + ! 1 hbf_eventlab::WritePath::read_view(hbf_eventlab::LogicalBlockKey) const  (in probe.bin) + 56  [0x104056258]
+            +   ! : | + ! : 1 hbf_eventlab::CapacityRetirementCoordinator::content_generation(hbf_eventlab::LogicalBlockKey) const  (in probe.bin) + 72  [0x10404ec10]
+            +   ! : | + ! :   1 hbf_eventlab::ReferenceAddressLayout::encode_logical(hbf_eventlab::LogicalNandAddress const&) const  (in probe.bin) + 80  [0x104049e68]
+            +   ! : | + ! 1 hbf_eventlab::WritePath::read_view(hbf_eventlab::LogicalBlockKey) const  (in probe.bin) + 72  [0x104056268]
+            +   ! : | + !   1 std::__tree<std::__value_type<hbf_eventlab::LogicalBlockKey, hbf_eventlab::WritePath::Block>, std::__map_value_compare<hbf_eventlab::LogicalBlockKey, std::__value_type<hbf_eventlab::LogicalBlockKey, hbf_eventlab::WritePath::Block>, true>>::find<hbf_eventlab::LogicalBlockKey>(hbf_eventlab::LogicalBlockKey const&) const  (in probe.bin) + 104  [0x10405a7b4]
+            +   ! : | + 1 hbf_eventlab::ReadPath::observe(hbf_eventlab::HostCommand const&) const  (in probe.bin) + 216  [0x10405b7b8]
+            +   ! : | + ! 1 hbf_eventlab::WriteAssembly::forward(hbf_eventlab::DluKey, unsigned int) const  (in probe.bin) + 4  [0x1040638b8]
+            +   ! : | + 1 hbf_eventlab::ReadPath::observe(hbf_eventlab::HostCommand const&) const  (in probe.bin) + 388  [0x10405b864]
+            +   ! : | + ! 1 hbf_eventlab::CapacityRetirementCoordinator::inspect(hbf_eventlab::ChannelAddress) const  (in probe.bin) + 64  [0x10404eed0]
+            +   ! : | + !   1 hbf_eventlab::ReferenceAddressLayout::logical_view(hbf_eventlab::ChannelAddress) const  (in probe.bin) + 56  [0x104049d84]
+            +   ! : | + !     1 hbf_eventlab::Geometry::channel_dlus() const  (in probe.bin) + 52  [0x104049530]
+            +   ! : | + 1 hbf_eventlab::ReadPath::observe(hbf_eventlab::HostCommand const&) const  (in probe.bin) + 424  [0x10405b888]
+            +   ! : | + ! 1 hbf_eventlab::NandMediaState::unusable(hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>) const  (in probe.bin) + 60  [0x104055644]
+            +   ! : | + !   1 std::__tree<std::__value_type<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, hbf_eventlab::NandMediaState::Block>, std::__map_value_compare<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, std::__value_type<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, hbf_eventlab::NandMediaState::Block>, true>>::find<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>>(hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag> const&) const  (in probe.bin) + 72  [0x1040558c0]
+            +   ! : | + 1 hbf_eventlab::ReadPath::observe(hbf_eventlab::HostCommand const&) const  (in probe.bin) + 424  [0x10405b888]
+            +   ! : | 4 hbf_eventlab::ReadPath::probe(hbf_eventlab::ReadCandidate, bool) const  (in probe.bin) + 128,312,...  [0x10405c564,0x10405c61c,...]
+            +   ! : | 3 hbf_eventlab::ReadPath::probe(hbf_eventlab::ReadCandidate, bool) const  (in probe.bin) + 484  [0x10405c6c8]
+            +   ! : |   2 hbf_eventlab::WritePath::read_view(hbf_eventlab::LogicalBlockKey) const  (in probe.bin) + 72  [0x104056268]
+            +   ! : |   ! 2 std::__tree<std::__value_type<hbf_eventlab::LogicalBlockKey, hbf_eventlab::WritePath::Block>, std::__map_value_compare<hbf_eventlab::LogicalBlockKey, std::__value_type<hbf_eventlab::LogicalBlockKey, hbf_eventlab::WritePath::Block>, true>>::find<hbf_eventlab::LogicalBlockKey>(hbf_eventlab::LogicalBlockKey const&) const  (in probe.bin) + 72,172  [0x10405a794,0x10405a7f8]
+            +   ! : |   1 hbf_eventlab::WritePath::read_view(hbf_eventlab::LogicalBlockKey) const  (in probe.bin) + 56  [0x104056258]
+            +   ! : |     1 hbf_eventlab::CapacityRetirementCoordinator::content_generation(hbf_eventlab::LogicalBlockKey) const  (in probe.bin) + 72  [0x10404ec10]
+            +   ! : |       1 hbf_eventlab::ReferenceAddressLayout::encode_logical(hbf_eventlab::LogicalNandAddress const&) const  (in probe.bin) + 28  [0x104049e34]
+            +   ! : 9 hbf_eventlab::DeviceDriver::prior_sense(hbf_eventlab::DeviceDriver::Transaction const&, hbf_eventlab::BankKey) const  (in probe.bin) + 116,124,...  [0x10403fd28,0x10403fd30,...]
+            +   ! : 1 hbf_eventlab::DeviceDriver::prior_sense(hbf_eventlab::DeviceDriver::Transaction const&, hbf_eventlab::BankKey) const  (in probe.bin) + 268  [0x10403fdc0]
+            +   ! :   1 hbf_eventlab::CapacityRetirementCoordinator::inspect(hbf_eventlab::ChannelAddress) const  (in probe.bin) + 64  [0x10404eed0]
+            +   ! :     1 hbf_eventlab::ReferenceAddressLayout::logical_view(hbf_eventlab::ChannelAddress) const  (in probe.bin) + 44  [0x104049d78]
+            +   ! 21 hbf_eventlab::DeviceDriver::execute_media(unsigned int)  (in probe.bin) + 2376,2416,...  [0x10403df20,0x10403df48,...]
+            +   36 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 588  [0x10403d560]
+            +   ! 18 hbf_eventlab::DeviceDriver::queue_responses(unsigned int)  (in probe.bin) + 116,136,...  [0x10403f42c,0x10403f440,...]
+            +   ! 15 hbf_eventlab::DeviceDriver::queue_responses(unsigned int)  (in probe.bin) + 276  [0x10403f4cc]
+            +   ! : 10 hbf_eventlab::ReadPath::response(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>) const  (in probe.bin) + 100,48,...  [0x10405deec,0x10405deb8,...]
+            +   ! : 5 hbf_eventlab::ReadPath::response(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>) const  (in probe.bin) + 196  [0x10405df4c]
+            +   ! :   3 hbf_eventlab::BankCache::load(hbf_eventlab::Quantity<hbf_eventlab::ReadResultTag>) const  (in probe.bin) + 28  [0x104037d64]
+            +   ! :   2 hbf_eventlab::BankCache::load(hbf_eventlab::Quantity<hbf_eventlab::ReadResultTag>) const  (in probe.bin) + 96  [0x104037da8]
+            +   ! :     2 hbf_eventlab::BankCache::get(hbf_eventlab::CacheFill) const  (in probe.bin) + 64,100  [0x1040374c4,0x1040374e8]
+            +   ! 3 hbf_eventlab::DeviceDriver::queue_responses(unsigned int)  (in probe.bin) + 312  [0x10403f4f0]
+            +   !   3 hbf_eventlab::ReadPath::result_in(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>, hbf_eventlab::IReadResultStorage const&) const  (in probe.bin) + 64,112  [0x10405dc38,0x10405dc68]
+            +   16 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 384  [0x10403d494]
+            +   ! 16 hbf_eventlab::ReadPath::candidate(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>) const  (in probe.bin) + 12,56,...  [0x10405c454,0x10405c480,...]
+            +   6 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 600  [0x10403d56c]
+            +   ! 6 hbf_eventlab::DeviceDriver::start_response(unsigned int)  (in probe.bin) + 232,184,...  [0x10403f788,0x10403f758,...]
+            +   5 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 188  [0x10403d3d0]
+            +   ! 4 hbf_eventlab::DeviceDriver::admit(hbf_eventlab::DeviceDriver::Transaction&)  (in probe.bin) + 1164  [0x10403c0dc]
+            +   ! : 3 hbf_eventlab::ReadPath::submit(hbf_eventlab::HostCommand const&)  (in probe.bin) + 532  [0x10405bd6c]
+            +   ! : | 1 hbf_eventlab::ReadPath::arm(hbf_eventlab::ReadCandidate)  (in probe.bin) + 388  [0x10405c0b8]
+            +   ! : | + 1 hbf_eventlab::AdmissionWaitRegistry::observe(hbf_eventlab::WaitKey) const  (in probe.bin) + 36  [0x1040610c8]
+            +   ! : | +   1 std::__tree<std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, std::__map_value_compare<hbf_eventlab::WaitKey, std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, true>>::find<hbf_eventlab::WaitKey>(hbf_eventlab::WaitKey const&) const  (in probe.bin) + 76  [0x104061e9c]
+            +   ! : | 1 hbf_eventlab::ReadPath::arm(hbf_eventlab::ReadCandidate)  (in probe.bin) + 456  [0x10405c0fc]
+            +   ! : | + 1 hbf_eventlab::AdmissionWaitRegistry::observe(hbf_eventlab::WaitKey) const  (in probe.bin) + 36  [0x1040610c8]
+            +   ! : | 1 hbf_eventlab::ReadPath::arm(hbf_eventlab::ReadCandidate)  (in probe.bin) + 808  [0x10405c25c]
+            +   ! : |   1 hbf_eventlab::AdmissionWaitRegistry::subscribe(std::vector<hbf_eventlab::WaitObservation> const&, std::function<void ()>)  (in probe.bin) + 612  [0x1040616a0]
+            +   ! : 1 hbf_eventlab::ReadPath::submit(hbf_eventlab::HostCommand const&)  (in probe.bin) + 284  [0x10405bc74]
+            +   ! :   1 hbf_eventlab::ReadPath::observe(hbf_eventlab::HostCommand const&) const  (in probe.bin) + 176  [0x10405b790]
+            +   ! :     1 hbf_eventlab::WritePath::read_view(hbf_eventlab::LogicalBlockKey) const  (in probe.bin) + 56  [0x104056258]
+            +   ! :       1 hbf_eventlab::CapacityRetirementCoordinator::content_generation(hbf_eventlab::LogicalBlockKey) const  (in probe.bin) + 24  [0x10404ebe0]
+            +   ! 1 hbf_eventlab::ReadDispatchWindow::accept(std::optional<hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>>, hbf_eventlab::ReadHint, hbf_eventlab::Quantity<hbf_eventlab::TickTag>)  (in probe.bin) + 928  [0x104067f20]
+            +   3 hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin) + 412  [0x10403d4b0]
+            +   ! 2 hbf_eventlab::DeviceDriver::try_cache(hbf_eventlab::DeviceDriver::Transaction&)  (in probe.bin) + 184  [0x10403ca14]
+            +   ! : 1 hbf_eventlab::ReadPath::probe(hbf_eventlab::ReadCandidate, bool) const  (in probe.bin) + 388  [0x10405c668]
+            +   ! : | 1 hbf_eventlab::ReadPath::observe(hbf_eventlab::HostCommand const&) const  (in probe.bin) + 424  [0x10405b888]
+            +   ! : |   1 hbf_eventlab::NandMediaState::unusable(hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>) const  (in probe.bin) + 60  [0x104055644]
+            +   ! : |     1 std::__tree<std::__value_type<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, hbf_eventlab::NandMediaState::Block>, std::__map_value_compare<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, std::__value_type<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, hbf_eventlab::NandMediaState::Block>, true>>::find<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>>(hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag> const&) const  (in probe.bin) + 152  [0x104055910]
+            +   ! : 1 hbf_eventlab::ReadPath::probe(hbf_eventlab::ReadCandidate, bool) const  (in probe.bin) + 312  [0x10405c61c]
+            +   ! 1 hbf_eventlab::DeviceDriver::try_cache(hbf_eventlab::DeviceDriver::Transaction&)  (in probe.bin) + 764  [0x10403cc58]
+            +   3 std::__function::__func<hbf_eventlab::DeviceDriver::deliver(unsigned long long)::$_19, void ()>::operator()()  (in probe.bin) + 936  [0x104048afc]
+            +   ! 3 hbf_eventlab::DeviceDriver::detach_external(hbf_eventlab::DeliveredResponse, std::function<void (hbf_eventlab::DeliveredResponse const&)>, hbf_eventlab::ChannelAddress, unsigned long long)  (in probe.bin) + 420  [0x1040433b4]
+            +   !   2 hbf_eventlab::DeviceDriver::receive_external(hbf_eventlab::DeviceDriver::ExternalPacket const&)  (in probe.bin) + 1036  [0x104043a18]
+            +   !   : 2 std::__function::__func<hbf_eventlab::HostDriver::pump(unsigned int)::$_1, void (hbf_eventlab::DeliveredResponse const&)>::operator()(hbf_eventlab::DeliveredResponse const&)  (in probe.bin) + 80  [0x104028484]
+            +   !   :   1 hbf_eventlab::HostDriver::receive(hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>, hbf_eventlab::DeliveredResponse const&)  (in probe.bin) + 2428  [0x104024ca0]
+            +   !   :   | 1 hbf_eventlab::HostDriver::advance()  (in probe.bin) + 2768  [0x104022f08]
+            +   !   :   1 hbf_eventlab::HostDriver::receive(hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>, hbf_eventlab::DeliveredResponse const&)  (in probe.bin) + 1784  [0x104024a1c]
+            +   !   1 hbf_eventlab::DeviceDriver::receive_external(hbf_eventlab::DeviceDriver::ExternalPacket const&)  (in probe.bin) + 924  [0x1040439a8]
+            +   !     1 std::map<unsigned long long, hbf_eventlab::DeviceDriver::ExternalWaiter>::erase[abi:ne180100](std::__map_iterator<std::__tree_iterator<std::__value_type<unsigned long long, hbf_eventlab::DeviceDriver::ExternalWaiter>, std::__tree_node<std::__value_type<unsigned long long, hbf_eventlab::DeviceDriver::ExternalWaiter>, void*>*, long>>)  (in probe.bin) + 160  [0x104043b54]
+            +   !       1 _xzm_free  (in libsystem_malloc.dylib) + 1048  [0x180a95484]
+            +   !         1 mach_absolute_time  (in libsystem_kernel.dylib) + 112  [0x180c34110]
+            +   2 hbf_eventlab::DeviceDriver::deliver(unsigned long long)  (in probe.bin) + 464  [0x1040405fc]
+            +   ! 2 hbf_eventlab::ReadPath::response_delivered(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>)  (in probe.bin) + 244  [0x10405e744]
+            +   !   1 hbf_eventlab::CommandAdmission::response_delivered(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>)  (in probe.bin) + 260  [0x104060e68]
+            +   !   : 1 hbf_eventlab::AdmissionWaitRegistry::notify(hbf_eventlab::WaitKey)  (in probe.bin) + 396  [0x104061c8c]
+            +   !   :   1 hbf_eventlab::AdmissionWaitRegistry::queue(hbf_eventlab::Quantity<hbf_eventlab::WaitTag>, hbf_eventlab::WaitReason)  (in probe.bin) + 76  [0x1040612f8]
+            +   !   1 hbf_eventlab::CommandAdmission::response_delivered(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>)  (in probe.bin) + 160  [0x104060e04]
+            +   2 std::__function::__func<hbf_eventlab::DeviceDriver::try_cache(hbf_eventlab::DeviceDriver::Transaction&)::$_13, void ()>::operator()()  (in probe.bin) + 152  [0x1040471d0]
+            +   ! 2 hbf_eventlab::ReadPath::serve_cached(hbf_eventlab::ReadCandidate, hbf_eventlab::ReadResultLease)  (in probe.bin) + 216  [0x10405da10]
+            +   !   1 hbf_eventlab::ReadPath::resolve_terminal(hbf_eventlab::ReadCandidate)  (in probe.bin) + 52  [0x10405cb28]
+            +   !   : 1 hbf_eventlab::ReadPath::resolve_terminal_state(hbf_eventlab::ReadCandidate)  (in probe.bin) + 320  [0x10405cdc0]
+            +   !   :   1 hbf_eventlab::ReadPath::observe(hbf_eventlab::HostCommand const&) const  (in probe.bin) + 424  [0x10405b888]
+            +   !   :     1 hbf_eventlab::NandMediaState::unusable(hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>) const  (in probe.bin) + 60  [0x104055644]
+            +   !   :       1 std::__tree<std::__value_type<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, hbf_eventlab::NandMediaState::Block>, std::__map_value_compare<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, std::__value_type<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>, hbf_eventlab::NandMediaState::Block>, true>>::find<hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag>>(hbf_eventlab::BlockCoordinates<hbf_eventlab::PhysicalTag> const&) const  (in probe.bin) + 72  [0x1040558c0]
+            +   !   1 hbf_eventlab::ReadPath::resolve_terminal(hbf_eventlab::ReadCandidate)  (in probe.bin) + 256  [0x10405cbf4]
+            +   1 std::__function::__func<hbf_eventlab::AdmissionWaitRegistry::queue(hbf_eventlab::Quantity<hbf_eventlab::WaitTag>, hbf_eventlab::WaitReason)::$_0, void ()>::operator()()  (in probe.bin) + 328  [0x104062210]
+            +   ! 1 std::__tree_remove[abi:ne180100]<std::__tree_node_base<void*>*>(std::__tree_node_base<void*>*, std::__tree_node_base<void*>*)  (in probe.bin) + 32  [0x10401b738]
+            +   1 std::__function::__func<hbf_eventlab::AdmissionWaitRegistry::queue(hbf_eventlab::Quantity<hbf_eventlab::WaitTag>, hbf_eventlab::WaitReason)::$_0, void ()>::operator()()  (in probe.bin) + 420  [0x10406226c]
+            +   ! 1 std::__function::__func<hbf_eventlab::DeviceDriver::wait(hbf_eventlab::DeviceDriver::Transaction&, std::vector<hbf_eventlab::WaitKey> const&)::$_10, void ()>::operator()()  (in probe.bin) + 80  [0x1040466f0]
+            +   1 std::__function::__func<hbf_eventlab::AdmissionWaitRegistry::queue(hbf_eventlab::Quantity<hbf_eventlab::WaitTag>, hbf_eventlab::WaitReason)::$_0, void ()>::operator()()  (in probe.bin) + 60  [0x104062104]
+            +   1 std::__function::__func<hbf_eventlab::HostDriver::pump(unsigned int)::$_2, void (hbf_eventlab::AcceptedNotice const&)>::operator()(hbf_eventlab::AcceptedNotice const&)  (in probe.bin) + 80  [0x1040286dc]
+            +     1 hbf_eventlab::HostDriver::accepted(hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>, hbf_eventlab::AcceptedNotice const&)  (in probe.bin) + 88  [0x104023270]
+            5 hbf_eventlab::EventQueue::run_next()  (in probe.bin) + 1536  [0x104066260]
+            + 4 std::__pop_heap[abi:ne180100]<std::_ClassicAlgPolicy, hbf_eventlab::EventQueue::Later, std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>(std::__wrap_iter<hbf_eventlab::EventQueue::Event*>, std::__wrap_iter<hbf_eventlab::EventQueue::Event*>, hbf_eventlab::EventQueue::Later&, std::iterator_traits<std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>::difference_type)  (in probe.bin) + 172  [0x104066bf4]
+            + ! 3 std::__floyd_sift_down[abi:ne180100]<std::_ClassicAlgPolicy, hbf_eventlab::EventQueue::Later&, std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>(std::__wrap_iter<hbf_eventlab::EventQueue::Event*>, hbf_eventlab::EventQueue::Later&, std::iterator_traits<std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>::difference_type)  (in probe.bin) + 356,108  [0x104066fa0,0x104066ea8]
+            + ! 1 std::__floyd_sift_down[abi:ne180100]<std::_ClassicAlgPolicy, hbf_eventlab::EventQueue::Later&, std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>(std::__wrap_iter<hbf_eventlab::EventQueue::Event*>, hbf_eventlab::EventQueue::Later&, std::iterator_traits<std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>::difference_type)  (in probe.bin) + 352  [0x104066f9c]
+            + !   1 std::__function::__func<hbf_eventlab::AdmissionWaitRegistry::queue(hbf_eventlab::Quantity<hbf_eventlab::WaitTag>, hbf_eventlab::WaitReason)::$_0, void ()>::__clone(std::__function::__base<void ()>*) const  (in probe.bin) + 0  [0x1040620a8]
+            + 1 std::__pop_heap[abi:ne180100]<std::_ClassicAlgPolicy, hbf_eventlab::EventQueue::Later, std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>(std::__wrap_iter<hbf_eventlab::EventQueue::Event*>, std::__wrap_iter<hbf_eventlab::EventQueue::Event*>, hbf_eventlab::EventQueue::Later&, std::iterator_traits<std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>::difference_type)  (in probe.bin) + 488  [0x104066d30]
+            +   1 std::__sift_up[abi:ne180100]<std::_ClassicAlgPolicy, hbf_eventlab::EventQueue::Later&, std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>(std::__wrap_iter<hbf_eventlab::EventQueue::Event*>, std::__wrap_iter<hbf_eventlab::EventQueue::Event*>, hbf_eventlab::EventQueue::Later&, std::iterator_traits<std::__wrap_iter<hbf_eventlab::EventQueue::Event*>>::difference_type)  (in probe.bin) + 124  [0x1040668c8]
+            1 hbf_eventlab::EventQueue::run_next()  (in probe.bin) + 1740  [0x10406632c]
+              1 std::__function::__func<hbf_eventlab::DeviceDriver::schedule(hbf_eventlab::Quantity<hbf_eventlab::TickTag>, hbf_eventlab::EventPhase, std::function<void ()>)::$_5, void ()>::destroy_deallocate()  (in probe.bin) + 128  [0x104045c1c]
+                1 _xzm_free  (in libsystem_malloc.dylib) + 352  [0x180a951cc]
+                  1 _platform_memset  (in libsystem_platform.dylib) + 188  [0x180c811ac]
+
+Total number in stack (recursive counted multiple, when >=5):
+        70       std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 32  [0x104027368]
+        58       std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 44  [0x104027374]
+        8       _xzm_free  (in libsystem_malloc.dylib) + 0  [0x180a9506c]
+        8       std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin) + 0  [0x104027348]
+        7       _free  (in libsystem_malloc.dylib) + 0  [0x180aa4c4c]
+        7       _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 0  [0x180a99ed4]
+        7       operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x180c2e7e8]
+        5       <deduplicated_symbol>  (in libsystem_malloc.dylib) + 0  [0x180a940d4]
+        5       _xzm_free  (in libsystem_malloc.dylib) + 352  [0x180a951cc]
+
+Sort by top of stack, same collapsed (when >= 5):
+        hbf_eventlab::HostDriver::pump(unsigned int)  (in probe.bin)        192
+        std::__tree<std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, std::__map_value_compare<hbf_eventlab::WaitKey, std::__value_type<hbf_eventlab::WaitKey, unsigned long long>, true>>::find<hbf_eventlab::WaitKey>(hbf_eventlab::WaitKey const&) const  (in probe.bin)        108
+        hbf_eventlab::DeviceDriver::pump(unsigned int)  (in probe.bin)        52
+        _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib)        50
+        hbf_eventlab::DeviceDriver::try_submit(hbf_eventlab::LocalTransaction const&, std::function<void (hbf_eventlab::DeliveredResponse const&)>, std::function<void (hbf_eventlab::AcceptedNotice const&)>)  (in probe.bin)        38
+        _xzm_free  (in libsystem_malloc.dylib)        32
+        hbf_eventlab::DeviceDriver::execute_media(unsigned int)  (in probe.bin)        21
+        hbf_eventlab::HostDriver::eligible(hbf_eventlab::HostDriver::Unit const&) const  (in probe.bin)        19
+        hbf_eventlab::DeviceDriver::queue_responses(unsigned int)  (in probe.bin)        18
+        <deduplicated_symbol>  (in libsystem_malloc.dylib)        16
+        hbf_eventlab::ReadPath::candidate(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>) const  (in probe.bin)        16
+        mach_absolute_time  (in libsystem_kernel.dylib)        15
+        std::__tree_node_base<void*>*& std::__tree<std::__value_type<hbf_eventlab::WaitKey, std::set<hbf_eventlab::Quantity<hbf_eventlab::WaitTag>>>, std::__map_value_compare<hbf_eventlab::WaitKey, std::__value_type<hbf_eventlab::WaitKey, std::set<hbf_eventlab::Quantity<hbf_eventlab::WaitTag>>>, true>>::__find_equal<hbf_eventlab::WaitKey>(std::__tree_end_node<std::__tree_node_base<void*>*>*&, hbf_eventlab::WaitKey const&)  (in probe.bin)        14
+        std::__tree_balance_after_insert[abi:ne180100]<std::__tree_node_base<void*>*>(std::__tree_node_base<void*>*, std::__tree_node_base<void*>*)  (in probe.bin)        13
+        _free  (in libsystem_malloc.dylib)        11
+        hbf_eventlab::ReadPath::response(unsigned int, hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>) const  (in probe.bin)        10
+        hbf_eventlab::DeviceDriver::prior_sense(hbf_eventlab::DeviceDriver::Transaction const&, hbf_eventlab::BankKey) const  (in probe.bin)        9
+        std::__tree<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>>::destroy(std::__tree_node<hbf_eventlab::Quantity<hbf_eventlab::SendUnitTag>, void*>*)  (in probe.bin)        8
+        std::__shared_weak_count::__release_weak()  (in libc++.1.dylib)        7
+        hbf_eventlab::DeviceDriver::start_response(unsigned int)  (in probe.bin)        6
+        DYLD-STUB$$operator delete(void*)  (in probe.bin)        5
+        _platform_memset  (in libsystem_platform.dylib)        5
+        hbf_eventlab::DeviceDriver::channel_send_blockers(unsigned int) const  (in probe.bin)        5
+        hbf_eventlab::ReadPath::probe(hbf_eventlab::ReadCandidate, bool) const  (in probe.bin)        5
+
+Binary Images:
+       0x104014000 -        0x104073ff7 +probe.bin (0) <100A7A65-C0BF-3EB8-8AA9-9F545904AB45> /Users/*/probe.bin
+       0x180814000 -        0x180866b4b  libobjc.A.dylib (951.7) <2E858E25-1FF6-3DA6-84F6-911630620512> /usr/lib/libobjc.A.dylib
+       0x180867000 -        0x18089bb34  libdyld.dylib (1376.6) <2C3C5F75-3686-39A1-9202-BD4D2133379D> /usr/lib/system/libdyld.dylib
+       0x18089c000 -        0x180941ec7  dyld (1.0.0 - 1376.6) <9F682DCF-340C-3BFA-BCDD-DD702F30313E> /usr/lib/dyld
+       0x180942000 -        0x180945228  libsystem_blocks.dylib (96) <2EA73169-CF76-3DD1-9869-F23C8B338022> /usr/lib/system/libsystem_blocks.dylib
+       0x180946000 -        0x18099a51f  libxpc.dylib (3102.100.102) <618039C8-9965-3782-A7D2-90FD4C3DD66F> /usr/lib/system/libxpc.dylib
+       0x18099b000 -        0x1809bb9bf  libsystem_trace.dylib (1861.100.19) <08629650-54FC-3AA6-910E-EACA563804D0> /usr/lib/system/libsystem_trace.dylib
+       0x1809bc000 -        0x180a69daf  libcorecrypto.dylib (1922.101.2) <D1EC203E-9B2E-391B-8DE3-7C58F0589437> /usr/lib/system/libcorecrypto.dylib
+       0x180a6a000 -        0x180aba1d7  libsystem_malloc.dylib (812.100.31) <2AD21BE3-FFDB-31D5-A3D7-2F7F672D6E92> /usr/lib/system/libsystem_malloc.dylib
+       0x180abb000 -        0x180b0223f  libdispatch.dylib (1542.100.32) <E17AA23F-DB2A-3302-B14C-F6B08C540FCF> /usr/lib/system/libdispatch.dylib
+       0x180b03000 -        0x180b05ffb  libsystem_featureflags.dylib (103) <0DE01F76-4B36-35A2-98F9-43DD147EDD95> /usr/lib/system/libsystem_featureflags.dylib
+       0x180b06000 -        0x180b86ef7  libsystem_c.dylib (1752.100.10) <66EBD321-6899-3863-BA24-5CFC3076A0CB> /usr/lib/system/libsystem_c.dylib
+       0x180b87000 -        0x180c17ae7  libc++.1.dylib (2100.43) <1E9541EC-C564-38CB-BED6-46F708E8D863> /usr/lib/libc++.1.dylib
+       0x180c18000 -        0x180c3275f  libc++abi.dylib (2100.43) <E8D325ED-3B97-325E-B494-B1B0FF93D133> /usr/lib/libc++abi.dylib
+       0x180c33000 -        0x180c7028f  libsystem_kernel.dylib (12377.101.15) <51565B39-F595-3E96-A217-FEF29815057A> /usr/lib/system/libsystem_kernel.dylib
+       0x180c71000 -        0x180c7db3b  libsystem_pthread.dylib (539.100.4) <E7A73008-0C09-31E3-9DD9-0C61652F0E85> /usr/lib/system/libsystem_pthread.dylib
+       0x180c7e000 -        0x180c868f3  libsystem_platform.dylib (375.100.10) <D93EC420-F465-3A3A-916D-A04AF9B023EB> /usr/lib/system/libsystem_platform.dylib
+       0x180c87000 -        0x180cb66eb  libsystem_info.dylib (600) <201FD67C-3DF6-3788-B132-A69CAA2AA3D7> /usr/lib/system/libsystem_info.dylib
+       0x184c4c000 -        0x184c55e5f  libsystem_darwin.dylib (1752.100.10) <D5BA0CAB-F283-3620-AAA9-1EEB718E1BA8> /usr/lib/system/libsystem_darwin.dylib
+       0x1850b7000 -        0x1850c8f5b  libsystem_notify.dylib (348.100.7) <9F46F30B-B7C0-3DD7-AC38-57B78C7971FF> /usr/lib/system/libsystem_notify.dylib
+       0x187381000 -        0x18739bf5b  libsystem_networkextension.dylib (2226.101.1) <85169C7B-48DD-3542-AD38-F1B88EA2A95A> /usr/lib/system/libsystem_networkextension.dylib
+       0x18741e000 -        0x187435fdf  libsystem_asl.dylib (406) <6427D987-7938-3278-8C14-10FB9C06BBD5> /usr/lib/system/libsystem_asl.dylib
+       0x188fd9000 -        0x188fe1387  libsystem_symptoms.dylib (2169.100.30) <28B6E34E-9C7D-3437-A3F1-A3C979DE579A> /usr/lib/system/libsystem_symptoms.dylib
+       0x18d274000 -        0x18d2ac25f  libsystem_containermanager.dylib (725.100.37) <14750F95-BB3A-3654-8610-A05A454643A8> /usr/lib/system/libsystem_containermanager.dylib
+       0x18e684000 -        0x18e6885d7  libsystem_configuration.dylib (1405.100.8) <634F597D-F8BD-3C00-B967-86047FC15D14> /usr/lib/system/libsystem_configuration.dylib
+       0x18e689000 -        0x18e68f8cf  libsystem_sandbox.dylib (2680.100.174) <AF76231D-EADC-3399-9414-6AD90FB4EA89> /usr/lib/system/libsystem_sandbox.dylib
+       0x18fccf000 -        0x18fcd21fb  libquarantine.dylib (196.100.8) <268FEB6E-A237-3050-BFFF-AE3A66B7EAD4> /usr/lib/system/libquarantine.dylib
+       0x19046e000 -        0x190474d03  libsystem_coreservices.dylib (191.4.5) <7129349D-04F9-3C3C-BF37-3082C1468654> /usr/lib/system/libsystem_coreservices.dylib
+       0x1909f3000 -        0x190a30a77  libsystem_m.dylib (3312.100.1) <83B173CD-7F32-3901-8E67-C0B2676BE015> /usr/lib/system/libsystem_m.dylib
+       0x190a32000 -        0x190a35527  libmacho.dylib (1376.6) <9729ECEA-0A08-32E3-8BDB-B42FC15FF258> /usr/lib/system/libmacho.dylib
+       0x190a4f000 -        0x190a5c3a7  libcommonCrypto.dylib (600035) <710EC5FA-F77C-3646-A9E3-C037C42E1539> /usr/lib/system/libcommonCrypto.dylib
+       0x190a5d000 -        0x190a66ca3  libunwind.dylib (2100.2) <FB0518B9-DF0F-3A03-A74B-AF1B21C26F8B> /usr/lib/system/libunwind.dylib
+       0x190a6f000 -        0x190a797ff  libcopyfile.dylib (240) <0B7FF027-5579-3CBF-A12B-68A4FD36641C> /usr/lib/system/libcopyfile.dylib
+       0x190a7a000 -        0x190a7d987  libcompiler_rt.dylib (103.3) <65E29E6E-7042-3F73-A1D2-F2C4EBCD7524> /usr/lib/system/libcompiler_rt.dylib
+       0x190a7e000 -        0x190a8278b  libsystem_collections.dylib (1752.100.10) <B81193DE-3BEC-3340-86D0-DB7F3683D135> /usr/lib/system/libsystem_collections.dylib
+       0x190a83000 -        0x190a864cf  libsystem_secinit.dylib (168.100.7) <A6B77B36-195D-33F8-8058-FE0B5BFA9D37> /usr/lib/system/libsystem_secinit.dylib
+       0x190a87000 -        0x190a89bf7  libremovefile.dylib (85.100.6) <BD89B1A3-0D06-3881-B5E1-EFC6CFBDFCC1> /usr/lib/system/libremovefile.dylib
+       0x190a8a000 -        0x190a8af27  libkeymgr.dylib (31) <DE8F8219-0072-35C2-8932-C065491ED15D> /usr/lib/system/libkeymgr.dylib
+       0x190a8b000 -        0x190a93e3f  libsystem_dnssd.dylib (2881.100.56.0.1) <DEC8BDD2-366C-3BF9-A123-35744DB06354> /usr/lib/system/libsystem_dnssd.dylib
+       0x190a94000 -        0x190a9909b  libcache.dylib (95) <4D6833A3-C910-3A76-AA8A-303F698B36BF> /usr/lib/system/libcache.dylib
+       0x190a9a000 -        0x190a9bce3  libSystem.B.dylib (1356) <E05F5341-06B7-365E-8014-E9CD64C352FE> /usr/lib/libSystem.B.dylib
+       0x28337d000 -        0x283384349  libRosetta.dylib (367.5) <2FC1EF06-04C4-35FC-8DC3-BEA1E9FBD63F> /usr/lib/libRosetta.dylib
+       0x28505a000 -        0x28505da4b  libsystem_darwindirectory.dylib (122) <CCAA2170-32DD-34BD-A927-32DF30893969> /usr/lib/system/libsystem_darwindirectory.dylib
+       0x28505e000 -        0x2850675a7  libsystem_eligibility.dylib (319.101.1) <2D19994A-87BB-34B8-A343-CB8DD47FF110> /usr/lib/system/libsystem_eligibility.dylib
+       0x285068000 -        0x28506f8db  libsystem_sanitizers.dylib (26) <FCB93D2F-4437-3089-A43F-A19BC23DD65B> /usr/lib/system/libsystem_sanitizers.dylib
+       0x285070000 -        0x285070bb7  libsystem_trial.dylib (474.2.18) <5BB81430-4E33-3160-94D2-1FFB2B614DB2> /usr/lib/system/libsystem_trial.dylib

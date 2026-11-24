@@ -1,0 +1,53 @@
+256-cold-sequential-independent-q1 0.45 host seconds
+256-cold-sequential-independent-q16 0.165 host seconds
+256-cold-sequential-independent-q256 0.537 host seconds
+256-cold-sequential-independent-q1024 1.343 host seconds
+256-cold-sequential-chain-q1 0.157 host seconds
+256-cold-sequential-chain-q16 0.16 host seconds
+256-cold-sequential-chain-q256 0.158 host seconds
+256-cold-sequential-chain-q1024 0.17 host seconds
+256-cold-permutation-independent-q1 0.16 host seconds
+256-cold-permutation-independent-q16 0.186 host seconds
+256-cold-permutation-independent-q256 0.566 host seconds
+256-cold-permutation-independent-q1024 1.453 host seconds
+256-cold-permutation-chain-q1 0.16 host seconds
+256-cold-permutation-chain-q16 0.159 host seconds
+256-cold-permutation-chain-q256 0.157 host seconds
+256-cold-permutation-chain-q1024 0.157 host seconds
+256-hot-sequential-independent-q1 1.681 host seconds
+256-hot-sequential-independent-q16 1.671 host seconds
+256-hot-sequential-independent-q256 2.093 host seconds
+256-hot-sequential-independent-q1024 2.5 host seconds
+256-hot-sequential-chain-q1 1.689 host seconds
+256-hot-sequential-chain-q16 1.69 host seconds
+256-hot-sequential-chain-q256 1.685 host seconds
+256-hot-sequential-chain-q1024 1.672 host seconds
+256-hot-permutation-independent-q1 1.677 host seconds
+256-hot-permutation-independent-q16 1.987 host seconds
+256-hot-permutation-independent-q256 2.093 host seconds
+256-hot-permutation-independent-q1024 2.744 host seconds
+256-hot-permutation-chain-q1 2.08 host seconds
+256-hot-permutation-chain-q16 2.006 host seconds
+256-hot-permutation-chain-q256 1.766 host seconds
+256-hot-permutation-chain-q1024 1.72 host seconds
+4096-cold-sequential-independent-q1 1.73 host seconds
+4096-cold-sequential-independent-q16 3.81 host seconds
+4096-cold-sequential-independent-q256 93.994 host seconds
+Traceback (most recent call last):
+  File "/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/tests/fcfs_curve_replay.py", line 12, in <module>
+    try:r=subprocess.run([str(exe),str(size),str(qd),str(int(cache=='hot')),str(int(dep=='chain'))],input=trace,text=True,capture_output=True,timeout=180)
+          ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 556, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1220, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 2153, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1267, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/calibration/fcfs-index/guard-replay-20261123/probe.bin', '4096', '1024', '0', '0']' timed out after 180 seconds

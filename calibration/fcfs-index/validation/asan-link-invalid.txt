@@ -1,0 +1,229 @@
+-- The CXX compiler identification is AppleClang 15.0.0.15000309
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Python3: /Users/kexin.chu/miniconda3/bin/python3.13 (found version "3.13.12") found components: Interpreter
+-- Configuring done (4.0s)
+-- Generating done (1.6s)
+-- Build files have been written to: /private/tmp/anns-fcfs-sanitized
+[  0%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/configuration/simulation_configuration.cpp.o
+[  3%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/diagnostics/runtime_profile.cpp.o
+[  6%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/architecture/topology_configuration.cpp.o
+[  9%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_configuration.cpp.o
+[ 12%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/architecture/ucie_profile.cpp.o
+[ 15%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/collector.cpp.o
+[ 15%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/event_stream.cpp.o
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/configuration/simulation_configuration.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/configuration/simulation_configuration.hpp:2:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:50:28: warning: 'notifications' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    AdmissionWaitRegistry& notifications() { return signals_; }
+                           ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:39:36: note: overridden virtual function is here
+    virtual AdmissionWaitRegistry& notifications()=0;
+                                   ^
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/configuration/simulation_configuration.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/configuration/simulation_configuration.hpp:2:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:55:36: warning: 'description' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const StaticDeviceDescription& description() const { return description_; }
+                                   ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:40:44: note: overridden virtual function is here
+    virtual const StaticDeviceDescription& description() const=0;
+                                           ^
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/configuration/simulation_configuration.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/configuration/simulation_configuration.hpp:2:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:58:35: warning: 'layout' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const ReferenceAddressLayout& layout() const { return layout_; }
+                                  ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:41:35: note: overridden virtual function is here
+    virtual const IAddressLayout& layout() const=0;
+                                  ^
+[ 18%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/pending.cpp.o
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/statistics/collector.cpp:61:75: warning: missing field 'released' initializer [-Wmissing-field-initializers]
+    require(globals_.emplace(e.id,GlobalTiming{e.id,e.op,e.bytes,e.release}).second,"statistics: duplicate Global");
+                                                                          ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/statistics/collector.cpp:66:79: warning: missing field 'finished' initializer [-Wmissing-field-initializers]
+    require(work_.emplace(e.id,LogicalTiming{e.id,e.parent,e.address,e.content}).second,"statistics: duplicate work");
+                                                                              ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing field 'rx_arrival' initializer [-Wmissing-field-initializers]
+    require(attempts_.emplace(e.id,AttemptTiming{e.id,e.command,e.at}).second,"statistics: duplicate attempt");note(e.at);
+                                                                    ^
+[ 21%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/media.cpp.o
+3 warnings generated.
+[ 24%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/reads.cpp.o
+3 warnings generated.
+[ 24%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/global_request_splitter.cpp.o
+[ 27%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/retention_store.cpp.o
+[ 30%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/recovery_manager.cpp.o
+[ 33%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_driver.cpp.o
+[ 36%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_input.cpp.o
+[ 36%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_indices.cpp.o
+[ 39%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_storage.cpp.o
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/host/host_driver.cpp:31:52: warning: missing field 'command' initializer [-Wmissing-field-initializers]
+    Unit u{id,op,std::move(fragments),content,group};u.replay=replay;u.pass=pass;
+                                                   ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/host/host_driver.cpp:339:13: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+            else if(versions_.at(*u.content).aborted)finish_work(f.id,false,versions_.at(*u.content).reason);
+            ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/host/host_input.cpp:100:139: warning: missing field 'reason' initializer [-Wmissing-field-initializers]
+        const auto inserted=results_.emplace(r.id,WorkResult{r.id,LogicalResult::Pending,static_cast<std::size_t>(r.bytes/host_unit_bytes)});
+                                                                                                                                          ^
+[ 42%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/write_retry.cpp.o
+[ 45%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/simulation_runner.cpp.o
+1 warning generated.
+[ 45%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/simulation_session.cpp.o
+2 warnings generated.
+[ 48%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/architecture/execution_configuration.cpp.o
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/simulation_session.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_session.hpp:2:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/configuration/simulation_configuration.hpp:2:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:50:28: warning: 'notifications' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    AdmissionWaitRegistry& notifications() { return signals_; }
+                           ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:39:36: note: overridden virtual function is here
+    virtual AdmissionWaitRegistry& notifications()=0;
+                                   ^
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/simulation_session.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_session.hpp:2:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/configuration/simulation_configuration.hpp:2:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:55:36: warning: 'description' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const StaticDeviceDescription& description() const { return description_; }
+                                   ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:40:44: note: overridden virtual function is here
+    virtual const StaticDeviceDescription& description() const=0;
+                                           ^
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/simulation_session.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_session.hpp:2:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/configuration/simulation_configuration.hpp:2:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:58:35: warning: 'layout' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const ReferenceAddressLayout& layout() const { return layout_; }
+                                  ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:41:35: note: overridden virtual function is here
+    virtual const IAddressLayout& layout() const=0;
+                                  ^
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/simulation_runner.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:50:28: warning: 'notifications' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    AdmissionWaitRegistry& notifications() { return signals_; }
+                           ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:39:36: note: overridden virtual function is here
+    virtual AdmissionWaitRegistry& notifications()=0;
+                                   ^
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/simulation_runner.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:55:36: warning: 'description' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const StaticDeviceDescription& description() const { return description_; }
+                                   ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:40:44: note: overridden virtual function is here
+    virtual const StaticDeviceDescription& description() const=0;
+                                           ^
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/simulation_runner.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:58:35: warning: 'layout' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const ReferenceAddressLayout& layout() const { return layout_; }
+                                  ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:41:35: note: overridden virtual function is here
+    virtual const IAddressLayout& layout() const=0;
+                                  ^
+3 warnings generated.
+[ 51%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/bank_cache.cpp.o
+[ 54%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/device_driver.cpp.o
+[ 57%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/architecture/device_description.cpp.o
+3 warnings generated.
+[ 57%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/policies/reference_address_layout.cpp.o
+[ 60%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/policies/round_robin_interleaver.cpp.o
+[ 63%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/zone_mapping.cpp.o
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/device_driver.cpp:1:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:50:28: warning: 'notifications' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    AdmissionWaitRegistry& notifications() { return signals_; }
+                           ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:39:36: note: overridden virtual function is here
+    virtual AdmissionWaitRegistry& notifications()=0;
+                                   ^
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/device_driver.cpp:1:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:55:36: warning: 'description' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const StaticDeviceDescription& description() const { return description_; }
+                                   ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:40:44: note: overridden virtual function is here
+    virtual const StaticDeviceDescription& description() const=0;
+                                           ^
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/device_driver.cpp:1:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:58:35: warning: 'layout' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const ReferenceAddressLayout& layout() const { return layout_; }
+                                  ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:41:35: note: overridden virtual function is here
+    virtual const IAddressLayout& layout() const=0;
+                                  ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/device_driver.cpp:121:79: warning: missing field 'wait' initializer [-Wmissing-field-initializers]
+    Transaction transaction{id,input,std::move(receiver),std::move(acceptance)};
+                                                                              ^
+[ 66%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/block_replacement.cpp.o
+[ 69%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/capacity_retirement_coordinator.cpp.o
+[ 69%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/nand_media_state.cpp.o
+[ 72%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/write_path.cpp.o
+[ 75%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/read_path.cpp.o
+4 warnings generated.
+[ 78%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/command_admission.cpp.o
+[ 78%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/admission_wait_registry.cpp.o
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/write_path.cpp:58:68: warning: missing field 'waits' initializer [-Wmissing-field-initializers]
+    return {SubmitResult::Accepted, WriteDisposition::Error, status};
+                                                                   ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/src/runtime/write_path.cpp:176:62: warning: missing field 'waits' initializer [-Wmissing-field-initializers]
+    return {SubmitResult::Accepted, disposition, std::nullopt};
+                                                             ^
+[ 81%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/write_assembly.cpp.o
+2 warnings generated.
+[ 84%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/block_write_order.cpp.o
+[ 87%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/infrastructure/event_queue.cpp.o
+[ 90%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/policies/read_dispatch.cpp.o
+[ 90%] Linking CXX static library libhbf_eventlab.a
+[ 90%] Built target hbf_eventlab
+[ 93%] Building CXX object eventlab/CMakeFiles/hbf_eventlab_workload_io.dir/src/adapters/workload_reader.cpp.o
+[ 96%] Linking CXX static library libhbf_eventlab_workload_io.a
+[ 96%] Built target hbf_eventlab_workload_io
+[ 96%] Building CXX object CMakeFiles/fcfs_host_contract.dir/vendor/EventLab/tests/host.cpp.o
+In file included from /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/vendor/EventLab/tests/host.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:50:28: warning: 'notifications' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    AdmissionWaitRegistry& notifications() { return signals_; }
+                           ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:39:36: note: overridden virtual function is here
+    virtual AdmissionWaitRegistry& notifications()=0;
+                                   ^
+In file included from /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/vendor/EventLab/tests/host.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:55:36: warning: 'description' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const StaticDeviceDescription& description() const { return description_; }
+                                   ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:40:44: note: overridden virtual function is here
+    virtual const StaticDeviceDescription& description() const=0;
+                                           ^
+In file included from /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/vendor/EventLab/tests/host.cpp:1:
+In file included from /private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:58:35: warning: 'layout' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const ReferenceAddressLayout& layout() const { return layout_; }
+                                  ^
+/private/tmp/anns-fcfs-sanitized/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:41:35: note: overridden virtual function is here
+    virtual const IAddressLayout& layout() const=0;
+                                  ^
+3 warnings generated.
+[100%] Linking CXX executable fcfs_host_contract
+ld: warning: ignoring duplicate libraries: 'eventlab/libhbf_eventlab.a'
+Undefined symbols for architecture arm64:
+  "___sanitizer_annotate_double_ended_contiguous_container", referenced from:
+      std::__1::deque<hbf_eventlab::EventQueue::Event, std::__1::allocator<hbf_eventlab::EventQueue::Event>>::__annotate_double_ended_contiguous_container[abi:ne180100](void const*, void const*, void const*, void const*, void const*, void const*) const in host.cpp.o
+      std::__1::deque<hbf_eventlab::RetainedKey, std::__1::allocator<hbf_eventlab::RetainedKey>>::__annotate_double_ended_contiguous_container[abi:ne180100](void const*, void const*, void const*, void const*, void const*, void const*) const in host.cpp.o
+      std::__1::deque<hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>, std::__1::allocator<hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>>>::__annotate_double_ended_contiguous_container[abi:ne180100](void const*, void const*, void const*, void const*, void const*, void const*) const in libhbf_eventlab.a[24](device_driver.cpp.o)
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[3]: *** [fcfs_host_contract] Error 1
+make[2]: *** [CMakeFiles/fcfs_host_contract.dir/all] Error 2
+make[1]: *** [CMakeFiles/fcfs_host_contract.dir/rule] Error 2
+make: *** [fcfs_host_contract] Error 2

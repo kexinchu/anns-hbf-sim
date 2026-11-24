@@ -68,3 +68,11 @@ For sequential 256 B cold reads, modeled useful bandwidth changes from 0.0940 GB
 [Raw observations and verdict](final-20261123/) · [CSV including invalid points](final-20261123/curves.csv) · [Curve plot](final-20261123/curves.png)
 
 Remaining blockers: fix or otherwise resolve host queue-scan execution cost without altering modeled semantics (separate revision and differential checks), rerun the missing points, add steady-state and multi-page-per-bank stress profiles under new frozen versions, and obtain independently sourced paper trace/timing/numeric curve data. Fitting against the reserved throughput condition cannot validate that same condition. Physical HBM/HBF calibration remains a separate unavailable evidence layer.
+
+## Subsequent execution-only repair
+
+The original observations above remain immutable. The separate
+[FCFS execution optimization](../fcfs-index/README.md) completes all 64 points,
+with byte-identical outputs for the original 56 successful points. This closes
+the host-timeout coverage gap only; independent paper/hardware alignment and
+steady-state/multi-page stress remain outstanding.

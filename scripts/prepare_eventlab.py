@@ -1,6 +1,6 @@
 """Materialize a reviewable overlay. Never edit pinned vendor. Fail on changed anchors."""
 import pathlib,shutil,sys
-src,dst=map(pathlib.Path,sys.argv[1:]);shutil.copytree(src,dst,dirs_exist_ok=True,ignore=shutil.ignore_patterns('.git'))
+src,dst=map(pathlib.Path,sys.argv[1:3]);shutil.copytree(src,dst,dirs_exist_ok=True,ignore=shutil.ignore_patterns('.git'))
 def edit(name,old,new):
  p=dst/name;s=p.read_text()
  if s.count(old)!=1:raise RuntimeError(f'patch anchor changed: {name}: {old}')
@@ -53,3 +53,7 @@ exec(compile((pathlib.Path(__file__).parent/'driver_reset_overlay.py').read_text
              str(pathlib.Path(__file__).parent/'driver_reset_overlay.py'),'exec'))
 exec(compile((pathlib.Path(__file__).parent/'external_reset_overlay.py').read_text(),
              str(pathlib.Path(__file__).parent/'external_reset_overlay.py'),'exec'))
+
+if len(sys.argv)>3 and sys.argv[3] != 'OFF':
+ exec(compile((pathlib.Path(__file__).parent/'fcfs_index_overlay.py').read_text(),
+              str(pathlib.Path(__file__).parent/'fcfs_index_overlay.py'),'exec'))

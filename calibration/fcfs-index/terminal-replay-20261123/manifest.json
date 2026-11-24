@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "4fddd12d574acb2f1752301dcaea3b438173325c1472373bb31903a6b84421a8",
+  "binary_sha256": "43f8f837761f80474deb71effac6a06c4866a611abab165b46da3761ddd116dc",
+  "comparison": "unchanged frozen inputs; original completed outputs byte-for-byte",
+  "sources": {
+    "scripts/fcfs_index_overlay.py": "a30aed2690123f568c2cf36cc3a76901433f7e117a996aae73cdfa1f66f55a0e",
+    "scripts/prepare_eventlab.py": "db8950054d15396830be488484e54406fbe12032661c526aa9c7ee9e412003f5",
+    "src/paper_curve_probe.cpp": "350072b7293613c9c309cfe48a179a54bd538d8b3cbd9982dffa637683fceeaf",
+    "tests/fcfs_curve_replay.py": "580be475e0239ae3a2287ba183defa4acbd95af36824e678ceaad07f78a23eef"
+  }
+}

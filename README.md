@@ -17,6 +17,10 @@ current integration scope and remaining gates.
 See [multichannel groups and joint recovery/CUDA review](docs/MULTICHANNEL_REVIEW.md)
 for the complete-group API and combined fault/race validation scope.
 
+See [Host execution optimization review](docs/FCFS_EXECUTION_REVIEW.md) for FCFS
+index equivalence, negative tests, and high-QD diagnostic coverage. This improves
+simulator execution efficiency only; external timing calibration remains gated.
+
 ## Reproduce
 
 Requires Python 3, Git, CMake >=3.20 and a C++20 compiler. No GPU required.

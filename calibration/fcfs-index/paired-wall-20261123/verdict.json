@@ -1,0 +1,14 @@
+{
+  "case": "4096-cold-sequential-independent-q16",
+  "binary_sha256": {
+    "baseline": "6797f50b664d0788ed7eac763be37fbdba4dcc44e75cb738b42157bb310437cb",
+    "optimized": "43f8f837761f80474deb71effac6a06c4866a611abab165b46da3761ddd116dc"
+  },
+  "median_wall_seconds": {
+    "baseline": 4.8511630210559815,
+    "optimized": 2.8726243330165744
+  },
+  "host_execution_speedup": 1.6887565023031472,
+  "scope": "paired local wall time, one fixture; not simulated hardware speedup",
+  "performance_ready": false
+}

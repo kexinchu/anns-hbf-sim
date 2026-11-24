@@ -1,0 +1,25 @@
+In file included from /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/vendor/EventLab/tests/host_incremental.cpp:1:
+In file included from /private/tmp/anns-fcfs-check/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-check/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:50:28: warning: 'notifications' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    AdmissionWaitRegistry& notifications() { return signals_; }
+                           ^
+/private/tmp/anns-fcfs-check/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:39:36: note: overridden virtual function is here
+    virtual AdmissionWaitRegistry& notifications()=0;
+                                   ^
+In file included from /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/vendor/EventLab/tests/host_incremental.cpp:1:
+In file included from /private/tmp/anns-fcfs-check/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-check/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:55:36: warning: 'description' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const StaticDeviceDescription& description() const { return description_; }
+                                   ^
+/private/tmp/anns-fcfs-check/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:40:44: note: overridden virtual function is here
+    virtual const StaticDeviceDescription& description() const=0;
+                                           ^
+In file included from /Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/vendor/EventLab/tests/host_incremental.cpp:1:
+In file included from /private/tmp/anns-fcfs-check/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3:
+/private/tmp/anns-fcfs-check/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:58:35: warning: 'layout' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+    const ReferenceAddressLayout& layout() const { return layout_; }
+                                  ^
+/private/tmp/anns-fcfs-check/eventlab-overlay/include/hbf_eventlab/interfaces/host_port.hpp:41:35: note: overridden virtual function is here
+    virtual const IAddressLayout& layout() const=0;
+                                  ^
+3 warnings generated.

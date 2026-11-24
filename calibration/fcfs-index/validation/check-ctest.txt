@@ -1,0 +1,73 @@
+Test project /private/tmp/anns-fcfs-check
+      Start 26: ucie_mutations
+      Start  5: protocol_diff
+      Start 29: fcfs_host_contract
+      Start  6: anns_concurrent
+ 1/34 Test  #6: anns_concurrent ...................   Passed    1.86 sec
+      Start 25: ucie_diff
+ 2/34 Test  #5: protocol_diff .....................   Passed    3.22 sec
+      Start 10: anns_bank
+ 3/34 Test #29: fcfs_host_contract ................   Passed    3.37 sec
+      Start  3: anns_closed_loop
+ 4/34 Test #25: ucie_diff .........................   Passed    2.26 sec
+      Start 22: driver_reset_diff
+ 5/34 Test #10: anns_bank .........................   Passed    1.27 sec
+      Start  9: bank_diff
+ 6/34 Test  #3: anns_closed_loop ..................   Passed    1.17 sec
+      Start 13: page_lifecycle_diff
+ 7/34 Test #13: page_lifecycle_diff ...............   Passed    0.87 sec
+      Start 17: multichannel_mapping
+ 8/34 Test  #9: bank_diff .........................   Passed    1.01 sec
+      Start 23: external_reset_diff
+ 9/34 Test #22: driver_reset_diff .................   Passed    1.63 sec
+      Start 32: fcfs_host_incremental_contract
+10/34 Test #17: multichannel_mapping ..............   Passed    0.93 sec
+      Start 20: reset_race_diff
+11/34 Test #23: external_reset_diff ...............   Passed    0.86 sec
+      Start 18: multichannel_race
+12/34 Test #32: fcfs_host_incremental_contract ....   Passed    0.75 sec
+      Start 27: external_alignment
+13/34 Test #27: external_alignment ................   Passed    0.35 sec
+      Start 11: read_recovery_contract
+14/34 Test #18: multichannel_race .................   Passed    0.66 sec
+      Start 14: page_wire_diff
+15/34 Test #20: reset_race_diff ...................   Passed    1.02 sec
+      Start 31: fcfs_host_retry_contract
+16/34 Test #11: read_recovery_contract ............   Passed    0.59 sec
+      Start 30: fcfs_host_send_policy_contract
+17/34 Test #14: page_wire_diff ....................   Passed    0.57 sec
+      Start 21: device_reset_diff
+18/34 Test #31: fcfs_host_retry_contract ..........   Passed    0.42 sec
+      Start 24: aou_diff
+19/34 Test #21: device_reset_diff .................   Passed    0.51 sec
+      Start  7: deadline_diff
+20/34 Test #30: fcfs_host_send_policy_contract ....   Passed    0.69 sec
+      Start 15: page_wire_anns
+21/34 Test #24: aou_diff ..........................   Passed    0.52 sec
+      Start  8: recovery_diff
+22/34 Test  #7: deadline_diff .....................   Passed    0.25 sec
+      Start  4: resource_contract
+23/34 Test  #4: resource_contract .................   Passed    0.06 sec
+      Start 28: paper_curve_contract
+24/34 Test #28: paper_curve_contract ..............   Passed    0.15 sec
+      Start 33: fcfs_cursor_contract
+25/34 Test #33: fcfs_cursor_contract ..............   Passed    0.02 sec
+      Start 19: page_group_contract
+26/34 Test  #8: recovery_diff .....................   Passed    0.34 sec
+      Start 16: page_writeback_contract
+27/34 Test #19: page_group_contract ...............   Passed    0.04 sec
+      Start  2: ocp_profile_contract
+28/34 Test #16: page_writeback_contract ...........   Passed    0.02 sec
+      Start 12: bank_adapter_contract
+29/34 Test  #2: ocp_profile_contract ..............   Passed    0.04 sec
+      Start  1: hbm_contract
+30/34 Test #15: page_wire_anns ....................   Passed    0.57 sec
+      Start 34: fcfs_incremental_retry_contract
+31/34 Test #12: bank_adapter_contract .............   Passed    0.06 sec
+32/34 Test  #1: hbm_contract ......................   Passed    0.04 sec
+33/34 Test #34: fcfs_incremental_retry_contract ...   Passed    0.22 sec
+34/34 Test #26: ucie_mutations ....................   Passed   12.83 sec
+
+100% tests passed out of 34
+
+Total Test time (real) =  12.86 sec

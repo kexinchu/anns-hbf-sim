@@ -1,0 +1,4 @@
+/private/tmp/fcfs-final-mutants-20261123/omit_handoff_cleanup/host_driver.cpp:339:13: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+            else if(versions_.at(*u.content).aborted)finish_work(f.id,false,versions_.at(*u.content).reason);
+            ^
+1 warning generated.

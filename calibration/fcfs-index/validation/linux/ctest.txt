@@ -1,0 +1,47 @@
+Internal ctest changing into directory: /tmp/fcfs-validation-20261123-NgB4zI/build
+Test project /tmp/fcfs-validation-20261123-NgB4zI/build
+    Start 29: fcfs_host_contract
+1/6 Test #29: fcfs_host_contract ................***Failed   98.05 sec
+PASS delayed_old_attempts (137 checks)
+PASS ingress_old_attempts (72 checks)
+PASS burst_recovery (7 checks)
+PASS multi_channel_recovery (7 checks)
+PASS prior_success_retained (8 checks)
+PASS abort_new_content (7 checks)
+PASS teardown_host (2 checks)
+PASS runner_device_activity (1 checks)
+PASS round_limit (1 checks)
+PASS late_read_second_pass (79 checks)
+PASS cancelled_future_release (7 checks)
+PASS normal (7 checks)
+Traceback (most recent call last):
+  File "/tmp/fcfs-validation-20261123-NgB4zI/tests/fcfs_donor_contract.py", line 7, in <module>
+    r=subprocess.run([sys.argv[1],case],capture_output=True,text=True,timeout=60)
+  File "/usr/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1154, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 2022, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.10/subprocess.py", line 1198, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['/tmp/fcfs-validation-20261123-NgB4zI/build/fcfs_host_contract', 'sixteen_channels']' timed out after 60 seconds
+
+    Start 30: fcfs_host_send_policy_contract
+2/6 Test #30: fcfs_host_send_policy_contract ....   Passed   15.24 sec
+    Start 31: fcfs_host_retry_contract
+3/6 Test #31: fcfs_host_retry_contract ..........   Passed    7.64 sec
+    Start 32: fcfs_host_incremental_contract
+4/6 Test #32: fcfs_host_incremental_contract ....   Passed   21.13 sec
+    Start 33: fcfs_cursor_contract
+5/6 Test #33: fcfs_cursor_contract ..............   Passed    0.08 sec
+    Start 34: fcfs_incremental_retry_contract
+6/6 Test #34: fcfs_incremental_retry_contract ...   Passed    0.27 sec
+
+83% tests passed, 1 tests failed out of 6
+
+Total Test time (real) = 142.42 sec
+
+The following tests FAILED:
+	 29 - fcfs_host_contract (Failed)
+Errors while running CTest

@@ -1,0 +1,21 @@
+{
+  "baseline": {
+    "cache": {
+      "CMAKE_BUILD_TYPE:STRING": "Release",
+      "CMAKE_CXX_COMPILER:FILEPATH": "/usr/bin/c++",
+      "CMAKE_CXX_FLAGS:STRING": "",
+      "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG"
+    },
+    "binary_sha256": "6797f50b664d0788ed7eac763be37fbdba4dcc44e75cb738b42157bb310437cb"
+  },
+  "optimized": {
+    "cache": {
+      "CMAKE_BUILD_TYPE:STRING": "Release",
+      "CMAKE_CXX_COMPILER:FILEPATH": "/usr/bin/c++",
+      "CMAKE_CXX_FLAGS:STRING": "",
+      "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG"
+    },
+    "binary_sha256": "43f8f837761f80474deb71effac6a06c4866a611abab165b46da3761ddd116dc"
+  },
+  "compiler": "Apple clang version 15.0.0 (clang-1500.3.9.4)\nTarget: arm64-apple-darwin25.4.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n"
+}

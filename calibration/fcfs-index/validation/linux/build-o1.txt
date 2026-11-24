@@ -1,0 +1,259 @@
+[  2%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/diagnostics/runtime_profile.cpp.o
+[  5%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/configuration/simulation_configuration.cpp.o
+[  8%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/architecture/topology_configuration.cpp.o
+[  8%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_configuration.cpp.o
+[ 11%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/architecture/ucie_profile.cpp.o
+[ 14%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/collector.cpp.o
+[ 14%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/event_stream.cpp.o
+[ 17%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/pending.cpp.o
+In file included from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:6,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/configuration/simulation_configuration.hpp:2,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/configuration/simulation_configuration.cpp:1:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp: In member function ‘void hbf_eventlab::BufferBudget::release(std::size_t)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp:12:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   12 |         if(!entries_ || bytes>bytes_) throw std::logic_error("buffer accounting underflow"); --entries_; bytes_-=bytes;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp:12:94: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   12 |         if(!entries_ || bytes>bytes_) throw std::logic_error("buffer accounting underflow"); --entries_; bytes_-=bytes;
+      |                                                                                              ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp: In function ‘void hbf_eventlab::{anonymous}::counts_json(std::ostream&, const std::map<hbf_eventlab::Op, hbf_eventlab::ResultCounts>&)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:47:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   47 |         if(comma)out<<',';comma=true;const auto& c=counts.at(op);
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:47:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   47 |         if(comma)out<<',';comma=true;const auto& c=counts.at(op);
+      |                           ^~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp: In member function ‘void hbf_eventlab::StatisticsCollector::record(const hbf_eventlab::StatGlobalDefined&)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:61:75: warning: missing initializer for member ‘hbf_eventlab::GlobalTiming::released’ [-Wmissing-field-initializers]
+   61 |     require(globals_.emplace(e.id,GlobalTiming{e.id,e.op,e.bytes,e.release}).second,"statistics: duplicate Global");
+      |                                                                           ^
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:61:75: warning: missing initializer for member ‘hbf_eventlab::GlobalTiming::finished’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:61:75: warning: missing initializer for member ‘hbf_eventlab::GlobalTiming::last_child_finished’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:61:75: warning: missing initializer for member ‘hbf_eventlab::GlobalTiming::reason’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:61:75: warning: missing initializer for member ‘hbf_eventlab::GlobalTiming::offered’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:61:75: warning: missing initializer for member ‘hbf_eventlab::GlobalTiming::registered’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp: In member function ‘void hbf_eventlab::StatisticsCollector::record(const hbf_eventlab::StatWorkDefined&)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:66:79: warning: missing initializer for member ‘hbf_eventlab::LogicalTiming::finished’ [-Wmissing-field-initializers]
+   66 |     require(work_.emplace(e.id,LogicalTiming{e.id,e.parent,e.address,e.content}).second,"statistics: duplicate work");
+      |                                                                               ^
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:66:79: warning: missing initializer for member ‘hbf_eventlab::LogicalTiming::reason’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp: In member function ‘void hbf_eventlab::StatisticsCollector::record(const hbf_eventlab::StatAttemptStarted&)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing initializer for member ‘hbf_eventlab::AttemptTiming::rx_arrival’ [-Wmissing-field-initializers]
+  101 |     require(attempts_.emplace(e.id,AttemptTiming{e.id,e.command,e.at}).second,"statistics: duplicate attempt");note(e.at);
+      |                                                                     ^
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing initializer for member ‘hbf_eventlab::AttemptTiming::accepted’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing initializer for member ‘hbf_eventlab::AttemptTiming::delivered’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing initializer for member ‘hbf_eventlab::AttemptTiming::assessed’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing initializer for member ‘hbf_eventlab::AttemptTiming::status’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing initializer for member ‘hbf_eventlab::AttemptTiming::host_success’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing initializer for member ‘hbf_eventlab::AttemptTiming::unit’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing initializer for member ‘hbf_eventlab::AttemptTiming::queued_at’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:101:69: warning: missing initializer for member ‘hbf_eventlab::AttemptTiming::work’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp: In member function ‘void hbf_eventlab::StatisticsCollector::write_json(std::ostream&, hbf_eventlab::Tick, const std::string&) const’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:205:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  205 |         if(comma)out<<',';comma=true;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:205:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  205 |         if(comma)out<<',';comma=true;
+      |                           ^~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:210:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  210 |         if(comma)out<<',';comma=true;const auto& l=entry.second;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:210:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  210 |         if(comma)out<<',';comma=true;const auto& l=entry.second;
+      |                           ^~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:216:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  216 |         if(comma)out<<',';comma=true;const auto& g=entry.second;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:216:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  216 |         if(comma)out<<',';comma=true;const auto& g=entry.second;
+      |                           ^~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:226:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  226 |         if(comma)out<<',';comma=true;const auto& w=entry.second;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:226:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  226 |         if(comma)out<<',';comma=true;const auto& w=entry.second;
+      |                           ^~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:237:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  237 |         if(comma)out<<',';comma=true;const auto& a=entry.second;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/collector.cpp:237:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  237 |         if(comma)out<<',';comma=true;const auto& a=entry.second;
+      |                           ^~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/pending.cpp: In member function ‘void hbf_eventlab::StatisticsCollector::write_pending_json(std::ostream&, hbf_eventlab::Tick) const’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/pending.cpp:138:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  138 |         if(comma)out<<',';comma=true;const auto& s=entry.second;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/pending.cpp:138:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  138 |         if(comma)out<<',';comma=true;const auto& s=entry.second;
+      |                           ^~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/pending.cpp:147:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  147 |         if(comma)out<<',';comma=true;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/pending.cpp:147:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  147 |         if(comma)out<<',';comma=true;
+      |                           ^~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/pending.cpp:153:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  153 |         if(comma)out<<',';comma=true;const auto& d=entry.second;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/pending.cpp:153:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  153 |         if(comma)out<<',';comma=true;const auto& d=entry.second;
+      |                           ^~~~~
+[ 20%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/media.cpp.o
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/media.cpp: In member function ‘void hbf_eventlab::StatisticsCollector::write_bank_json(std::ostream&, hbf_eventlab::Tick) const’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/media.cpp:25:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   25 |         if(comma)out<<',';comma=true;const auto& op=entry.second;const auto& a=op.target;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/media.cpp:25:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   25 |         if(comma)out<<',';comma=true;const auto& op=entry.second;const auto& a=op.target;
+      |                           ^~~~~
+[ 23%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/statistics/reads.cpp.o
+[ 23%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/global_request_splitter.cpp.o
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/reads.cpp: In member function ‘void hbf_eventlab::StatisticsCollector::write_read_json(std::ostream&) const’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/reads.cpp:57:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   57 |         if(comma)out<<',';comma=true;const auto& r=entry.second;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/reads.cpp:57:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   57 |         if(comma)out<<',';comma=true;const auto& r=entry.second;
+      |                           ^~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/reads.cpp:67:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   67 |         if(comma)out<<',';comma=true;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/statistics/reads.cpp:67:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   67 |         if(comma)out<<',';comma=true;
+      |                           ^~~~~
+[ 26%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/retention_store.cpp.o
+[ 29%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/recovery_manager.cpp.o
+[ 32%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_driver.cpp.o
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/host/host_driver.cpp: In member function ‘hbf_eventlab::SendUnitId hbf_eventlab::HostDriver::add_unit(hbf_eventlab::Op, std::vector<hbf_eventlab::Fragment>, std::optional<hbf_eventlab::ContentKey>, std::optional<unsigned int>, bool, uint64_t)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/host/host_driver.cpp:31:52: warning: missing initializer for member ‘hbf_eventlab::HostDriver::Unit::command’ [-Wmissing-field-initializers]
+   31 |     Unit u{id,op,std::move(fragments),content,group};u.replay=replay;u.pass=pass;
+      |                                                    ^
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/host/host_driver.cpp: In member function ‘void hbf_eventlab::HostDriver::receive(hbf_eventlab::CommandId, const hbf_eventlab::DeliveredResponse&)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/host/host_driver.cpp:337:11: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  337 |         if(!u.replay)for(const auto& f:u.fragments)
+      |           ^
+[ 35%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_input.cpp.o
+[ 35%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_indices.cpp.o
+[ 38%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/host_storage.cpp.o
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/host/host_input.cpp: In member function ‘void hbf_eventlab::HostDriver::register_input(std::vector<PreparedRequest>)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/host/host_input.cpp:100:139: warning: missing initializer for member ‘hbf_eventlab::WorkResult::reason’ [-Wmissing-field-initializers]
+  100 |         const auto inserted=results_.emplace(r.id,WorkResult{r.id,LogicalResult::Pending,static_cast<std::size_t>(r.bytes/host_unit_bytes)});
+      |                                                                                                                                           ^
+[ 41%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/host/write_retry.cpp.o
+[ 44%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/simulation_runner.cpp.o
+In file included from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:6,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/simulation_runner.cpp:1:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp: In member function ‘void hbf_eventlab::BufferBudget::release(std::size_t)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp:12:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   12 |         if(!entries_ || bytes>bytes_) throw std::logic_error("buffer accounting underflow"); --entries_; bytes_-=bytes;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp:12:94: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   12 |         if(!entries_ || bytes>bytes_) throw std::logic_error("buffer accounting underflow"); --entries_; bytes_-=bytes;
+      |                                                                                              ^~
+[ 44%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/simulation_session.cpp.o
+[ 47%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/architecture/execution_configuration.cpp.o
+[ 50%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/bank_cache.cpp.o
+In file included from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:6,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/simulation_runner.hpp:3,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/configuration/simulation_configuration.hpp:2,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/simulation_session.hpp:2,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/simulation_session.cpp:1:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp: In member function ‘void hbf_eventlab::BufferBudget::release(std::size_t)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp:12:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   12 |         if(!entries_ || bytes>bytes_) throw std::logic_error("buffer accounting underflow"); --entries_; bytes_-=bytes;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp:12:94: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   12 |         if(!entries_ || bytes>bytes_) throw std::logic_error("buffer accounting underflow"); --entries_; bytes_-=bytes;
+      |                                                                                              ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/bank_cache.cpp: In member function ‘hbf_eventlab::ReadResultLease hbf_eventlab::BankCache::pin_fill(hbf_eventlab::CacheFill, uint32_t)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/bank_cache.cpp:56:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   56 |     if(!get(f).filling) throw std::logic_error("not a fill"); return reference(f,offset);
+      |     ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/bank_cache.cpp:56:63: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   56 |     if(!get(f).filling) throw std::logic_error("not a fill"); return reference(f,offset);
+      |                                                               ^~~~~~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/bank_cache.cpp: In member function ‘virtual void hbf_eventlab::BankCache::release(hbf_eventlab::ReadResultId)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/bank_cache.cpp:79:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   79 |     if(--get(it->second.slot).references==0) --protected_; refs_.erase(it);
+      |     ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/bank_cache.cpp:79:60: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   79 |     if(--get(it->second.slot).references==0) --protected_; refs_.erase(it);
+      |                                                            ^~~~~
+[ 52%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/device_driver.cpp.o
+[ 52%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/architecture/device_description.cpp.o
+[ 55%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/policies/reference_address_layout.cpp.o
+[ 58%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/policies/round_robin_interleaver.cpp.o
+[ 61%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/zone_mapping.cpp.o
+[ 64%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/block_replacement.cpp.o
+[ 64%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/capacity_retirement_coordinator.cpp.o
+In file included from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/device_driver.hpp:6,
+                 from /tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/device_driver.cpp:1:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp: In member function ‘void hbf_eventlab::BufferBudget::release(std::size_t)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp:12:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   12 |         if(!entries_ || bytes>bytes_) throw std::logic_error("buffer accounting underflow"); --entries_; bytes_-=bytes;
+      |         ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/include/hbf_eventlab/runtime/link_buffers.hpp:12:94: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   12 |         if(!entries_ || bytes>bytes_) throw std::logic_error("buffer accounting underflow"); --entries_; bytes_-=bytes;
+      |                                                                                              ^~
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/device_driver.cpp: In member function ‘virtual hbf_eventlab::HandoffResult hbf_eventlab::DeviceDriver::try_submit(const hbf_eventlab::LocalTransaction&, Receiver, hbf_eventlab::IHostPort::AcceptanceObserver)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/device_driver.cpp:121:79: warning: missing initializer for member ‘hbf_eventlab::DeviceDriver::Transaction::wait’ [-Wmissing-field-initializers]
+  121 |     Transaction transaction{id,input,std::move(receiver),std::move(acceptance)};
+      |                                                                               ^
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/device_driver.cpp:121:79: warning: missing initializer for member ‘hbf_eventlab::DeviceDriver::Transaction::read’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/device_driver.cpp:121:79: warning: missing initializer for member ‘hbf_eventlab::DeviceDriver::Transaction::cache_result’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/device_driver.cpp:121:79: warning: missing initializer for member ‘hbf_eventlab::DeviceDriver::Transaction::target’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/device_driver.cpp:121:79: warning: missing initializer for member ‘hbf_eventlab::DeviceDriver::Transaction::egress’ [-Wmissing-field-initializers]
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/device_driver.cpp:121:79: warning: missing initializer for member ‘hbf_eventlab::DeviceDriver::Transaction::delivered’ [-Wmissing-field-initializers]
+[ 67%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/nand_media_state.cpp.o
+[ 70%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/write_path.cpp.o
+[ 73%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/read_path.cpp.o
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/write_path.cpp: In member function ‘hbf_eventlab::WriteSubmission hbf_eventlab::WritePath::reject(const hbf_eventlab::HostCommand&, std::optional<hbf_eventlab::LogicalBlockKey>, hbf_eventlab::WriteStatus, uint8_t)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/write_path.cpp:58:68: warning: missing initializer for member ‘hbf_eventlab::WriteSubmission::waits’ [-Wmissing-field-initializers]
+   58 |     return {SubmitResult::Accepted, WriteDisposition::Error, status};
+      |                                                                    ^
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/write_path.cpp: In member function ‘hbf_eventlab::WriteSubmission hbf_eventlab::WritePath::submit(const hbf_eventlab::HostCommand&, const std::vector<hbf_eventlab::Quantity<hbf_eventlab::DataTokenTag> >&)’:
+/tmp/fcfs-validation-20261123-NgB4zI/build-o1/eventlab-overlay/src/runtime/write_path.cpp:176:62: warning: missing initializer for member ‘hbf_eventlab::WriteSubmission::waits’ [-Wmissing-field-initializers]
+  176 |     return {SubmitResult::Accepted, disposition, std::nullopt};
+      |                                                              ^
+[ 73%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/command_admission.cpp.o
+[ 76%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/admission_wait_registry.cpp.o
+[ 79%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/write_assembly.cpp.o
+[ 82%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/runtime/block_write_order.cpp.o
+[ 82%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/infrastructure/event_queue.cpp.o
+[ 85%] Building CXX object eventlab/CMakeFiles/hbf_eventlab.dir/src/policies/read_dispatch.cpp.o
+[ 88%] Linking CXX static library libhbf_eventlab.a
+[ 88%] Built target hbf_eventlab
+[ 91%] Building CXX object eventlab/CMakeFiles/hbf_eventlab_workload_io.dir/src/adapters/workload_reader.cpp.o
+[ 94%] Linking CXX static library libhbf_eventlab_workload_io.a
+[ 94%] Built target hbf_eventlab_workload_io
+[ 97%] Building CXX object CMakeFiles/fcfs_host_contract.dir/vendor/EventLab/tests/host.cpp.o
+[100%] Linking CXX executable fcfs_host_contract
+[100%] Built target fcfs_host_contract
+Consolidate compiler generated dependencies of target hbf_eventlab
+[ 90%] Built target hbf_eventlab
+Consolidate compiler generated dependencies of target hbf_eventlab_workload_io
+[ 96%] Built target hbf_eventlab_workload_io
+[100%] Building CXX object CMakeFiles/fcfs_host_send_policy_contract.dir/vendor/EventLab/tests/host_send_policy.cpp.o
+[100%] Linking CXX executable fcfs_host_send_policy_contract
+[100%] Built target fcfs_host_send_policy_contract
+[ 88%] Built target hbf_eventlab
+[ 94%] Built target hbf_eventlab_workload_io
+[ 97%] Building CXX object CMakeFiles/fcfs_host_retry_contract.dir/vendor/EventLab/tests/host_retry.cpp.o
+[100%] Linking CXX executable fcfs_host_retry_contract
+[100%] Built target fcfs_host_retry_contract
+[ 90%] Built target hbf_eventlab
+[ 96%] Built target hbf_eventlab_workload_io
+[100%] Building CXX object CMakeFiles/fcfs_host_incremental_contract.dir/vendor/EventLab/tests/host_incremental.cpp.o
+[100%] Linking CXX executable fcfs_host_incremental_contract
+[100%] Built target fcfs_host_incremental_contract
+[ 96%] Built target hbf_eventlab
+[100%] Building CXX object CMakeFiles/fcfs_cursor_contract.dir/src/fcfs_cursor_contract.cpp.o
+[100%] Linking CXX executable fcfs_cursor_contract
+[100%] Built target fcfs_cursor_contract
+[ 93%] Built target hbf_eventlab
+[ 96%] Building CXX object CMakeFiles/fcfs_incremental_retry_contract.dir/src/fcfs_incremental_retry_contract.cpp.o
+[100%] Linking CXX executable fcfs_incremental_retry_contract
+[100%] Built target fcfs_incremental_retry_contract
