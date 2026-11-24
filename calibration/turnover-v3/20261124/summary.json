@@ -1,0 +1,356 @@
+{
+  "runs": [
+    {
+      "requests": 12288,
+      "senses": 12288,
+      "page_efficiency": 0.0625,
+      "window_GBps": [
+        0.09401226345908575,
+        0.09401226345908575,
+        0.09401226345908575,
+        0.09401226345908575
+      ],
+      "window_p99_ps": [
+        2723049,
+        2723049,
+        2723049,
+        2723049
+      ],
+      "steady": true,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "payload-v3",
+      "size": 256,
+      "pages": 3072,
+      "pattern": "dependent",
+      "qd": 1,
+      "artifact": "results/payload-v3-256-3072-dependent.status.json"
+    },
+    {
+      "requests": 12288,
+      "senses": 12264,
+      "page_efficiency": 0.06262230919765166,
+      "window_GBps": [
+        11.107684121334534,
+        11.553217191792202,
+        12.019894561507893,
+        11.112735185026295
+      ],
+      "window_p99_ps": [
+        5439451,
+        5434776,
+        5431797,
+        5431147
+      ],
+      "steady": false,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "payload-v3",
+      "size": 256,
+      "pages": 3072,
+      "pattern": "random",
+      "qd": 128,
+      "artifact": "results/payload-v3-256-3072-random.status.json"
+    },
+    {
+      "requests": 196608,
+      "senses": 12288,
+      "page_efficiency": 1.0,
+      "window_GBps": [
+        12.029777765820894,
+        12.033569722762977,
+        12.033569722762977,
+        12.033569722762977
+      ],
+      "window_p99_ps": [
+        2740074,
+        2723049,
+        2723049,
+        2723049
+      ],
+      "steady": true,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "payload-v3",
+      "size": 256,
+      "pages": 3072,
+      "pattern": "sequential",
+      "qd": 128,
+      "artifact": "results/payload-v3-256-3072-sequential.status.json"
+    },
+    {
+      "requests": 12288,
+      "senses": 12264,
+      "page_efficiency": 1.0019569471624266,
+      "window_GBps": [
+        175.07571663765785,
+        182.3129630581338,
+        186.37989646134045,
+        176.26125947934443
+      ],
+      "window_p99_ps": [
+        5412107,
+        5353157,
+        5301757,
+        5280923
+      ],
+      "steady": false,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "payload-v3",
+      "size": 4096,
+      "pages": 3072,
+      "pattern": "random",
+      "qd": 128,
+      "artifact": "results/payload-v3-4096-3072-random.status.json"
+    },
+    {
+      "requests": 12288,
+      "senses": 12288,
+      "page_efficiency": 1.0,
+      "window_GBps": [
+        188.8203835603118,
+        189.6907604410999,
+        189.6907604410999,
+        189.6907604410999
+      ],
+      "window_p99_ps": [
+        3026094,
+        2763909,
+        2763909,
+        2763909
+      ],
+      "steady": true,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "payload-v3",
+      "size": 4096,
+      "pages": 3072,
+      "pattern": "sequential",
+      "qd": 128,
+      "artifact": "results/payload-v3-4096-3072-sequential.status.json"
+    },
+    {
+      "requests": 12288,
+      "senses": 12288,
+      "page_efficiency": 0.0625,
+      "window_GBps": [
+        0.09398706723269398,
+        0.09398706723269398,
+        0.09398706723269398,
+        0.09398706723269398
+      ],
+      "window_p99_ps": [
+        2723779,
+        2723779,
+        2723779,
+        2723779
+      ],
+      "steady": true,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "service-v2",
+      "size": 256,
+      "pages": 3072,
+      "pattern": "dependent",
+      "qd": 1,
+      "artifact": "results/service-v2-256-3072-dependent.status.json"
+    },
+    {
+      "requests": 12288,
+      "senses": 12264,
+      "page_efficiency": 0.06262230919765166,
+      "window_GBps": [
+        11.10459494213907,
+        11.550331237507416,
+        12.013301042739291,
+        11.110853664256776
+      ],
+      "window_p99_ps": [
+        5439038,
+        5433419,
+        5429776,
+        5428646
+      ],
+      "steady": false,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "service-v2",
+      "size": 256,
+      "pages": 3072,
+      "pattern": "random",
+      "qd": 128,
+      "artifact": "results/service-v2-256-3072-random.status.json"
+    },
+    {
+      "requests": 196608,
+      "senses": 12288,
+      "page_efficiency": 1.0,
+      "window_GBps": [
+        12.025603400697367,
+        12.03034460578483,
+        12.03034460578483,
+        12.03034460578483
+      ],
+      "window_p99_ps": [
+        2745079,
+        2723779,
+        2723779,
+        2723779
+      ],
+      "steady": true,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "service-v2",
+      "size": 256,
+      "pages": 3072,
+      "pattern": "sequential",
+      "qd": 128,
+      "artifact": "results/service-v2-256-3072-sequential.status.json"
+    },
+    {
+      "requests": 12288,
+      "senses": 12264,
+      "page_efficiency": 1.0019569471624266,
+      "window_GBps": [
+        174.37409820743613,
+        181.63946359815324,
+        184.84751310339755,
+        175.8674365920988
+      ],
+      "window_p99_ps": [
+        5406818,
+        5331315,
+        5266573,
+        5243241
+      ],
+      "steady": false,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "service-v2",
+      "size": 4096,
+      "pages": 3072,
+      "pattern": "random",
+      "qd": 128,
+      "artifact": "results/service-v2-4096-3072-random.status.json"
+    },
+    {
+      "requests": 12288,
+      "senses": 12288,
+      "page_efficiency": 1.0,
+      "window_GBps": [
+        187.8603867618997,
+        188.93948932916118,
+        188.93948932916118,
+        188.93948932916118
+      ],
+      "window_p99_ps": [
+        3102919,
+        2774899,
+        2774899,
+        2774899
+      ],
+      "steady": true,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 3,
+      "mode": "service-v2",
+      "size": 4096,
+      "pages": 3072,
+      "pattern": "sequential",
+      "qd": 128,
+      "artifact": "results/service-v2-4096-3072-sequential.status.json"
+    },
+    {
+      "requests": 393216,
+      "senses": 24576,
+      "page_efficiency": 1.0,
+      "window_GBps": [
+        12.031673445519342,
+        12.033569722762977,
+        12.033569722762977,
+        12.033569722762977
+      ],
+      "window_p99_ps": [
+        2731221,
+        2723049,
+        2723049,
+        2723049
+      ],
+      "steady": true,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 6,
+      "mode": "payload-v3",
+      "size": 256,
+      "pages": 6144,
+      "pattern": "sequential",
+      "qd": 128,
+      "artifact": "retry-input-limit/payload-v3-256-6144-sequential.status.json"
+    },
+    {
+      "requests": 24576,
+      "senses": 24576,
+      "page_efficiency": 1.0,
+      "window_GBps": [
+        189.25457129580374,
+        189.6907604410999,
+        189.6907604410999,
+        189.6907604410999
+      ],
+      "window_p99_ps": [
+        2938926,
+        2763909,
+        2763909,
+        2763909
+      ],
+      "steady": true,
+      "distinct_banks": 1024,
+      "min_pages_per_bank": 6,
+      "mode": "payload-v3",
+      "size": 4096,
+      "pages": 6144,
+      "pattern": "sequential",
+      "qd": 128,
+      "artifact": "retry-input-limit/payload-v3-4096-6144-sequential.status.json"
+    }
+  ],
+  "invalid_retained": [
+    {
+      "artifact": "results/payload-v3-256-6144-sequential.status.json",
+      "status": {
+        "valid": false,
+        "exit": 1,
+        "wall_seconds": 30.463174196891487
+      }
+    },
+    {
+      "artifact": "results/payload-v3-4096-6144-sequential.status.json",
+      "status": {
+        "valid": false,
+        "exit": 1,
+        "wall_seconds": 344.16637824382633
+      }
+    }
+  ],
+  "length_checks": [
+    {
+      "size": 256,
+      "rates_GBps": [
+        12.033569722762977,
+        12.033569722762977
+      ],
+      "within_5_percent": true
+    },
+    {
+      "size": 4096,
+      "rates_GBps": [
+        189.6907604410999,
+        189.6907604410999
+      ],
+      "within_5_percent": true
+    }
+  ],
+  "fit_performed": false,
+  "hardware_calibrated": false,
+  "paper_curve_reproduced": false,
+  "performance_ready": false
+}

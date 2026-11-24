@@ -1,0 +1,31 @@
+service-v2-256-3072-dependent [0.09398706723269398, 0.09398706723269398, 0.09398706723269398, 0.09398706723269398] True
+service-v2-256-3072-random [11.10459494213907, 11.550331237507416, 12.013301042739291, 11.110853664256776] False
+payload-v3-256-3072-random [11.107684121334534, 11.553217191792202, 12.019894561507893, 11.112735185026295] False
+service-v2-256-3072-sequential [12.025603400697367, 12.03034460578483, 12.03034460578483, 12.03034460578483] True
+payload-v3-256-3072-dependent [0.09401226345908575, 0.09401226345908575, 0.09401226345908575, 0.09401226345908575] True
+payload-v3-256-3072-sequential [12.029777765820894, 12.033569722762977, 12.033569722762977, 12.033569722762977] True
+service-v2-4096-3072-sequential [187.8603867618997, 188.93948932916118, 188.93948932916118, 188.93948932916118] True
+payload-v3-4096-3072-sequential [188.8203835603118, 189.6907604410999, 189.6907604410999, 189.6907604410999] True
+service-v2-4096-3072-random [174.37409820743613, 181.63946359815324, 184.84751310339755, 175.8674365920988] False
+payload-v3-4096-3072-random [175.07571663765785, 182.3129630581338, 186.37989646134045, 176.26125947934443] False
+Traceback (most recent call last):
+  File "/tmp/turnover-v3-20261124/tests/turnover_v3.py", line 52, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/turnover-v3-20261124/tests/turnover_v3.py", line 47, in main
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:results=list(pool.map(run,jobs))
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 621, in result_iterator
+    yield _result_or_cancel(fs.pop())
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 319, in _result_or_cancel
+    return fut.result(timeout)
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/tmp/turnover-v3-20261124/tests/turnover_v3.py", line 40, in run
+    (out/(key+'.stderr')).write_text(r.stderr);assert r.returncode==0,r.stderr
+AssertionError: initialization-start
+initialization-complete
+workload exceeds configured fragment limit
+

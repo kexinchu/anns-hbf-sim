@@ -1,0 +1,9 @@
+{
+  "model": "payload-v3",
+  "cases": 12,
+  "read_commands": 1536,
+  "negative_cases": 3,
+  "checks": "PASS",
+  "scope": "transaction-level service accounting, NOT flit calibration",
+  "hardware_calibrated": false
+}

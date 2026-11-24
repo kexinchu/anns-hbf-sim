@@ -1,0 +1,11 @@
+Undefined symbols for architecture arm64:
+  "___sanitizer_annotate_double_ended_contiguous_container", referenced from:
+      std::__1::deque<hbf_eventlab::EventQueue::Event, std::__1::allocator<hbf_eventlab::EventQueue::Event>>::__annotate_double_ended_contiguous_container[abi:ne180100](void const*, void const*, void const*, void const*, void const*, void const*) const in link_v3_probe.cpp.o
+      std::__1::deque<hbf_eventlab::RetainedKey, std::__1::allocator<hbf_eventlab::RetainedKey>>::__annotate_double_ended_contiguous_container[abi:ne180100](void const*, void const*, void const*, void const*, void const*, void const*) const in libhbf_eventlab.a[13](retention_store.cpp.o)
+      std::__1::deque<hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>, std::__1::allocator<hbf_eventlab::Quantity<hbf_eventlab::CommandIdTag>>>::__annotate_double_ended_contiguous_container[abi:ne180100](void const*, void const*, void const*, void const*, void const*, void const*) const in libhbf_eventlab.a[24](device_driver.cpp.o)
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[3]: *** [link_v3_probe] Error 1
+make[2]: *** [CMakeFiles/link_v3_probe.dir/all] Error 2
+make[1]: *** [CMakeFiles/link_v3_probe.dir/rule] Error 2
+make: *** [link_v3_probe] Error 2

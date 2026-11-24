@@ -9,6 +9,8 @@ for line in r.stdout.splitlines():
  elif x['kind']=='event':cases[-1][1].append(x)
 def check(cfg,events):
  rate={1:48,2:94,3:188}[cfg['grade']];req=(16000+rate-1)//rate;resp=((64+cfg['response_control'])*1000+rate-1)//rate
+ if len(sys.argv)>3 and sys.argv[3]=='v3':
+  raw={1:64,2:128,3:256}[cfg['grade']];req=(16000+raw-1)//raw;resp=(64000+rate-1)//rate
  by={}
  for e in events:by.setdefault((e['channel'],e['id']),{})[e['action']]=e['ps']
  assert len(by)==128 and not any(e['action'].startswith('sense-') for e in events)
@@ -24,9 +26,9 @@ def check(cfg,events):
 for c,e in cases:check(c,e)
 assert len(cases)==12
 bad=copy.deepcopy(cases[0]);next(e for e in bad[1] if e['action']=='delivered')['ps']+=1
-mutants=[bad,[dict(cases[0][0],response_control=0),cases[0][1]],[dict(cases[0][0],fixed_ps=100),cases[0][1]]]
+mutants=[bad,[dict(cases[0][0],grade=2),cases[0][1]],[dict(cases[0][0],fixed_ps=100),cases[0][1]]]
 for c,e in mutants:
  try:check(c,e)
  except AssertionError:pass
  else:raise AssertionError('corrupted accounting accepted')
-(out/'verdict.json').write_text(json.dumps({'cases':12,'read_commands':1536,'negative_cases':3,'checks':'PASS','scope':'transaction-level service accounting, NOT flit calibration','hardware_calibrated':False},indent=2));print('PASS: 12 cases, 1536 read commands, 3 negative controls')
+(out/'verdict.json').write_text(json.dumps({'model':'payload-v3' if len(sys.argv)>3 and sys.argv[3]=='v3' else 'service-v2','cases':12,'read_commands':1536,'negative_cases':3,'checks':'PASS','scope':'transaction-level service accounting, NOT flit calibration','hardware_calibrated':False},indent=2));print('PASS: 12 cases, 1536 read commands, 3 negative controls')

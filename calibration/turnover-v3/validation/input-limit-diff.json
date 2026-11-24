@@ -1,0 +1,10 @@
+[
+  {
+    "mode": "service-v2",
+    "identical_requests_and_event_digest_after_input_limit_change": true
+  },
+  {
+    "mode": "payload-v3",
+    "identical_requests_and_event_digest_after_input_limit_change": true
+  }
+]

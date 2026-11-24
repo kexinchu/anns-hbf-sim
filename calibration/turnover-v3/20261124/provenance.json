@@ -1,0 +1,12 @@
+{
+  "host": "cloudsys01.engr.uconn.edu",
+  "compute": "CPU only; no GPU or ANNS performance runs",
+  "compiler": "g++ Ubuntu 12.3.0-1ubuntu1~22.04.3",
+  "flags": "-O3 -DNDEBUG -std=c++20",
+  "library_sha256": "ccc611ff1987f6c526c7010d2987f126b5bb5c9b8c43b61a714f7770ea669251",
+  "initial_binary_sha256": "ac1b612fabb26be6bf5a2c4d47d20184117e7562fa490fa92fb1926d9441a4bd",
+  "retry_binary_sha256": "f1ef2ae6cd62e429ab8671aa672422fcf71a8f8c96f54baa43fb5474d4e3f922",
+  "later_change": "Final source additionally rejects overflowing control-only configuration before running; no valid-configuration timing change.",
+  "initial_probe_source_sha256": "30ff8384978d6b0010e4823679a16edc0f0982f8a517d4f625023f50d3d39b59",
+  "initial_probe_source_verified_against_pre_run_bundle": true
+}

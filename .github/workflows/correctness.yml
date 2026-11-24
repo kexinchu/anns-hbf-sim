@@ -5,13 +5,15 @@ permissions:
 jobs:
   cpu:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30 # Full-library sanitizer coverage now includes page turnover.
     steps:
       - uses: actions/checkout@v4
       - run: python3 bootstrap.py
       - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DANNS_FCFS_INDEX=CHECK -DANNS_DEVICE_INDEX=CHECK
       - run: cmake --build build -j 4
       - run: ctest --test-dir build --output-on-failure
+      - run: python3 tests/turnover_audit_negative.py calibration/turnover-v3/20261124
+      - run: cd calibration/turnover-v3/20261124 && sha256sum -c SHA256SUMS
       - run: python3 tests/fcfs_mutations.py build build/fcfs-mutants
       - run: python3 tests/mechanism_mutations.py build build/mechanism-mutants
       - run: python3 tests/device_index_mutations.py build build/device-index-mutants
@@ -37,8 +39,9 @@ jobs:
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ibuild/eventlab-overlay/include src/device_reset_probe.cpp build/eventlab/libhbf_eventlab.a -o build/device_reset_sanitized
       - run: python3 tests/device_reset_diff.py build/device_reset_sanitized build/device-reset-sanitized
       - run: cmake -S . -B build-driver-sanitized -DANNS_DEVICE_INDEX=CHECK -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer -g"
-      - run: cmake --build build-driver-sanitized --target driver_reset_probe external_reset_probe aou_probe ucie_probe ucie_trace fcfs_host_contract fcfs_host_send_policy_contract fcfs_host_retry_contract fcfs_host_incremental_contract fcfs_cursor_contract fcfs_incremental_retry_contract mechanism_probe -j 4
+      - run: cmake --build build-driver-sanitized --target driver_reset_probe external_reset_probe aou_probe ucie_probe ucie_trace fcfs_host_contract fcfs_host_send_policy_contract fcfs_host_retry_contract fcfs_host_incremental_contract fcfs_cursor_contract fcfs_incremental_retry_contract mechanism_probe link_v3_probe link_accounting_probe link_write_probe turnover_probe -j 4
       - run: ctest --test-dir build-driver-sanitized -R '^fcfs_' --output-on-failure
+      - run: ctest --test-dir build-driver-sanitized -R '^(link_v3_contract|link_accounting_contract|link_write_contract|turnover_contract)$' --output-on-failure
       - run: python3 tests/mechanism_diff.py build-driver-sanitized/mechanism_probe build/mechanism-sanitized
       - run: python3 tests/ucie_diff.py build-driver-sanitized/ucie_trace build-driver-sanitized/ucie_probe build/ucie-sanitized
       - run: python3 tests/aou_diff.py build-driver-sanitized/aou_probe build/aou-sanitized
@@ -53,6 +56,7 @@ jobs:
           name: correctness-evidence
           path: |
             build/Testing/Temporary/
+            build-driver-sanitized/Testing/Temporary/
             build-upstream/Testing/Temporary/
             build/validation/
             build/protocol-validation/
@@ -89,5 +93,6 @@ jobs:
             build/device-index-differential/
             build/alignment-protocol-validation/
             build/link-accounting-validation/
+            build/link-v3-validation/
             build/ucie-sanitized/
             build/external-alignment/

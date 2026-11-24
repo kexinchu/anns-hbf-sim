@@ -1,0 +1,21 @@
+{
+ "version":3,
+ "link_model":"payload-v3: nonempty payload charged once at effective 94GB/s SG2; control-only assumed 16B at raw128GB/s; fixed100ps each direction",
+ "reference":"OCP HBF v0.7 section5.1.2.2 system94GB/s; Table4 96GB/s implication unresolved; no fit to1536",
+ "control":"service-v2 unchanged, same workload",
+ "topology":"16 channels x4 dies x16 banks; two buffers/bank; 4KiB pages, 4KiB channel striping; FIFO; ideal Core",
+ "sense_ps":2720000,
+ "mocs":4096,
+ "pages":[3072,6144],
+ "rounds":4,
+ "seed":314159,
+ "patterns":{"sequential":"consume whole footprint contiguously","random":"permuted pages, one parent per page","dependent":"same random trace, parent QD1"},
+ "arrival":"continuous closed-loop; no drain or flush at round/window boundaries",
+ "timing":"whole-stream first submission to final completion, plus equal-count completion windows; first window warmup excluded only from steady estimate",
+ "steady_rule":"three post-warmup equal-count completion windows, max/min throughput <=1.05; otherwise report non-steady and keep all results",
+ "length_rule":"v3 sequential double-footprint confirmation, final window rates must differ <=5%; no adaptation if failed",
+ "cases":"v2/v3 x {sequential256, sequential4096, random256, random4096, dependent256} at3072pages; independent QD128, dependentQD1; additional v3 sequential256/4096 at6144pages",
+ "fit":{"performed":false,"training_observations":[],"note":"sense is inherited paper-fitted nominal, not hardware validation"},
+ "validation_seed":314159,
+ "hardware_calibrated":false,"paper_curve_reproduced":false,"performance_ready":false
+}

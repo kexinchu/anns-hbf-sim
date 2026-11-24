@@ -102,3 +102,5 @@ UCIe lower-transport work: [retry ownership and FDI/reset audit](docs/UCIE_LIFET
 External numeric audit: [OCP and paper alignment](calibration/external-alignment/README.md), including exposed source conflicts and uncalibrated timing differences.
 
 Frozen paper-aligned topology, closed-loop QD/dependency sweeps, and calibration/validation boundaries: [component curves](calibration/paper-curves/README.md). Missing external curve data and invalid execution points remain explicit; performance stays gated.
+
+- [可选 payload-v3 链路模型及长工作集验收边界](docs/LINK_PAYLOAD_V3_ZH.md)：保留 v2，校准与性能门仍关闭。

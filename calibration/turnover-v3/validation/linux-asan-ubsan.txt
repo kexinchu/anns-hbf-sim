@@ -1,0 +1,5 @@
+PASS: 12 cases, 1536 read commands, 3 negative controls
+PASS: 12 cases, 1536 read commands, 3 negative controls
+12 write/ACK cases passed; 24 timing mutations rejected
+two independent FIFO traces passed; six corrupt traces and four invalid inputs rejected
+PASS

@@ -1,0 +1,7 @@
+{
+ "reason":"The 24MiB cases exceed the donor default cumulative 1048576 logical-fragment input guard, including initialization. Both original failures are retained.",
+ "max_logical_fragments":2097152,
+ "scope":"Input admission total only; no change to QD, MOCS, resident resource queues, timing, topology, trace, window criteria or link model.",
+ "rerun":"Only the two failed 6144-page cases; new binary and artifacts in retry-input-limit; original outputs immutable.",
+ "fit_performed":false
+}
