@@ -1,0 +1,15 @@
+{
+  "source_and_binary_sha256": {
+    "src/large_window_probe.cpp": "8f4a71a130659f8c3770cb4c9b256e70772710e767b76b18bb38ff3550478b4c",
+    "tests/paper_curves_v2.py": "3e08198f8aa01851d3236983a80f57790b686ebc3a01f6341a7c7c5438d86813",
+    "calibration/paper-curves/protocol-v2.json": "6a9c95ef710863caec3ecc5ddab57a93281d62cd7e5cd33952e6fe7b5d7ff9c5",
+    "large_window_probe": "7b73e3667e99d01947a70c900852b0800202757615fc33dddf43f2fb07d44b21",
+    "build/libhbf_eventlab.a": "5d52a65ccdd7173461ddbe138fcb7a03940756114ffe46921073084d6013fa31"
+  },
+  "compiler": "g++ (Ubuntu 12.3.0-1ubuntu1~22.04.3) 12.3.0",
+  "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+  "build_type": "Release, -O3 -DNDEBUG probe, DEVICE index ON, FCFS index ON",
+  "gpu_used": false,
+  "fit_performed": false,
+  "performance_ready": false
+}

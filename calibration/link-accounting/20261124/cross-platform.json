@@ -1,0 +1,6 @@
+{
+  "case": "4096 cold sequential QD1024 MOCS4096",
+  "linux_vs_prior_macos_request_records_byte_identical": true,
+  "stdout_sha256": "f24ff8df6ad3986d87068ab52f1abc6334facda8f2796d8799b6d20bb0e83e55",
+  "scope": "deterministic simulation replay, not hardware calibration"
+}

@@ -1,0 +1,13 @@
+{
+  "case": {
+    "size": 256,
+    "cache": "cold",
+    "pattern": "random",
+    "qd": 1,
+    "mocs": 4096,
+    "seed": 2718
+  },
+  "valid": true,
+  "exit": 0,
+  "wall_seconds": 0.39915189146995544
+}

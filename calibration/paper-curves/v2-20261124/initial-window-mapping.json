@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "seed": 8301,
+      "pattern": "sequential",
+      "parent_bytes": 256,
+      "initial_qd": 16,
+      "channels": [
+        0
+      ]
+    },
+    {
+      "seed": 8301,
+      "pattern": "random",
+      "parent_bytes": 256,
+      "initial_qd": 16,
+      "channels": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        7,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "seed": 2718,
+      "pattern": "sequential",
+      "parent_bytes": 256,
+      "initial_qd": 16,
+      "channels": [
+        0
+      ]
+    },
+    {
+      "seed": 2718,
+      "pattern": "random",
+      "parent_bytes": 256,
+      "initial_qd": 16,
+      "channels": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10,
+        11,
+        13,
+        15
+      ]
+    }
+  ],
+  "scope": "initial arrival window only; no alternate mapping run"
+}

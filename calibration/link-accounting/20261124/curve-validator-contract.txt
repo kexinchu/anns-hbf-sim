@@ -1,0 +1,1 @@
+PASS: frozen 192-point grid, original-scanner fixture, 5 corrupted records rejected

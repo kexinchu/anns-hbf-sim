@@ -1,0 +1,81 @@
+Test project /private/tmp/window-check
+      Start 26: ucie_mutations
+      Start  5: protocol_diff
+      Start 29: fcfs_host_contract
+      Start 22: driver_reset_diff
+ 1/38 Test #22: driver_reset_diff .................   Passed    1.78 sec
+      Start 25: ucie_diff
+ 2/38 Test #29: fcfs_host_contract ................   Passed    2.03 sec
+      Start  6: anns_concurrent
+ 3/38 Test  #5: protocol_diff .....................   Passed    2.62 sec
+      Start  3: anns_closed_loop
+ 4/38 Test #25: ucie_diff .........................   Passed    1.10 sec
+      Start 10: anns_bank
+ 5/38 Test  #6: anns_concurrent ...................   Passed    1.49 sec
+      Start 36: alignment_protocol_contract
+ 6/38 Test  #3: anns_closed_loop ..................   Passed    1.32 sec
+      Start 35: mechanism_diff
+ 7/38 Test #10: anns_bank .........................   Passed    1.31 sec
+      Start 20: reset_race_diff
+ 8/38 Test #36: alignment_protocol_contract .......   Passed    1.20 sec
+      Start 18: multichannel_race
+ 9/38 Test #20: reset_race_diff ...................   Passed    0.63 sec
+      Start 17: multichannel_mapping
+10/38 Test #35: mechanism_diff ....................   Passed    0.92 sec
+      Start 32: fcfs_host_incremental_contract
+11/38 Test #18: multichannel_race .................   Passed    0.66 sec
+      Start 23: external_reset_diff
+12/38 Test #17: multichannel_mapping ..............   Passed    0.61 sec
+      Start 27: external_alignment
+13/38 Test #32: fcfs_host_incremental_contract ....   Passed    0.77 sec
+      Start 30: fcfs_host_send_policy_contract
+14/38 Test #23: external_reset_diff ...............   Passed    0.66 sec
+      Start 21: device_reset_diff
+15/38 Test #27: external_alignment ................   Passed    0.70 sec
+      Start 15: page_wire_anns
+16/38 Test #30: fcfs_host_send_policy_contract ....   Passed    0.54 sec
+      Start 14: page_wire_diff
+17/38 Test #21: device_reset_diff .................   Passed    0.26 sec
+      Start 28: paper_curve_contract
+18/38 Test #14: page_wire_diff ....................   Passed    0.44 sec
+      Start 31: fcfs_host_retry_contract
+19/38 Test #26: ucie_mutations ....................   Passed    6.65 sec
+      Start  9: bank_diff
+20/38 Test #15: page_wire_anns ....................   Passed    0.55 sec
+      Start 24: aou_diff
+21/38 Test #28: paper_curve_contract ..............   Passed    0.43 sec
+      Start  8: recovery_diff
+22/38 Test  #9: bank_diff .........................   Passed    0.22 sec
+      Start 13: page_lifecycle_diff
+23/38 Test #31: fcfs_host_retry_contract ..........   Passed    0.37 sec
+      Start  7: deadline_diff
+24/38 Test #13: page_lifecycle_diff ...............   Passed    0.18 sec
+      Start 19: page_group_contract
+25/38 Test #24: aou_diff ..........................   Passed    0.47 sec
+      Start  4: resource_contract
+26/38 Test  #8: recovery_diff .....................   Passed    0.53 sec
+      Start 16: page_writeback_contract
+27/38 Test  #7: deadline_diff .....................   Passed    0.38 sec
+      Start 33: fcfs_cursor_contract
+28/38 Test #19: page_group_contract ...............   Passed    0.47 sec
+      Start  2: ocp_profile_contract
+29/38 Test  #4: resource_contract .................   Passed    0.58 sec
+      Start 34: fcfs_incremental_retry_contract
+30/38 Test #16: page_writeback_contract ...........   Passed    0.61 sec
+      Start 11: read_recovery_contract
+31/38 Test #11: read_recovery_contract ............   Passed    0.10 sec
+      Start  1: hbm_contract
+32/38 Test  #1: hbm_contract ......................   Passed    0.00 sec
+      Start 12: bank_adapter_contract
+33/38 Test #12: bank_adapter_contract .............   Passed    0.01 sec
+      Start 37: link_accounting_contract
+34/38 Test #33: fcfs_cursor_contract ..............   Passed    0.67 sec
+      Start 38: paper_curves_v2_contract
+35/38 Test #38: paper_curves_v2_contract ..........   Passed    0.07 sec
+36/38 Test  #2: ocp_profile_contract ..............   Passed    0.65 sec
+37/38 Test #34: fcfs_incremental_retry_contract ...   Passed    0.59 sec
+38/38 Test #37: link_accounting_contract ..........   Passed    0.72 sec
+
+100% tests passed out of 38
+
+Total Test time (real) =   8.74 sec

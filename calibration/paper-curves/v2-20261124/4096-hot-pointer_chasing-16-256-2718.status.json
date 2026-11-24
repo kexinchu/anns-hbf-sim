@@ -1,0 +1,13 @@
+{
+  "case": {
+    "size": 4096,
+    "cache": "hot",
+    "pattern": "pointer_chasing",
+    "qd": 16,
+    "mocs": 256,
+    "seed": 2718
+  },
+  "valid": true,
+  "exit": 0,
+  "wall_seconds": 5.6365693267434835
+}

@@ -1,0 +1,50 @@
+{
+  "ocp_source": "https://www.opencompute.org/documents/ocp-hbf-architecture-specification-v0-7-0-final-pdf/",
+  "ocp_revision": "0.7.0, 2026-08-03",
+  "verified_clauses": {
+    "p16_table2": "SG3 example: 4096 GB/s raw cube bandwidth, 75% AXI-link efficiency, 3072 GB/s effective",
+    "p16_table4": "SG2 maximum user bandwidth 1.536 TB/s",
+    "p32_section5.1.2.2": "SG2 raw 128 GB/s per module, system throughput 94 GB/s per module, maximum 16 modules"
+  },
+  "arithmetic": {
+    "sg2_table4_user_GBps": 1536,
+    "sg2_section5_system_GBps": 1504,
+    "difference_GBps": 32,
+    "difference_fraction_of_table4": 0.020833333333333332,
+    "v2_service_rate_per_channel_GBps": 94,
+    "v2_read_payload_bytes": 64,
+    "v2_response_service_equivalent_bytes": 80,
+    "v2_response_serialization_ps": 852,
+    "v2_useful_ceiling_continuous_GBps": 1203.2,
+    "v2_useful_ceiling_integer_ps_GBps": 1201.8779342723005
+  },
+  "interpretation": {
+    "94_is_raw_wire_rate": false,
+    "16B_is_normative_literal_header_size": false,
+    "service_equivalent_bytes_are_physical_wire_bytes": false,
+    "extra_16B_penalty_independently_calibrated": false,
+    "double_counting_protocol_efficiency_risk": true,
+    "94_vs_96_discrepancy_resolved_by_source": false,
+    "action": "Keep frozen v2 unchanged as explicit EventLab service-equivalent model; do not relabel as OCP payload throughput. No silent rate/overhead adjustment. A future payload-budget or explicit wire model needs a separately versioned protocol and evidence."
+  },
+  "paper_source": "https://research.ece.cornell.edu/retrieve/camera-ready/retrieve26-final50.pdf",
+  "paper_evidence": "Fig.3 caption uses 1.536 TB/s; section IV chooses nominal sensing time to match fully utilized SG2 throughput; no public QD sweep or exact microbenchmark arrival/window configuration supplied in this PDF.",
+  "fit": {
+    "performed": false,
+    "validation_reused_as_fit": false
+  },
+  "hardware_calibrated": false,
+  "paper_curve_reproduced": false,
+  "performance_ready": false,
+  "resolved_blockers": [
+    "Located actual service-byte billing in the DeviceDriver main path",
+    "Separated OCP raw, system, user-bandwidth labels",
+    "Verified integer serialization and non-blocking fixed latency with an independent trace oracle"
+  ],
+  "remaining_blockers": [
+    "Physical validation of extra control service cost on top of system throughput",
+    "Unexplained 94 versus implied 96 per-module discrepancy in source tables",
+    "Paper matched arrivals/window/footprint and raw QD observations",
+    "Independent hardware timing measurements"
+  ]
+}

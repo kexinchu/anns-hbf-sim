@@ -49,3 +49,5 @@
 另一个必须显式保留的差异：当前链路是 16×94=1504 GB/s 的 service-byte 预算，每个 64B 返回额外记 16B control。仅由当前模型配置推导，持续有用载荷上限为 1504×64/80=1203.2 GB/s；这是模型上界，不是硬件实测，也不是论文 1536 GB/s user bandwidth 的同一口径。不能暗改 overhead/sense 来拟合图线。有限 4MiB 冷批次还包含启动与排空，不能当作满利用稳态。
 
 因此：超时和地址序列口径已处理；论文完整曲线精确对齐、链路 user/service-byte 口径以及硬件校准仍未关闭。没有将这些有限批次诊断作为拟合数据再充当独立验证。`performance_ready=false`、`hardware_calibrated=false`、`paper_curve_reproduced=false`，ANNS 性能实验继续关闭。
+
+后续链路计费核对与冻结v2完整网格见 [LINK_BANDWIDTH_AUDIT_ZH.md](LINK_BANDWIDTH_AUDIT_ZH.md)。旧报告与数据保持原口径；没有以新曲线替换历史失败记录。

@@ -88,5 +88,6 @@ jobs:
             build/device-index-mutants/
             build/device-index-differential/
             build/alignment-protocol-validation/
+            build/link-accounting-validation/
             build/ucie-sanitized/
             build/external-alignment/

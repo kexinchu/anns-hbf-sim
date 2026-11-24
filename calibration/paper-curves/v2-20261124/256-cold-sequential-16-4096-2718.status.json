@@ -1,0 +1,13 @@
+{
+  "case": {
+    "size": 256,
+    "cache": "cold",
+    "pattern": "sequential",
+    "qd": 16,
+    "mocs": 4096,
+    "seed": 2718
+  },
+  "valid": true,
+  "exit": 0,
+  "wall_seconds": 0.4359608730301261
+}

@@ -1,0 +1,16 @@
+{
+  "base_commit": "6150505aa6067b2afdea6a197bf3179d84b7f565",
+  "sources": {
+    "src/link_accounting_probe.cpp": "eab77524935844cfffa27d4015cd6319d558244ccabbb91dc2d6e63779caac1b",
+    "tests/link_accounting_contract.py": "18088ba7fe5f87dc07a2365fc93b3045d5dcd5b1758b94488ea8bbe0fc1a2b74",
+    "vendor/EventLab/src/architecture/execution_configuration.cpp": "c51b70b829e1b182a6ccaa49fd88902abf909c79f3d582c78ee019acee03f4df",
+    "vendor/EventLab/src/architecture/ucie_profile.cpp": "2558228a98f34c428876b2551e241db7fa5d537a6bc25ced1e4230cca1a8f5f8",
+    "vendor/EventLab/include/hbf_eventlab/architecture/execution_configuration.hpp": "917ecfa8690650c36d98679c47354b33a847004d945b5e14e8edd98f8b8d02f4"
+  },
+  "prior_CI": {
+    "url": "https://github.com/kexinchu/anns-hbf-sim/actions/runs/45477656623",
+    "conclusion": "success",
+    "completed_at": "2026-11-24T20:24:15Z"
+  },
+  "performance_ready": false
+}

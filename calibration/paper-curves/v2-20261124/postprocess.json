@@ -1,0 +1,19 @@
+{
+  "source_sha256": {
+    "tests/audit_paper_curves_v2.py": "e04fa72955b6d6d673b567a3246bbc48b1c3eebfdd0720218cf553b14c80e0e8",
+    "scripts/plot_paper_curves_v2.py": "7c72b5967ce6c74f0764446cae388990c5602eab17b76e88ae5ca3cd685ed24b",
+    "tests/paper_curves_v2_contract.py": "606c522bf413e097786018bc6d1f70ba241559d7c440e2dd04fc245185d433e9"
+  },
+  "output_sha256": {
+    "curves.csv": "11c6d3400875df5420c239567eecb709b4a59dbf838df963387ec71516ee3c4d",
+    "audit.json": "ed29dcee7a154ab2965e26ffcaa564b79a05796b45785a20bb7c217870d6c930",
+    "GBps.png": "0aee0d9374543fd23c779ddb9e12d2c17e15976884f10ff082cffededf7ead33",
+    "GBps.svg": "eb6b1ff23e89395f8771c7cf2653d52bc7fb07d423711aae7164c35f903acab9",
+    "p99_ps.png": "51ad8f3641070f10b0969d79dc0c0a6ca5701e82a1911d03b9ae98e4a8246a2c",
+    "p99_ps.svg": "58392be80f66ceff5dad03b97faa177be00265fb88f6cf2741f0846e671aa67f",
+    "mechanism-summary.json": "008c8321305e476665e74d579ec92de35ccf185bb9a4438f7265bda221385c96",
+    "initial-window-mapping.json": "fa6656fe07eff3d397f31f20ff7d44052c845e3d956bf4257aaf8041aa45b476"
+  },
+  "fit_performed": false,
+  "performance_ready": false
+}
