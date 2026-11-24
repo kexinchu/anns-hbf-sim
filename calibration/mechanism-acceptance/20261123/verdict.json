@@ -1,0 +1,14 @@
+{
+  "cache_reference_phases": 262,
+  "directed_runs": 8,
+  "corrupt_traces_rejected": 5,
+  "binary_sha256": "3f31bcb813f07ac99004ba8112e8987d6cf56d1ad82d36afb2e1eda2887271d7",
+  "independent_scope": "quiescent two-slot LRU, event causality, bank exclusion/overlap, core FIFO serialization, sense sensitivity",
+  "not_proven": [
+    "OCP full compliance",
+    "physical sense timing",
+    "paper throughput reproduction",
+    "ANNS design benefit"
+  ],
+  "performance_ready": false
+}

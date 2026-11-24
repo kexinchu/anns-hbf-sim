@@ -1,0 +1,12 @@
+[
+  {
+    "mutant": "one_slot",
+    "rejected": true,
+    "scope": "two-buffer capacity"
+  },
+  {
+    "mutant": "fifo_instead_of_assumed_lru",
+    "rejected": true,
+    "scope": "declared replacement assumption, not OCP certification"
+  }
+]

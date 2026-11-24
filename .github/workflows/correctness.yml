@@ -13,6 +13,7 @@ jobs:
       - run: cmake --build build -j 4
       - run: ctest --test-dir build --output-on-failure
       - run: python3 tests/fcfs_mutations.py build build/fcfs-mutants
+      - run: python3 tests/mechanism_mutations.py build build/mechanism-mutants
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g src/bank_probe.cpp -o build/bank_probe_sanitized
       - run: python3 tests/bank_diff.py build/bank_probe_sanitized build/bank-sanitized-validation
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g src/read_recovery_probe.cpp -o build/read_recovery_sanitized
@@ -76,5 +77,7 @@ jobs:
             build/ucie-validation/
             build/ucie-mutations/
             build/fcfs-mutants/
+            build/mechanism-mutants/
+            build/mechanism-validation/
             build/ucie-sanitized/
             build/external-alignment/

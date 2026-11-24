@@ -30,7 +30,9 @@ edit('src/runtime/device_driver.cpp',
  'schedule(after(core_transfer(bank),config_.media_timing.program),EventPhase::Completion,')
 edit('src/runtime/device_driver.cpp',
  '''                cache_.finish_fill(fill); reads_.finish_read(op.id);''',
- '''                // Reserve bus at sense completion, not at a future guessed arrival.
+ '''                // Separate media completion from buffer-ready/bank-release completion.
+                emit("sense-media-finish",bank.channel,ticket,op.physical);
+                // Reserve bus at sense completion, not at a future guessed arrival.
                 schedule(core_transfer(bank),EventPhase::Completion,[this,op,fill,bank,ticket] {
                 cache_.finish_fill(fill); reads_.finish_read(op.id);''')
 edit('src/runtime/device_driver.cpp',

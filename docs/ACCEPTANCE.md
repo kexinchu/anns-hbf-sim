@@ -37,3 +37,5 @@ See [multichannel aggregation and joint race review](MULTICHANNEL_REVIEW.md). Di
 Reset/cancel and permanent-failure functional scope: [review](RESET_CANCEL_REVIEW.md). Physical die reset and calibration remain open; performance stays disabled.
 
 The [device reset review](DEVICE_RESET_REVIEW.md) documents the new physical-media/CSR endpoint, uncertainty assumptions and remaining full-transport integration gap. Performance remains disabled.
+
+See [external-source and mechanism acceptance audit](MECHANISM_ACCEPTANCE_ZH.md) for the current design-use boundary, independent mechanism tests, and unresolved throughput/cache interpretation gaps.
