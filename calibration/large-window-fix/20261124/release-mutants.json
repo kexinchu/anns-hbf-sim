@@ -1,0 +1,14 @@
+[
+  {
+    "mutation": "ignore_prior_sense",
+    "rejected_by_independent_scan": true
+  },
+  {
+    "mutation": "skip_ingress_index",
+    "rejected_by_independent_scan": true
+  },
+  {
+    "mutation": "leak_feedback_index",
+    "rejected_by_independent_scan": true
+  }
+]

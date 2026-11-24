@@ -1,0 +1,27 @@
+{
+  "cases": [
+    {
+      "case": "cold-wide",
+      "byte_identical_requests_and_event_digest": true,
+      "sha256": "a2de880b26765fdd6a8ed1a46edd3a36870d1776c72cf6ab2908ea68ad56527c"
+    },
+    {
+      "case": "hot-wide",
+      "byte_identical_requests_and_event_digest": true,
+      "sha256": "7f1b243d930bd5a20de14f975bf8a793e445510edc14d346729b888d9e71de66"
+    },
+    {
+      "case": "chain",
+      "byte_identical_requests_and_event_digest": true,
+      "sha256": "87e29670f68ec62cb8614cb9416ba43d1a856cb32749888ee9f8feeb1efbf42a"
+    },
+    {
+      "case": "small-window",
+      "byte_identical_requests_and_event_digest": true,
+      "sha256": "d460ed79b205334ab667d20b231f8b227993d64775bfbee85d4430ef382ee14a"
+    }
+  ],
+  "corrupt_records_rejected": 12,
+  "scope": "scan implementation versus stage index, with independent completion/count/peak invariants",
+  "performance_ready": false
+}

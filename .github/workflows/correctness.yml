@@ -9,11 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 bootstrap.py
-      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DANNS_FCFS_INDEX=CHECK
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON -DANNS_FCFS_INDEX=CHECK -DANNS_DEVICE_INDEX=CHECK
       - run: cmake --build build -j 4
       - run: ctest --test-dir build --output-on-failure
       - run: python3 tests/fcfs_mutations.py build build/fcfs-mutants
       - run: python3 tests/mechanism_mutations.py build build/mechanism-mutants
+      - run: python3 tests/device_index_mutations.py build build/device-index-mutants
+      - run: cmake -S . -B build-device-reference -DCMAKE_BUILD_TYPE=Release -DANNS_DEVICE_INDEX=OFF
+      - run: cmake --build build-device-reference --target large_window_probe -j 4
+      - run: python3 tests/device_index_diff.py build-device-reference/large_window_probe build/large_window_probe build/device-index-differential
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g src/bank_probe.cpp -o build/bank_probe_sanitized
       - run: python3 tests/bank_diff.py build/bank_probe_sanitized build/bank-sanitized-validation
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g src/read_recovery_probe.cpp -o build/read_recovery_sanitized
@@ -32,7 +36,7 @@ jobs:
       - run: python3 tests/reset_diff.py build/reset_sanitized build/reset-sanitized CPU
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ibuild/eventlab-overlay/include src/device_reset_probe.cpp build/eventlab/libhbf_eventlab.a -o build/device_reset_sanitized
       - run: python3 tests/device_reset_diff.py build/device_reset_sanitized build/device-reset-sanitized
-      - run: cmake -S . -B build-driver-sanitized -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer -g"
+      - run: cmake -S . -B build-driver-sanitized -DANNS_DEVICE_INDEX=CHECK -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer -g"
       - run: cmake --build build-driver-sanitized --target driver_reset_probe external_reset_probe aou_probe ucie_probe ucie_trace fcfs_host_contract fcfs_host_send_policy_contract fcfs_host_retry_contract fcfs_host_incremental_contract fcfs_cursor_contract fcfs_incremental_retry_contract mechanism_probe -j 4
       - run: ctest --test-dir build-driver-sanitized -R '^fcfs_' --output-on-failure
       - run: python3 tests/mechanism_diff.py build-driver-sanitized/mechanism_probe build/mechanism-sanitized
@@ -81,5 +85,8 @@ jobs:
             build/mechanism-mutants/
             build/mechanism-validation/
             build/mechanism-sanitized/
+            build/device-index-mutants/
+            build/device-index-differential/
+            build/alignment-protocol-validation/
             build/ucie-sanitized/
             build/external-alignment/

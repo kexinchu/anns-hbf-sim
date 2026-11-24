@@ -9,8 +9,12 @@ set(ANNS_FCFS_INDEX "ON" CACHE STRING "FCFS execution optimization: ON, OFF, CHE
 if(NOT ANNS_FCFS_INDEX MATCHES "^(ON|OFF|CHECK)$")
   message(FATAL_ERROR "Invalid ANNS_FCFS_INDEX")
 endif()
+set(ANNS_DEVICE_INDEX "ON" CACHE STRING "Device stage index: ON, OFF, CHECK")
+if(NOT ANNS_DEVICE_INDEX MATCHES "^(ON|OFF|CHECK)$")
+  message(FATAL_ERROR "Invalid ANNS_DEVICE_INDEX")
+endif()
 execute_process(COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/prepare_eventlab.py
-  ${CMAKE_CURRENT_SOURCE_DIR}/vendor/EventLab ${CMAKE_CURRENT_BINARY_DIR}/eventlab-overlay ${ANNS_FCFS_INDEX}
+  ${CMAKE_CURRENT_SOURCE_DIR}/vendor/EventLab ${CMAKE_CURRENT_BINARY_DIR}/eventlab-overlay ${ANNS_FCFS_INDEX} ${ANNS_DEVICE_INDEX}
   COMMAND_ERROR_IS_FATAL ANY)
 function(add_donors)
   set(BUILD_TESTING OFF)
@@ -20,6 +24,9 @@ endfunction()
 add_donors()
 if(ANNS_FCFS_INDEX STREQUAL "CHECK")
   target_compile_definitions(hbf_eventlab PRIVATE HBF_FCFS_SCAN_ORACLE=1)
+endif()
+if(ANNS_DEVICE_INDEX STREQUAL "CHECK")
+  target_compile_definitions(hbf_eventlab PRIVATE HBF_DEVICE_INDEX_ORACLE=1)
 endif()
 # Reuse only HBM. Donor CLI assumes it owns CMAKE_SOURCE_DIR.
 add_library(anns_hbm vendor/HBXim/src/physical/hbm/hbm_device.cpp
@@ -268,4 +275,10 @@ add_executable(mechanism_probe src/mechanism_probe.cpp)
 target_link_libraries(mechanism_probe PRIVATE HBFEventLab::core)
 if(BUILD_TESTING)
  add_test(NAME mechanism_diff COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/mechanism_diff.py $<TARGET_FILE:mechanism_probe> ${CMAKE_CURRENT_BINARY_DIR}/mechanism-validation)
+endif()
+
+add_executable(large_window_probe src/large_window_probe.cpp)
+target_link_libraries(large_window_probe PRIVATE HBFEventLab::core)
+if(BUILD_TESTING)
+ add_test(NAME alignment_protocol_contract COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/alignment_protocol_contract.py $<TARGET_FILE:large_window_probe> ${CMAKE_CURRENT_BINARY_DIR}/alignment-protocol-validation)
 endif()

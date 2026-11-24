@@ -1,0 +1,40 @@
+{
+  "base_commit": "aa825b54ae21b4e55a2d788192feaba36628c53a",
+  "source_sha256": {
+    "scripts/device_index_overlay.py": "892f14242ccebf998075fad7601e00160a40d6eeee1312a67ccab53bdb7ec6e6",
+    "scripts/prepare_eventlab.py": "bba452775caa2be0dc5b718e6218ec4b567737eb344af81b8b60b30d0e8f1cd1",
+    "src/large_window_probe.cpp": "8f4a71a130659f8c3770cb4c9b256e70772710e767b76b18bb38ff3550478b4c",
+    "tests/device_index_diff.py": "7fe174247919b211e604409628f8d59113a78ccda904d620ca6e3cac3bcaf978",
+    "tests/device_index_mutations.py": "c2341da40729963252ac39a4ef8395aa7b437168b36861a132816a7044310e1b",
+    "tests/alignment_protocol_contract.py": "6b25b9cff543333754a81e2628d582e308f6794382cd15a2a117b401e722beef"
+  },
+  "reference": "original device scans, existing host FCFS index, FIFO cache; /tmp/credit-on/libhbf_eventlab.a",
+  "linux_sanitizer_directory": "/tmp/window-stage-20261124-z8410F",
+  "linux_flags": "-O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -DHBF_DEVICE_INDEX_ORACLE=1",
+  "large_case": {
+    "parent_bytes": 4096,
+    "requests": 1024,
+    "QD": 1024,
+    "MOCS": 4096,
+    "before_binary_sha256": "cad67ba347e951e07c3cab2d7acc64ab68f73885492f71164a1156aaf04c834d",
+    "after_binary_sha256": "c18034f907273bc475a3f3a814a4378988918371ea174dbf39dae627b0411074",
+    "requests_byte_identical": true,
+    "ordered_device_trace_fingerprint_equal": true,
+    "intermediate_final_binary_sha256": "c7af63bbf1f8f5de69120055ec90e6fdb7aa2d2dd58029a49e9c86aa72fa2ade",
+    "release_wall_seconds": 213.5448931249557,
+    "input": "ascending page IDs 0 through 1023, newline delimited",
+    "release_status": "release-status.json"
+  },
+  "performance_ready": false,
+  "hardware_calibrated": false,
+  "paper_curve_reproduced": false,
+  "validation": {
+    "on_ctest": 36,
+    "check_ctest": 36,
+    "upstream_ctest": 500,
+    "production_mutants_rejected": 3,
+    "independent_scan_cases": 4,
+    "corrupt_evidence_records_rejected": 12,
+    "invalid_address_inputs_rejected": 3
+  }
+}

@@ -50,3 +50,5 @@
 `performance_ready=false`、`hardware_calibrated=false`、`paper_curve_reproduced=false` 继续保留。
 
 2026-11-24 修复证据见 [CACHE_POLICY_FIX_ZH.md](CACHE_POLICY_FIX_ZH.md)。此前日期下的历史结果保留原样，不把旧 LRU 结果改标为 FIFO。
+
+QD1024 大窗口后续已完成原扫描/索引差分，程序超时已修复；新版地址/到达/窗口协议已冻结，论文与链路口径缺口见 [LARGE_WINDOW_FIX_ZH.md](LARGE_WINDOW_FIX_ZH.md)。不提升 calibration gate。

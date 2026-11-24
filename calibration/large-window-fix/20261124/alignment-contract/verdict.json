@@ -1,0 +1,17 @@
+{
+  "protocol_sha256": "6a9c95ef710863caec3ecc5ddab57a93281d62cd7e5cd33952e6fe7b5d7ff9c5",
+  "cases": [
+    {
+      "case": "contiguous-256",
+      "senses": 64,
+      "page_efficiency": 1.0
+    },
+    {
+      "case": "page-stride-256",
+      "senses": 1024,
+      "page_efficiency": 0.0625
+    }
+  ],
+  "invalid_inputs_rejected": 3,
+  "paper_curve_reproduced": false
+}

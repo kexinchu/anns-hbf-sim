@@ -61,3 +61,7 @@ if len(sys.argv)>3 and sys.argv[3] != 'OFF':
               str(pathlib.Path(__file__).parent/'fcfs_index_overlay.py'),'exec'))
 exec(compile((pathlib.Path(__file__).parent/'cache_policy_overlay.py').read_text(),
              str(pathlib.Path(__file__).parent/'cache_policy_overlay.py'),'exec'))
+
+if len(sys.argv)<5 or sys.argv[4] != 'OFF':
+ exec(compile((pathlib.Path(__file__).parent/'device_index_overlay.py').read_text(),
+              str(pathlib.Path(__file__).parent/'device_index_overlay.py'),'exec'))
