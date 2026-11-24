@@ -1,0 +1,17 @@
+{
+  "base_commit": "5be2ef7285af30cf51a32949306539b60badb2b0",
+  "source_sha256": {
+    "scripts/cache_policy_overlay.py": "153e4200f79df983e967b43d015bc36c5aa6ee5f3a75528c7344395de130f513",
+    "scripts/prepare_eventlab.py": "54b954aee8cf37dcb1920c31d2717c73e22fcf6f2dc4a63cc44cbf937f69afd9",
+    "src/mechanism_probe.cpp": "516fa6eff4295e4e666d8376d7377592a097b7334271ba1502a5bf8d3a55a43c",
+    "tests/mechanism_diff.py": "e5eda025a63087b229e2873d297023a39bb3b232c7bcde93166d043ef71d2864",
+    "tests/mechanism_mutations.py": "e18efc135fae26c09f4c80d01814dfad9f486f8085e2f0577d4896d2072bee7b"
+  },
+  "local": "Apple Clang 15, Release, ANNS_FCFS_INDEX=CHECK",
+  "linux": "cloudsys01, GCC, full EventLab library and probe -O1 -fsanitize=address,undefined -fno-omit-frame-pointer -g",
+  "linux_directory": "/tmp/cache-validation-20261124-47CuSa",
+  "ctest_passed": 35,
+  "upstream_passed": 500,
+  "performance_ready": false,
+  "hardware_calibrated": false
+}

@@ -33,8 +33,9 @@ jobs:
       - run: g++ -std=c++20 -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ibuild/eventlab-overlay/include src/device_reset_probe.cpp build/eventlab/libhbf_eventlab.a -o build/device_reset_sanitized
       - run: python3 tests/device_reset_diff.py build/device_reset_sanitized build/device-reset-sanitized
       - run: cmake -S . -B build-driver-sanitized -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer -g"
-      - run: cmake --build build-driver-sanitized --target driver_reset_probe external_reset_probe aou_probe ucie_probe ucie_trace fcfs_host_contract fcfs_host_send_policy_contract fcfs_host_retry_contract fcfs_host_incremental_contract fcfs_cursor_contract fcfs_incremental_retry_contract -j 4
+      - run: cmake --build build-driver-sanitized --target driver_reset_probe external_reset_probe aou_probe ucie_probe ucie_trace fcfs_host_contract fcfs_host_send_policy_contract fcfs_host_retry_contract fcfs_host_incremental_contract fcfs_cursor_contract fcfs_incremental_retry_contract mechanism_probe -j 4
       - run: ctest --test-dir build-driver-sanitized -R '^fcfs_' --output-on-failure
+      - run: python3 tests/mechanism_diff.py build-driver-sanitized/mechanism_probe build/mechanism-sanitized
       - run: python3 tests/ucie_diff.py build-driver-sanitized/ucie_trace build-driver-sanitized/ucie_probe build/ucie-sanitized
       - run: python3 tests/aou_diff.py build-driver-sanitized/aou_probe build/aou-sanitized
       - run: python3 tests/external_reset_diff.py build-driver-sanitized/external_reset_probe build/external-reset-sanitized
@@ -79,5 +80,6 @@ jobs:
             build/fcfs-mutants/
             build/mechanism-mutants/
             build/mechanism-validation/
+            build/mechanism-sanitized/
             build/ucie-sanitized/
             build/external-alignment/

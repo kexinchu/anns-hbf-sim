@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/kexin.chu/Github/paper-manager/Ongoing-Idea/anns-hbf-sim/tests/mechanism_diff.py", line 46, in <module>
+    assert row['senses']==int(not hit),(policy,row,page,cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('fifo', {'phase': 2, 'elapsed_ps': 2727202, 'senses': 1, 'events': [['sense-issue', 434, 11, 0], ['sense-media-finish', 2720434, 11, 0], ['sense-finish', 2720434, 11, 0]], 'core': []}, 0, defaultdict(<class 'list'>, {0: [0, 2]}))

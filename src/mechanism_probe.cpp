@@ -5,9 +5,10 @@
 #include <vector>
 using namespace hbf_eventlab;
 int main(int argc,char**argv){try{
- if(argc!=3)throw std::runtime_error("sense_ps core_bytes_per_ns required");
+ if(argc!=3&&argc!=4)throw std::runtime_error("sense_ps core_bytes_per_ns required");
+ if(argc==4&&std::string(argv[3])!="fifo"&&std::string(argv[3])!="lru")throw std::invalid_argument("cache policy must be fifo or lru");
  Geometry g{1,1,2,4,2,1};StaticDeviceDescription desc(g,{256,8,false,true},{256,Tick{100000000},g.block_group_dlus()});
- EventQueue events;ExecutionConfiguration cfg;cfg.media_timing.sense=Tick{std::stoull(argv[1])};cfg.core_bytes_per_ns=std::stoull(argv[2]);cfg.read_dispatch.wait=Tick{0};
+ EventQueue events;ExecutionConfiguration cfg;cfg.media_timing.sense=Tick{std::stoull(argv[1])};cfg.core_bytes_per_ns=std::stoull(argv[2]);cfg.cache_hit_recency=argc==4&&std::string(argv[3])=="lru";cfg.read_dispatch.wait=Tick{0};
  std::vector<std::array<std::uint64_t,5>> transfers;
  cfg.core_observer=[&](ChannelId c,std::uint32_t k,Tick a,Tick b,Tick e){transfers.push_back({c,k,a.value,b.value,e.value});};
  DeviceDriver d(desc,cfg,events);RoundRobinInterleaver map(GlobalByteAddress{},1,g.channel_bytes(),4096);HostDriver h(d,events,map);h.start_incremental();
