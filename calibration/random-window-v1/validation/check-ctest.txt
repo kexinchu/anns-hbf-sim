@@ -1,0 +1,91 @@
+Test project /tmp/link-v3-check
+      Start  1: hbm_contract
+ 1/43 Test  #1: hbm_contract ......................   Passed    0.35 sec
+      Start  2: ocp_profile_contract
+ 2/43 Test  #2: ocp_profile_contract ..............   Passed    0.20 sec
+      Start  3: anns_closed_loop
+ 3/43 Test  #3: anns_closed_loop ..................   Passed   19.87 sec
+      Start  4: resource_contract
+ 4/43 Test  #4: resource_contract .................   Passed    1.57 sec
+      Start  5: protocol_diff
+ 5/43 Test  #5: protocol_diff .....................   Passed    2.93 sec
+      Start  6: anns_concurrent
+ 6/43 Test  #6: anns_concurrent ...................   Passed   21.02 sec
+      Start  7: deadline_diff
+ 7/43 Test  #7: deadline_diff .....................   Passed    0.34 sec
+      Start  8: recovery_diff
+ 8/43 Test  #8: recovery_diff .....................   Passed    0.37 sec
+      Start  9: bank_diff
+ 9/43 Test  #9: bank_diff .........................   Passed    0.39 sec
+      Start 10: anns_bank
+10/43 Test #10: anns_bank .........................   Passed   21.27 sec
+      Start 11: read_recovery_contract
+11/43 Test #11: read_recovery_contract ............   Passed    0.33 sec
+      Start 12: bank_adapter_contract
+12/43 Test #12: bank_adapter_contract .............   Passed    0.18 sec
+      Start 13: page_lifecycle_diff
+13/43 Test #13: page_lifecycle_diff ...............   Passed    0.43 sec
+      Start 14: page_wire_diff
+14/43 Test #14: page_wire_diff ....................   Passed    3.00 sec
+      Start 15: page_wire_anns
+15/43 Test #15: page_wire_anns ....................   Passed   11.95 sec
+      Start 16: page_writeback_contract
+16/43 Test #16: page_writeback_contract ...........   Passed    0.44 sec
+      Start 17: multichannel_mapping
+17/43 Test #17: multichannel_mapping ..............   Passed    3.51 sec
+      Start 18: multichannel_race
+18/43 Test #18: multichannel_race .................   Passed    7.92 sec
+      Start 19: page_group_contract
+19/43 Test #19: page_group_contract ...............   Passed    0.31 sec
+      Start 20: reset_race_diff
+20/43 Test #20: reset_race_diff ...................   Passed    5.17 sec
+      Start 21: device_reset_diff
+21/43 Test #21: device_reset_diff .................   Passed    0.36 sec
+      Start 22: driver_reset_diff
+22/43 Test #22: driver_reset_diff .................   Passed   10.31 sec
+      Start 23: external_reset_diff
+23/43 Test #23: external_reset_diff ...............   Passed    3.06 sec
+      Start 24: aou_diff
+24/43 Test #24: aou_diff ..........................   Passed    1.03 sec
+      Start 25: ucie_diff
+25/43 Test #25: ucie_diff .........................   Passed    2.01 sec
+      Start 26: ucie_mutations
+26/43 Test #26: ucie_mutations ....................   Passed    5.50 sec
+      Start 27: external_alignment
+27/43 Test #27: external_alignment ................   Passed    6.81 sec
+      Start 28: paper_curve_contract
+28/43 Test #28: paper_curve_contract ..............   Passed    0.48 sec
+      Start 29: fcfs_host_contract
+29/43 Test #29: fcfs_host_contract ................   Passed   31.37 sec
+      Start 30: fcfs_host_send_policy_contract
+30/43 Test #30: fcfs_host_send_policy_contract ....   Passed    2.30 sec
+      Start 31: fcfs_host_retry_contract
+31/43 Test #31: fcfs_host_retry_contract ..........   Passed    1.39 sec
+      Start 32: fcfs_host_incremental_contract
+32/43 Test #32: fcfs_host_incremental_contract ....   Passed    4.03 sec
+      Start 33: fcfs_cursor_contract
+33/43 Test #33: fcfs_cursor_contract ..............   Passed    0.33 sec
+      Start 34: fcfs_incremental_retry_contract
+34/43 Test #34: fcfs_incremental_retry_contract ...   Passed    0.32 sec
+      Start 35: mechanism_diff
+35/43 Test #35: mechanism_diff ....................   Passed   13.32 sec
+      Start 36: alignment_protocol_contract
+36/43 Test #36: alignment_protocol_contract .......   Passed   22.48 sec
+      Start 37: link_accounting_contract
+37/43 Test #37: link_accounting_contract ..........   Passed    2.55 sec
+      Start 38: paper_curves_v2_contract
+38/43 Test #38: paper_curves_v2_contract ..........   Passed    0.12 sec
+      Start 39: link_v3_contract
+39/43 Test #39: link_v3_contract ..................   Passed    2.46 sec
+      Start 40: turnover_contract
+40/43 Test #40: turnover_contract .................   Passed   55.99 sec
+      Start 41: link_write_contract
+41/43 Test #41: link_write_contract ...............   Passed    0.54 sec
+      Start 42: random_window_contract
+42/43 Test #42: random_window_contract ............   Passed    2.43 sec
+      Start 43: cache_overlap_contract
+43/43 Test #43: cache_overlap_contract ............   Passed    0.44 sec
+
+100% tests passed out of 43
+
+Total Test time (real) = 271.40 sec

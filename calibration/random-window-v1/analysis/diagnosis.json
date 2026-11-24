@@ -1,0 +1,1627 @@
+{
+  "cases": [
+    {
+      "mode": "service-v2",
+      "size": 256,
+      "baseline": {
+        "windows": [
+          {
+            "GBps": 11.10459494213907,
+            "duration_ps": 70820413,
+            "average_busy_banks": 122.23491726883886,
+            "finished_senses": 3076,
+            "sense_work_page_equivalents": 3182.6203397058825,
+            "unfinished_sense_work_start_ps": 0,
+            "unfinished_sense_work_end_ps": 290007324,
+            "completion_cohorts": {
+              "0": 3070,
+              "1": 2
+            }
+          },
+          {
+            "GBps": 11.550331237507416,
+            "duration_ps": 68087398,
+            "average_busy_banks": 122.57871599087984,
+            "finished_senses": 3065,
+            "sense_work_page_equivalents": 3068.4065522058822,
+            "unfinished_sense_work_start_ps": 290007324,
+            "unfinished_sense_work_end_ps": 299273146,
+            "completion_cohorts": {
+              "1": 3068,
+              "0": 2,
+              "2": 2
+            }
+          },
+          {
+            "GBps": 12.013301042739291,
+            "duration_ps": 65463439,
+            "average_busy_banks": 122.81928997039095,
+            "finished_senses": 3061,
+            "sense_work_page_equivalents": 2955.9459915441175,
+            "unfinished_sense_work_start_ps": 299273146,
+            "unfinished_sense_work_end_ps": 13526243,
+            "completion_cohorts": {
+              "2": 3068,
+              "1": 2,
+              "3": 2
+            }
+          },
+          {
+            "GBps": 11.110853664256776,
+            "duration_ps": 70780520,
+            "average_busy_banks": 117.47743244892804,
+            "finished_senses": 3062,
+            "sense_work_page_equivalents": 3057.0271165441177,
+            "unfinished_sense_work_start_ps": 13526243,
+            "unfinished_sense_work_end_ps": 0,
+            "completion_cohorts": {
+              "3": 3070,
+              "2": 2
+            }
+          }
+        ],
+        "first_four_pass_5pct": false,
+        "ratio_last_three": 1.0812221459981655,
+        "terminal_drain_ps": 5411977,
+        "requests": 12288,
+        "sense_count": 12264,
+        "parent_residence_ps": 34836955363,
+        "page_ownership": {
+          "sense_free_parents": 24,
+          "banks": [
+            214,
+            365,
+            373,
+            728,
+            879,
+            888
+          ],
+          "hits": [
+            {
+              "request_index": 6320,
+              "bank": 214,
+              "page": 2
+            },
+            {
+              "request_index": 6373,
+              "bank": 214,
+              "page": 1
+            },
+            {
+              "request_index": 6417,
+              "bank": 365,
+              "page": 1
+            },
+            {
+              "request_index": 3348,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 9492,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 6453,
+              "bank": 365,
+              "page": 0
+            },
+            {
+              "request_index": 3434,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 9578,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 6712,
+              "bank": 879,
+              "page": 0
+            },
+            {
+              "request_index": 6749,
+              "bank": 879,
+              "page": 2
+            },
+            {
+              "request_index": 3697,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 9841,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 6940,
+              "bank": 888,
+              "page": 1
+            },
+            {
+              "request_index": 6983,
+              "bank": 888,
+              "page": 2
+            },
+            {
+              "request_index": 3928,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 10072,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 7803,
+              "bank": 373,
+              "page": 2
+            },
+            {
+              "request_index": 7811,
+              "bank": 373,
+              "page": 1
+            },
+            {
+              "request_index": 4795,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 10939,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 8272,
+              "bank": 728,
+              "page": 0
+            },
+            {
+              "request_index": 8297,
+              "bank": 728,
+              "page": 2
+            },
+            {
+              "request_index": 5308,
+              "bank": 728,
+              "page": 1
+            },
+            {
+              "request_index": 11452,
+              "bank": 728,
+              "page": 1
+            }
+          ],
+          "scope": "No same-page parent overlap; exact sense ownership; independent FIFO residency feasibility, not exact pin-release reconstruction"
+        }
+      },
+      "guard": {
+        "windows": [
+          {
+            "GBps": 11.10459494213907,
+            "duration_ps": 70820413,
+            "average_busy_banks": 122.23491726883886,
+            "finished_senses": 3076,
+            "sense_work_page_equivalents": 3182.6203397058825,
+            "unfinished_sense_work_start_ps": 0,
+            "unfinished_sense_work_end_ps": 290007324,
+            "completion_cohorts": {
+              "0": 3070,
+              "1": 2
+            }
+          },
+          {
+            "GBps": 11.550331237507416,
+            "duration_ps": 68087398,
+            "average_busy_banks": 122.57871599087984,
+            "finished_senses": 3065,
+            "sense_work_page_equivalents": 3068.4065522058822,
+            "unfinished_sense_work_start_ps": 290007324,
+            "unfinished_sense_work_end_ps": 299273146,
+            "completion_cohorts": {
+              "1": 3068,
+              "0": 2,
+              "2": 2
+            }
+          },
+          {
+            "GBps": 12.013301042739291,
+            "duration_ps": 65463439,
+            "average_busy_banks": 122.81928997039095,
+            "finished_senses": 3061,
+            "sense_work_page_equivalents": 2955.9459915441175,
+            "unfinished_sense_work_start_ps": 299273146,
+            "unfinished_sense_work_end_ps": 13526243,
+            "completion_cohorts": {
+              "2": 3068,
+              "1": 2,
+              "3": 2
+            }
+          },
+          {
+            "GBps": 11.54858624711565,
+            "duration_ps": 68097686,
+            "average_busy_banks": 122.59791466335581,
+            "finished_senses": 3066,
+            "sense_work_page_equivalents": 3069.350844485294,
+            "unfinished_sense_work_start_ps": 13526243,
+            "unfinished_sense_work_end_ps": 22640540,
+            "completion_cohorts": {
+              "3": 3068,
+              "2": 2,
+              "4": 2
+            }
+          }
+        ],
+        "first_four_pass_5pct": true,
+        "ratio_last_three": 1.0402399727273723,
+        "terminal_drain_ps": 5402353,
+        "requests": 12416,
+        "sense_count": 12392,
+        "parent_residence_ps": 35201805366,
+        "page_ownership": {
+          "sense_free_parents": 24,
+          "banks": [
+            214,
+            365,
+            373,
+            728,
+            879,
+            888
+          ],
+          "hits": [
+            {
+              "request_index": 6320,
+              "bank": 214,
+              "page": 2
+            },
+            {
+              "request_index": 6373,
+              "bank": 214,
+              "page": 1
+            },
+            {
+              "request_index": 6417,
+              "bank": 365,
+              "page": 1
+            },
+            {
+              "request_index": 3348,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 9492,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 6453,
+              "bank": 365,
+              "page": 0
+            },
+            {
+              "request_index": 3434,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 9578,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 6712,
+              "bank": 879,
+              "page": 0
+            },
+            {
+              "request_index": 6749,
+              "bank": 879,
+              "page": 2
+            },
+            {
+              "request_index": 3697,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 9841,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 6940,
+              "bank": 888,
+              "page": 1
+            },
+            {
+              "request_index": 6983,
+              "bank": 888,
+              "page": 2
+            },
+            {
+              "request_index": 3928,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 10072,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 7803,
+              "bank": 373,
+              "page": 2
+            },
+            {
+              "request_index": 7811,
+              "bank": 373,
+              "page": 1
+            },
+            {
+              "request_index": 4795,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 10939,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 8272,
+              "bank": 728,
+              "page": 0
+            },
+            {
+              "request_index": 8297,
+              "bank": 728,
+              "page": 2
+            },
+            {
+              "request_index": 5308,
+              "bank": 728,
+              "page": 1
+            },
+            {
+              "request_index": 11452,
+              "bank": 728,
+              "page": 1
+            }
+          ],
+          "scope": "No same-page parent overlap; exact sense ownership; independent FIFO residency feasibility, not exact pin-release reconstruction"
+        }
+      },
+      "prefix": {
+        "identical_completions": 12160,
+        "sense_prefix_before_ps": 269739793
+      }
+    },
+    {
+      "mode": "service-v2",
+      "size": 4096,
+      "baseline": {
+        "windows": [
+          {
+            "GBps": 174.37409820743613,
+            "duration_ps": 72160442,
+            "average_busy_banks": 119.1724620256622,
+            "finished_senses": 3074,
+            "sense_work_page_equivalents": 3161.594681617647,
+            "unfinished_sense_work_start_ps": 0,
+            "unfinished_sense_work_end_ps": 238257534,
+            "completion_cohorts": {
+              "0": 3070,
+              "1": 2
+            }
+          },
+          {
+            "GBps": 181.63946359815324,
+            "duration_ps": 69274109,
+            "average_busy_banks": 120.14290510759221,
+            "finished_senses": 3067,
+            "sense_work_page_equivalents": 3059.850258823529,
+            "unfinished_sense_work_start_ps": 238257534,
+            "unfinished_sense_work_end_ps": 218810238,
+            "completion_cohorts": {
+              "1": 3068,
+              "0": 2,
+              "2": 2
+            }
+          },
+          {
+            "GBps": 184.84751310339755,
+            "duration_ps": 68071849,
+            "average_busy_banks": 120.46219126499707,
+            "finished_senses": 3062,
+            "sense_work_page_equivalents": 3014.736799264706,
+            "unfinished_sense_work_start_ps": 218810238,
+            "unfinished_sense_work_end_ps": 90254332,
+            "completion_cohorts": {
+              "2": 3068,
+              "1": 2,
+              "3": 2
+            }
+          },
+          {
+            "GBps": 175.8674365920988,
+            "duration_ps": 71547708,
+            "average_busy_banks": 115.10733045424739,
+            "finished_senses": 3061,
+            "sense_work_page_equivalents": 3027.818260294118,
+            "unfinished_sense_work_start_ps": 90254332,
+            "unfinished_sense_work_end_ps": 0,
+            "completion_cohorts": {
+              "3": 3070,
+              "2": 2
+            }
+          }
+        ],
+        "first_four_pass_5pct": false,
+        "ratio_last_three": 1.0510616216697741,
+        "terminal_drain_ps": 4948025,
+        "requests": 12288,
+        "sense_count": 12264,
+        "parent_residence_ps": 35570347189,
+        "page_ownership": {
+          "sense_free_parents": 24,
+          "banks": [
+            214,
+            365,
+            373,
+            728,
+            879,
+            888
+          ],
+          "hits": [
+            {
+              "request_index": 6320,
+              "bank": 214,
+              "page": 2
+            },
+            {
+              "request_index": 6373,
+              "bank": 214,
+              "page": 1
+            },
+            {
+              "request_index": 6417,
+              "bank": 365,
+              "page": 1
+            },
+            {
+              "request_index": 3348,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 9492,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 6453,
+              "bank": 365,
+              "page": 0
+            },
+            {
+              "request_index": 3434,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 9578,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 6712,
+              "bank": 879,
+              "page": 0
+            },
+            {
+              "request_index": 6749,
+              "bank": 879,
+              "page": 2
+            },
+            {
+              "request_index": 3697,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 9841,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 6940,
+              "bank": 888,
+              "page": 1
+            },
+            {
+              "request_index": 6983,
+              "bank": 888,
+              "page": 2
+            },
+            {
+              "request_index": 3928,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 10072,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 7803,
+              "bank": 373,
+              "page": 2
+            },
+            {
+              "request_index": 7811,
+              "bank": 373,
+              "page": 1
+            },
+            {
+              "request_index": 4795,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 10939,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 8272,
+              "bank": 728,
+              "page": 0
+            },
+            {
+              "request_index": 8297,
+              "bank": 728,
+              "page": 2
+            },
+            {
+              "request_index": 5308,
+              "bank": 728,
+              "page": 1
+            },
+            {
+              "request_index": 11452,
+              "bank": 728,
+              "page": 1
+            }
+          ],
+          "scope": "No same-page parent overlap; exact sense ownership; independent FIFO residency feasibility, not exact pin-release reconstruction"
+        }
+      },
+      "guard": {
+        "windows": [
+          {
+            "GBps": 174.37409820743613,
+            "duration_ps": 72160442,
+            "average_busy_banks": 119.1724620256622,
+            "finished_senses": 3074,
+            "sense_work_page_equivalents": 3161.594681617647,
+            "unfinished_sense_work_start_ps": 0,
+            "unfinished_sense_work_end_ps": 238257534,
+            "completion_cohorts": {
+              "0": 3070,
+              "1": 2
+            }
+          },
+          {
+            "GBps": 181.63946359815324,
+            "duration_ps": 69274109,
+            "average_busy_banks": 120.14290510759221,
+            "finished_senses": 3067,
+            "sense_work_page_equivalents": 3059.850258823529,
+            "unfinished_sense_work_start_ps": 238257534,
+            "unfinished_sense_work_end_ps": 218810238,
+            "completion_cohorts": {
+              "1": 3068,
+              "0": 2,
+              "2": 2
+            }
+          },
+          {
+            "GBps": 184.84751310339755,
+            "duration_ps": 68071849,
+            "average_busy_banks": 120.46219126499707,
+            "finished_senses": 3062,
+            "sense_work_page_equivalents": 3014.736799264706,
+            "unfinished_sense_work_start_ps": 218810238,
+            "unfinished_sense_work_end_ps": 90254332,
+            "completion_cohorts": {
+              "2": 3068,
+              "1": 2,
+              "3": 2
+            }
+          },
+          {
+            "GBps": 181.23395215637936,
+            "duration_ps": 69429110,
+            "average_busy_banks": 120.44179055442306,
+            "finished_senses": 3065,
+            "sense_work_page_equivalents": 3074.3258547794117,
+            "unfinished_sense_work_start_ps": 90254332,
+            "unfinished_sense_work_end_ps": 115620657,
+            "completion_cohorts": {
+              "3": 3068,
+              "2": 2,
+              "4": 2
+            }
+          }
+        ],
+        "first_four_pass_5pct": true,
+        "ratio_last_three": 1.0199386533484642,
+        "terminal_drain_ps": 4837772,
+        "requests": 12416,
+        "sense_count": 12392,
+        "parent_residence_ps": 35940102313,
+        "page_ownership": {
+          "sense_free_parents": 24,
+          "banks": [
+            214,
+            365,
+            373,
+            728,
+            879,
+            888
+          ],
+          "hits": [
+            {
+              "request_index": 6320,
+              "bank": 214,
+              "page": 2
+            },
+            {
+              "request_index": 6373,
+              "bank": 214,
+              "page": 1
+            },
+            {
+              "request_index": 6417,
+              "bank": 365,
+              "page": 1
+            },
+            {
+              "request_index": 3348,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 9492,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 6453,
+              "bank": 365,
+              "page": 0
+            },
+            {
+              "request_index": 3434,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 9578,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 6712,
+              "bank": 879,
+              "page": 0
+            },
+            {
+              "request_index": 6749,
+              "bank": 879,
+              "page": 2
+            },
+            {
+              "request_index": 3697,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 9841,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 6940,
+              "bank": 888,
+              "page": 1
+            },
+            {
+              "request_index": 6983,
+              "bank": 888,
+              "page": 2
+            },
+            {
+              "request_index": 3928,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 10072,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 7803,
+              "bank": 373,
+              "page": 2
+            },
+            {
+              "request_index": 7811,
+              "bank": 373,
+              "page": 1
+            },
+            {
+              "request_index": 4795,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 10939,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 8272,
+              "bank": 728,
+              "page": 0
+            },
+            {
+              "request_index": 8297,
+              "bank": 728,
+              "page": 2
+            },
+            {
+              "request_index": 5308,
+              "bank": 728,
+              "page": 1
+            },
+            {
+              "request_index": 11452,
+              "bank": 728,
+              "page": 1
+            }
+          ],
+          "scope": "No same-page parent overlap; exact sense ownership; independent FIFO residency feasibility, not exact pin-release reconstruction"
+        }
+      },
+      "prefix": {
+        "identical_completions": 12160,
+        "sense_prefix_before_ps": 276106083
+      }
+    },
+    {
+      "mode": "payload-v3",
+      "size": 256,
+      "baseline": {
+        "windows": [
+          {
+            "GBps": 11.107684121334534,
+            "duration_ps": 70800717,
+            "average_busy_banks": 122.27980815505018,
+            "finished_senses": 3076,
+            "sense_work_page_equivalents": 3182.9037102941174,
+            "unfinished_sense_work_start_ps": 0,
+            "unfinished_sense_work_end_ps": 290778092,
+            "completion_cohorts": {
+              "0": 3070,
+              "1": 2
+            }
+          },
+          {
+            "GBps": 11.553217191792202,
+            "duration_ps": 68070390,
+            "average_busy_banks": 122.6136634739422,
+            "finished_senses": 3065,
+            "sense_work_page_equivalents": 3068.5146661764707,
+            "unfinished_sense_work_start_ps": 290778092,
+            "unfinished_sense_work_end_ps": 300337984,
+            "completion_cohorts": {
+              "1": 3068,
+              "0": 2,
+              "2": 2
+            }
+          },
+          {
+            "GBps": 12.019894561507893,
+            "duration_ps": 65427529,
+            "average_busy_banks": 122.8536280959044,
+            "finished_senses": 3061,
+            "sense_work_page_equivalents": 2955.1504834558823,
+            "unfinished_sense_work_start_ps": 300337984,
+            "unfinished_sense_work_end_ps": 12427299,
+            "completion_cohorts": {
+              "2": 3068,
+              "1": 2,
+              "3": 2
+            }
+          },
+          {
+            "GBps": 11.112735185026295,
+            "duration_ps": 70768536,
+            "average_busy_banks": 117.51285487946225,
+            "finished_senses": 3062,
+            "sense_work_page_equivalents": 3057.4311400735296,
+            "unfinished_sense_work_start_ps": 12427299,
+            "unfinished_sense_work_end_ps": 0,
+            "completion_cohorts": {
+              "3": 3070,
+              "2": 2
+            }
+          }
+        ],
+        "first_four_pass_5pct": false,
+        "ratio_last_three": 1.081632411946965,
+        "terminal_drain_ps": 5415553,
+        "requests": 12288,
+        "sense_count": 12264,
+        "parent_residence_ps": 34826530968,
+        "page_ownership": {
+          "sense_free_parents": 24,
+          "banks": [
+            214,
+            365,
+            373,
+            728,
+            879,
+            888
+          ],
+          "hits": [
+            {
+              "request_index": 6320,
+              "bank": 214,
+              "page": 2
+            },
+            {
+              "request_index": 6373,
+              "bank": 214,
+              "page": 1
+            },
+            {
+              "request_index": 6417,
+              "bank": 365,
+              "page": 1
+            },
+            {
+              "request_index": 3348,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 9492,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 6453,
+              "bank": 365,
+              "page": 0
+            },
+            {
+              "request_index": 3434,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 9578,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 6712,
+              "bank": 879,
+              "page": 0
+            },
+            {
+              "request_index": 6749,
+              "bank": 879,
+              "page": 2
+            },
+            {
+              "request_index": 3697,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 9841,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 6940,
+              "bank": 888,
+              "page": 1
+            },
+            {
+              "request_index": 6983,
+              "bank": 888,
+              "page": 2
+            },
+            {
+              "request_index": 3928,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 10072,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 7803,
+              "bank": 373,
+              "page": 2
+            },
+            {
+              "request_index": 7811,
+              "bank": 373,
+              "page": 1
+            },
+            {
+              "request_index": 4795,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 10939,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 8272,
+              "bank": 728,
+              "page": 0
+            },
+            {
+              "request_index": 8297,
+              "bank": 728,
+              "page": 2
+            },
+            {
+              "request_index": 5308,
+              "bank": 728,
+              "page": 1
+            },
+            {
+              "request_index": 11452,
+              "bank": 728,
+              "page": 1
+            }
+          ],
+          "scope": "No same-page parent overlap; exact sense ownership; independent FIFO residency feasibility, not exact pin-release reconstruction"
+        }
+      },
+      "guard": {
+        "windows": [
+          {
+            "GBps": 11.107684121334534,
+            "duration_ps": 70800717,
+            "average_busy_banks": 122.27980815505018,
+            "finished_senses": 3076,
+            "sense_work_page_equivalents": 3182.9037102941174,
+            "unfinished_sense_work_start_ps": 0,
+            "unfinished_sense_work_end_ps": 290778092,
+            "completion_cohorts": {
+              "0": 3070,
+              "1": 2
+            }
+          },
+          {
+            "GBps": 11.553217191792202,
+            "duration_ps": 68070390,
+            "average_busy_banks": 122.6136634739422,
+            "finished_senses": 3065,
+            "sense_work_page_equivalents": 3068.5146661764707,
+            "unfinished_sense_work_start_ps": 290778092,
+            "unfinished_sense_work_end_ps": 300337984,
+            "completion_cohorts": {
+              "1": 3068,
+              "0": 2,
+              "2": 2
+            }
+          },
+          {
+            "GBps": 12.019894561507893,
+            "duration_ps": 65427529,
+            "average_busy_banks": 122.8536280959044,
+            "finished_senses": 3061,
+            "sense_work_page_equivalents": 2955.1504834558823,
+            "unfinished_sense_work_start_ps": 300337984,
+            "unfinished_sense_work_end_ps": 12427299,
+            "completion_cohorts": {
+              "2": 3068,
+              "1": 2,
+              "3": 2
+            }
+          },
+          {
+            "GBps": 11.551681897721922,
+            "duration_ps": 68079437,
+            "average_busy_banks": 122.62942571043882,
+            "finished_senses": 3065,
+            "sense_work_page_equivalents": 3069.317008088235,
+            "unfinished_sense_work_start_ps": 12427299,
+            "unfinished_sense_work_end_ps": 24169561,
+            "completion_cohorts": {
+              "3": 3068,
+              "2": 2,
+              "4": 2
+            }
+          }
+        ],
+        "first_four_pass_5pct": true,
+        "ratio_last_three": 1.0405319907465862,
+        "terminal_drain_ps": 5408743,
+        "requests": 12416,
+        "sense_count": 12392,
+        "parent_residence_ps": 35191301139,
+        "page_ownership": {
+          "sense_free_parents": 24,
+          "banks": [
+            214,
+            365,
+            373,
+            728,
+            879,
+            888
+          ],
+          "hits": [
+            {
+              "request_index": 6320,
+              "bank": 214,
+              "page": 2
+            },
+            {
+              "request_index": 6373,
+              "bank": 214,
+              "page": 1
+            },
+            {
+              "request_index": 6417,
+              "bank": 365,
+              "page": 1
+            },
+            {
+              "request_index": 3348,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 9492,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 6453,
+              "bank": 365,
+              "page": 0
+            },
+            {
+              "request_index": 3434,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 9578,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 6712,
+              "bank": 879,
+              "page": 0
+            },
+            {
+              "request_index": 6749,
+              "bank": 879,
+              "page": 2
+            },
+            {
+              "request_index": 3697,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 9841,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 6940,
+              "bank": 888,
+              "page": 1
+            },
+            {
+              "request_index": 6983,
+              "bank": 888,
+              "page": 2
+            },
+            {
+              "request_index": 3928,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 10072,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 7803,
+              "bank": 373,
+              "page": 2
+            },
+            {
+              "request_index": 7811,
+              "bank": 373,
+              "page": 1
+            },
+            {
+              "request_index": 4795,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 10939,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 8272,
+              "bank": 728,
+              "page": 0
+            },
+            {
+              "request_index": 8297,
+              "bank": 728,
+              "page": 2
+            },
+            {
+              "request_index": 5308,
+              "bank": 728,
+              "page": 1
+            },
+            {
+              "request_index": 11452,
+              "bank": 728,
+              "page": 1
+            }
+          ],
+          "scope": "No same-page parent overlap; exact sense ownership; independent FIFO residency feasibility, not exact pin-release reconstruction"
+        }
+      },
+      "prefix": {
+        "identical_completions": 12160,
+        "sense_prefix_before_ps": 269651619
+      }
+    },
+    {
+      "mode": "payload-v3",
+      "size": 4096,
+      "baseline": {
+        "windows": [
+          {
+            "GBps": 175.07571663765785,
+            "duration_ps": 71871258,
+            "average_busy_banks": 119.82259422814055,
+            "finished_senses": 3075,
+            "sense_work_page_equivalents": 3166.103155882353,
+            "unfinished_sense_work_start_ps": 0,
+            "unfinished_sense_work_end_ps": 247800584,
+            "completion_cohorts": {
+              "0": 3070,
+              "1": 2
+            }
+          },
+          {
+            "GBps": 182.3129630581338,
+            "duration_ps": 69018197,
+            "average_busy_banks": 120.65935867608944,
+            "finished_senses": 3066,
+            "sense_work_page_equivalents": 3061.6512452205884,
+            "unfinished_sense_work_start_ps": 247800584,
+            "unfinished_sense_work_end_ps": 235971971,
+            "completion_cohorts": {
+              "1": 3068,
+              "0": 2,
+              "2": 2
+            }
+          },
+          {
+            "GBps": 186.37989646134045,
+            "duration_ps": 67512174,
+            "average_busy_banks": 120.95139264808743,
+            "finished_senses": 3062,
+            "sense_work_page_equivalents": 3002.0924507352943,
+            "unfinished_sense_work_start_ps": 235971971,
+            "unfinished_sense_work_end_ps": 73023437,
+            "completion_cohorts": {
+              "2": 3068,
+              "1": 2,
+              "3": 2
+            }
+          },
+          {
+            "GBps": 176.26125947934443,
+            "duration_ps": 71387848,
+            "average_busy_banks": 115.60646236317419,
+            "finished_senses": 3061,
+            "sense_work_page_equivalents": 3034.153148161765,
+            "unfinished_sense_work_start_ps": 73023437,
+            "unfinished_sense_work_end_ps": 0,
+            "completion_cohorts": {
+              "3": 3070,
+              "2": 2
+            }
+          }
+        ],
+        "first_four_pass_5pct": false,
+        "ratio_last_three": 1.0574070389141965,
+        "terminal_drain_ps": 5054170,
+        "requests": 12288,
+        "sense_count": 12264,
+        "parent_residence_ps": 35412734864,
+        "page_ownership": {
+          "sense_free_parents": 24,
+          "banks": [
+            214,
+            365,
+            373,
+            728,
+            879,
+            888
+          ],
+          "hits": [
+            {
+              "request_index": 6320,
+              "bank": 214,
+              "page": 2
+            },
+            {
+              "request_index": 6373,
+              "bank": 214,
+              "page": 1
+            },
+            {
+              "request_index": 6417,
+              "bank": 365,
+              "page": 1
+            },
+            {
+              "request_index": 3348,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 9492,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 6453,
+              "bank": 365,
+              "page": 0
+            },
+            {
+              "request_index": 3434,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 9578,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 6712,
+              "bank": 879,
+              "page": 0
+            },
+            {
+              "request_index": 6749,
+              "bank": 879,
+              "page": 2
+            },
+            {
+              "request_index": 3697,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 9841,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 6940,
+              "bank": 888,
+              "page": 1
+            },
+            {
+              "request_index": 6983,
+              "bank": 888,
+              "page": 2
+            },
+            {
+              "request_index": 3928,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 10072,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 7803,
+              "bank": 373,
+              "page": 2
+            },
+            {
+              "request_index": 7811,
+              "bank": 373,
+              "page": 1
+            },
+            {
+              "request_index": 4795,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 10939,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 8272,
+              "bank": 728,
+              "page": 0
+            },
+            {
+              "request_index": 8297,
+              "bank": 728,
+              "page": 2
+            },
+            {
+              "request_index": 5308,
+              "bank": 728,
+              "page": 1
+            },
+            {
+              "request_index": 11452,
+              "bank": 728,
+              "page": 1
+            }
+          ],
+          "scope": "No same-page parent overlap; exact sense ownership; independent FIFO residency feasibility, not exact pin-release reconstruction"
+        }
+      },
+      "guard": {
+        "windows": [
+          {
+            "GBps": 175.07571663765785,
+            "duration_ps": 71871258,
+            "average_busy_banks": 119.82259422814055,
+            "finished_senses": 3075,
+            "sense_work_page_equivalents": 3166.103155882353,
+            "unfinished_sense_work_start_ps": 0,
+            "unfinished_sense_work_end_ps": 247800584,
+            "completion_cohorts": {
+              "0": 3070,
+              "1": 2
+            }
+          },
+          {
+            "GBps": 182.3129630581338,
+            "duration_ps": 69018197,
+            "average_busy_banks": 120.65935867608944,
+            "finished_senses": 3066,
+            "sense_work_page_equivalents": 3061.6512452205884,
+            "unfinished_sense_work_start_ps": 247800584,
+            "unfinished_sense_work_end_ps": 235971971,
+            "completion_cohorts": {
+              "1": 3068,
+              "0": 2,
+              "2": 2
+            }
+          },
+          {
+            "GBps": 186.37989646134045,
+            "duration_ps": 67512174,
+            "average_busy_banks": 120.95139264808743,
+            "finished_senses": 3062,
+            "sense_work_page_equivalents": 3002.0924507352943,
+            "unfinished_sense_work_start_ps": 235971971,
+            "unfinished_sense_work_end_ps": 73023437,
+            "completion_cohorts": {
+              "2": 3068,
+              "1": 2,
+              "3": 2
+            }
+          },
+          {
+            "GBps": 181.9833989136688,
+            "duration_ps": 69143186,
+            "average_busy_banks": 120.89842718557979,
+            "finished_senses": 3065,
+            "sense_work_page_equivalents": 3073.272955147059,
+            "unfinished_sense_work_start_ps": 73023437,
+            "unfinished_sense_work_end_ps": 95525875,
+            "completion_cohorts": {
+              "3": 3068,
+              "2": 2,
+              "4": 2
+            }
+          }
+        ],
+        "first_four_pass_5pct": true,
+        "ratio_last_three": 1.0241587835699086,
+        "terminal_drain_ps": 4961195,
+        "requests": 12416,
+        "sense_count": 12392,
+        "parent_residence_ps": 35781501651,
+        "page_ownership": {
+          "sense_free_parents": 24,
+          "banks": [
+            214,
+            365,
+            373,
+            728,
+            879,
+            888
+          ],
+          "hits": [
+            {
+              "request_index": 6320,
+              "bank": 214,
+              "page": 2
+            },
+            {
+              "request_index": 6373,
+              "bank": 214,
+              "page": 1
+            },
+            {
+              "request_index": 6417,
+              "bank": 365,
+              "page": 1
+            },
+            {
+              "request_index": 3348,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 9492,
+              "bank": 214,
+              "page": 0
+            },
+            {
+              "request_index": 6453,
+              "bank": 365,
+              "page": 0
+            },
+            {
+              "request_index": 3434,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 9578,
+              "bank": 365,
+              "page": 2
+            },
+            {
+              "request_index": 6712,
+              "bank": 879,
+              "page": 0
+            },
+            {
+              "request_index": 6749,
+              "bank": 879,
+              "page": 2
+            },
+            {
+              "request_index": 3697,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 9841,
+              "bank": 879,
+              "page": 1
+            },
+            {
+              "request_index": 6940,
+              "bank": 888,
+              "page": 1
+            },
+            {
+              "request_index": 6983,
+              "bank": 888,
+              "page": 2
+            },
+            {
+              "request_index": 3928,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 10072,
+              "bank": 888,
+              "page": 0
+            },
+            {
+              "request_index": 7803,
+              "bank": 373,
+              "page": 2
+            },
+            {
+              "request_index": 7811,
+              "bank": 373,
+              "page": 1
+            },
+            {
+              "request_index": 4795,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 10939,
+              "bank": 373,
+              "page": 0
+            },
+            {
+              "request_index": 8272,
+              "bank": 728,
+              "page": 0
+            },
+            {
+              "request_index": 8297,
+              "bank": 728,
+              "page": 2
+            },
+            {
+              "request_index": 5308,
+              "bank": 728,
+              "page": 1
+            },
+            {
+              "request_index": 11452,
+              "bank": 728,
+              "page": 1
+            }
+          ],
+          "scope": "No same-page parent overlap; exact sense ownership; independent FIFO residency feasibility, not exact pin-release reconstruction"
+        }
+      },
+      "prefix": {
+        "identical_completions": 12160,
+        "sense_prefix_before_ps": 274735307
+      }
+    }
+  ],
+  "acceptance_reclassified": false,
+  "fit_performed": false,
+  "performance_ready": false
+}

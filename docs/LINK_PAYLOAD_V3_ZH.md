@@ -53,7 +53,7 @@ v3 不为了命中 1.536TB/s 而改用 96 或拟合额外常数。
 
 ## 与论文对齐及拟合隔离
 
-[HEAVEN/RETRIEVE 论文](https://research.ece.cornell.edu/retrieve/camera-ready/retrieve26-final50.pdf)
+[RETRIEVE：Characterizing and Exploiting Dense Retrieval on High Bandwidth Flash](https://research.ece.cornell.edu/retrieve/camera-ready/retrieve26-final50.pdf)
 Table II 的 16×4×16、4KiB、双缓冲和 2.72us 名义 sense 参数用于结构对照。
 2.72us 本身是论文拟合参数，不能拿同一个饱和点当独立验证。
 本轮未拟合任何参数；固定种子验证轨迹与所有失败观察均保存。

@@ -1,0 +1,12 @@
+{
+ "version":"random-window-diagnostic-v1",
+ "baseline":"93b79070851371f0f108df46cb990c6a88fae8d5; turnover-v3 four-round archives unchanged",
+ "purpose":"Causal terminal-drain control and independent accounting; not a replacement acceptance protocol",
+ "trace":"Frozen seed314159 permutation of3072 pages repeated4 times, append first128 entries of same permutation",
+ "cases":"service-v2/payload-v3 x256/4096 bytes; QD128, same binary and timings as baseline",
+ "invariance":"Original completion prefix through N-QD completions must be byte-identical; sense events strictly before that boundary identical",
+ "diagnostics":"Original 3072-completion windows preserved. Compare first four windows in extended stream without changing5% criterion; report cohorts, tail duration, occupancy integral, overlapping round counts",
+ "independent_checks":"Bank busy interval clipping versus event sweep; closed-loop occupancy integral equals sum of request latencies; reference scan versus indexed execution on deterministic randomized multi-bank fixture",
+ "negative_checks":"Corrupt timing, overlap, request identity, event order, missing record, prefix mismatch",
+ "fit_performed":false,"hardware_calibrated":false,"paper_curve_reproduced":false,"performance_ready":false
+}

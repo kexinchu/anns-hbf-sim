@@ -104,3 +104,5 @@ External numeric audit: [OCP and paper alignment](calibration/external-alignment
 Frozen paper-aligned topology, closed-loop QD/dependency sweeps, and calibration/validation boundaries: [component curves](calibration/paper-curves/README.md). Missing external curve data and invalid execution points remain explicit; performance stays gated.
 
 - [可选 payload-v3 链路模型及长工作集验收边界](docs/LINK_PAYLOAD_V3_ZH.md)：保留 v2，校准与性能门仍关闭。
+
+- [四条随机曲线的窗口诊断与机制验证](docs/RANDOM_WINDOW_DIAGNOSIS_ZH.md)：保留旧失败和 5% 判据，追加尾段仅作因果对照，校准门仍关闭。

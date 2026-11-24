@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "case": 0,
+      "exact_events_completions_and_digest": true,
+      "sha256": "62a4667349d1e5d7228115fb37e12de81f321499f8f0d410e6ec82c43fb8e12f"
+    },
+    {
+      "case": 1,
+      "exact_events_completions_and_digest": true,
+      "sha256": "c68bbcbca2cb02a45f507dd70f3f716464113ab449d10ee3ed86fab90cde33a5"
+    },
+    {
+      "case": 2,
+      "exact_events_completions_and_digest": true,
+      "sha256": "dcc166285e0fa06d2bccad266807d5e8db15435c6cd3a599ebf76a9767b93eaa"
+    },
+    {
+      "case": 3,
+      "exact_events_completions_and_digest": true,
+      "sha256": "11e2696011e16136ed46ed94bf208a24b5fb3fd478b7ff0eb58695960875c02f"
+    },
+    {
+      "case": 4,
+      "exact_events_completions_and_digest": true,
+      "sha256": "3ade03103a6a95d5e8ec3fb8c7325a230db6650811b35cea56495ff3b3e4281a"
+    },
+    {
+      "case": 5,
+      "exact_events_completions_and_digest": true,
+      "sha256": "3c094cb29aa7edd004371b960a44a7791a1277ae61a586b17e0939224b38c164"
+    }
+  ],
+  "mutations_rejected": 12,
+  "performance_ready": false
+}

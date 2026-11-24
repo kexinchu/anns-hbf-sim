@@ -1,0 +1,7 @@
+{
+  "frozen_protocol_unchanged": true,
+  "field": "cases: same binary",
+  "correction": "Guard uses prior input-limit-fixed f1ef2ae6 binary; not all original baselines use the same binary hash. Prior change raises cumulative logical fragment admission guard only, with no timing or scheduling change. Exact completion and sense prefix invariance separately checked.",
+  "guard_binary_sha256": "f1ef2ae6cd62e429ab8671aa672422fcf71a8f8c96f54baa43fb5474d4e3f922",
+  "acceptance_reclassified": false
+}
