@@ -1,0 +1,7 @@
+{
+  "base_library": "Release CHECK, then host_driver.cpp.o and host_storage.cpp.o rebuilt with c++ -std=c++20 -O3 -DNDEBUG and WITHOUT HBF_FCFS_SCAN_ORACLE; replaced using ar r",
+  "probe_flags": "-std=c++20 -O2",
+  "probe_sha256": "18c3c6d2fbf2833003caa97b3828f4bc3aff8afc0cad9c9acb8775af72c8e997",
+  "source_sha256": "1dec1a4fd0997a9e5d5bfbeb4f353088c0c1bf37595e1859d3bbbb75af086cfc",
+  "scope": "resource sensitivity, not hardware performance or paper reproduction"
+}

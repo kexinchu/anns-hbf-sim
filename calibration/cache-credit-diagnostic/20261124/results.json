@@ -1,0 +1,28 @@
+{
+  "complete_runs": [
+    {
+      "qd": 1024,
+      "mocs": 256,
+      "peak_busy_banks": 80,
+      "elapsed_ps": 36234019,
+      "modeled_GBps": 115.75596954894792
+    },
+    {
+      "qd": 128,
+      "mocs": 256,
+      "peak_busy_banks": 80,
+      "elapsed_ps": 36234019,
+      "modeled_GBps": 115.75596954894792
+    },
+    {
+      "qd": 128,
+      "mocs": 4096,
+      "peak_busy_banks": 128,
+      "elapsed_ps": 22581740,
+      "modeled_GBps": 185.73874289580874
+    }
+  ],
+  "performance_ready": false,
+  "hardware_calibrated": false,
+  "paper_curve_reproduced": false
+}

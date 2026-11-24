@@ -1,0 +1,12 @@
+[
+  {
+    "mocs": 256,
+    "exit": 0,
+    "wall_seconds": 84.63174204097595
+  },
+  {
+    "mocs": 4096,
+    "timeout_seconds": 300,
+    "wall_seconds": 300.0289440409979
+  }
+]

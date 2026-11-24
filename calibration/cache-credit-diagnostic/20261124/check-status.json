@@ -1,0 +1,11 @@
+{
+  "build_mode": "CHECK",
+  "mocs_256": {
+    "status": "timeout",
+    "limit_seconds": 400
+  },
+  "mocs_4096": {
+    "status": "no completed summary; exit code not retained after first future exception"
+  },
+  "usable_for_throughput": false
+}
